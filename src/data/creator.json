@@ -1,0 +1,60 @@
+{
+  "name": "Kaio",
+  "fullName": "Jean-Francois Gaillard",
+  "role": "UEFN Map Developer",
+  "company": "Kaio Corporation",
+  "email": "contact@kaiocorp.com",
+  "website": "kaiocorp.com",
+  "bio": "Professional Fortnite UEFN map developer specializing in competitive game modes. Building high-performance maps with Verse scripting for top Fortnite creators. Creator of the CLUTCH and FFA frameworks.",
+  "skills": [
+    "UEFN / Creative 2.0",
+    "Verse Scripting",
+    "Unreal Engine 5",
+    "Game Design",
+    "Performance Optimization",
+    "Competitive Game Modes"
+  ],
+  "collaborators": [
+    {
+      "name": "Martoz",
+      "role": "Fortnite Creator",
+      "mapsCount": 4,
+      "description": "One of the most popular Fortnite competitive content creators"
+    },
+    {
+      "name": "GamersOrigin",
+      "role": "Esports Organization",
+      "mapsCount": 3,
+      "description": "French esports organization with competitive Fortnite teams"
+    },
+    {
+      "name": "WZF",
+      "role": "Fortnite Creator",
+      "mapsCount": 3,
+      "description": "Competitive Fortnite zone wars and endgame specialist"
+    },
+    {
+      "name": "Greencat",
+      "role": "Fortnite Creator",
+      "mapsCount": 1,
+      "description": "Competitive boxfight and ranked map creator"
+    },
+    {
+      "name": "Teekzie",
+      "role": "Fortnite Creator",
+      "mapsCount": 1,
+      "description": "Realistic and ranked competitive map specialist"
+    }
+  ],
+  "aggregateStats": {
+    "totalMaps": 15,
+    "totalMinutesPlayed": "4.9B+",
+    "totalFavorites": "3.3M+",
+    "highestAllTimePeak": 17842,
+    "totalCollaborators": 5
+  },
+  "social": {
+    "twitter": "https://twitter.com/7KaioFTW",
+    "fortniteGg": "https://fortnite.gg/creator/kaio"
+  }
+}

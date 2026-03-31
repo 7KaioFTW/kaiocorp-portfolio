@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+dist/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Claude Code local overrides (personal, not committed)
+CLAUDE.local.md
+.claude/settings.local.json
