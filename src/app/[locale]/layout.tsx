@@ -58,6 +58,14 @@ export default async function LocaleLayout({ children, params }: { children: Rea
 
   return (
     <html lang={locale} dir={isRtl ? "rtl" : "ltr"} className={`${inter.variable} ${orbitron.variable} ${cjkFont}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="48x48" />
+        <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#7B2FBE" />
+      </head>
       <body className="font-body bg-surface-dark text-slate-200 antialiased">
         <NextIntlClientProvider messages={messages}>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-surface-dark focus:font-semibold">
