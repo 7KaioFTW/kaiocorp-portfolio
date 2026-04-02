@@ -65,6 +65,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#7B2FBE" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3020506952463600" crossOrigin="anonymous"></script>
       </head>
       <body className="font-body bg-surface-dark text-slate-200 antialiased">
         <NextIntlClientProvider messages={messages}>
