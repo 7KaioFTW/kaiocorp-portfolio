@@ -40,7 +40,7 @@ export function Header() {
           <LanguageSwitcher />
           <Link href="/contact" className="rounded-md border border-accent/60 bg-accent/10 px-5 py-2 text-[13px] font-semibold uppercase tracking-wider text-accent transition-all hover:bg-accent/20 hover:shadow-lg hover:shadow-accent/10">{t("getInTouch")}</Link>
         </div>
-        <button className="flex flex-col gap-1.5 md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
+        <button className="flex flex-col gap-1.5 md:hidden" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
           <span className={cn("block h-0.5 w-6 bg-white transition-transform", open && "translate-y-2 rotate-45")} />
           <span className={cn("block h-0.5 w-6 bg-white transition-opacity", open && "opacity-0")} />
           <span className={cn("block h-0.5 w-6 bg-white transition-transform", open && "-translate-y-2 -rotate-45")} />

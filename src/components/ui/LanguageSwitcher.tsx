@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useLocale } from "next-intl";
 import { useRouter, usePathname, localeNames, type Locale } from "@/i18n/routing";
 import { locales } from "@/i18n/routing";
@@ -21,25 +21,33 @@ export function LanguageSwitcher() {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === "Escape") setOpen(false);
+  }, []);
+
   const switchLocale = (next: Locale) => {
     setOpen(false);
     router.replace(pathname, { locale: next });
   };
 
   return (
-    <div ref={ref} className="relative">
+    <div ref={ref} className="relative" onKeyDown={handleKeyDown}>
       <button
         onClick={() => setOpen(!open)}
         className="rounded-md border border-white/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400 transition-all hover:border-white/20 hover:text-white"
         aria-label="Change language"
+        aria-expanded={open}
+        aria-haspopup="listbox"
       >
         {locale.toUpperCase()}
       </button>
       {open && (
-        <div className="absolute end-0 top-full z-50 mt-2 w-48 rounded-lg border border-white/10 bg-surface-dark/95 py-1 shadow-xl backdrop-blur-md">
+        <div className="absolute end-0 top-full z-50 mt-2 w-48 rounded-lg border border-white/10 bg-surface-dark/95 py-1 shadow-xl backdrop-blur-md" role="listbox" aria-label="Select language">
           {locales.map((l) => (
             <button
               key={l}
+              role="option"
+              aria-selected={l === locale}
               onClick={() => switchLocale(l)}
               className={cn(
                 "w-full px-4 py-2 text-start text-xs transition-colors",

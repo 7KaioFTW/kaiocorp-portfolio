@@ -14,7 +14,9 @@ function processInline(text: string): React.ReactNode[] {
     if (match[1]) parts.push(<strong key={key++} className="font-semibold text-slate-300">{match[2]}</strong>);
     else if (match[3]) {
       const href = match[5];
-      if (href.startsWith("/")) parts.push(<Link key={key++} href={href} className="text-accent hover:text-accent-light underline underline-offset-2">{match[4]}</Link>);
+      const isSafe = href.startsWith("/") || href.startsWith("https://") || href.startsWith("http://");
+      if (!isSafe) { parts.push(<span key={key++}>{match[4]}</span>); }
+      else if (href.startsWith("/")) parts.push(<Link key={key++} href={href} className="text-accent hover:text-accent-light underline underline-offset-2">{match[4]}</Link>);
       else parts.push(<a key={key++} href={href} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-light underline underline-offset-2">{match[4]}</a>);
     }
     else if (match[6]) parts.push(<code key={key++} className="rounded bg-surface-light px-1.5 py-0.5 text-xs text-accent">{match[7]}</code>);
