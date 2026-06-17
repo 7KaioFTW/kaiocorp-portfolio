@@ -37,12 +37,12 @@ export function Header() {
           <span className="font-heading text-lg font-extrabold tracking-[0.16em] text-white">KAIOCORP</span>
         </Link>
 
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul className="hidden items-center gap-5 lg:flex">
           {NAV.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className={cn("text-[13px] font-medium uppercase tracking-wider transition-colors", pathname.startsWith(l.href) ? "text-accent" : "text-slate-400 hover:text-white")}
+                className={cn("whitespace-nowrap text-[13px] font-medium uppercase tracking-wider transition-colors", pathname.startsWith(l.href) ? "text-accent" : "text-slate-400 hover:text-white")}
               >
                 {l.label}
               </Link>
