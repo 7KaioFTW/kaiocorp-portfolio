@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
@@ -32,7 +33,7 @@ export function Header() {
     <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-300", scrolled ? "border-b border-white/5 bg-surface-dark/85 backdrop-blur-md" : "bg-transparent")}>
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2.5">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent font-heading text-sm font-extrabold text-surface-dark">K</span>
+          <Image src="/images/logo-mark.png" alt="KaioCorp" width={790} height={440} priority className="h-9 w-auto" />
           <span className="font-heading text-lg font-extrabold tracking-[0.16em] text-white">KAIOCORP</span>
         </Link>
 

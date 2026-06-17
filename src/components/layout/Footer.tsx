@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { PROOF } from "@/content/site";
 import { TOTAL_MINUTES_LABEL } from "@/lib/stats";
@@ -33,7 +34,7 @@ export async function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="flex items-center gap-2.5">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-accent font-heading text-sm font-extrabold text-surface-dark">K</span>
+              <Image src="/images/logo-mark.png" alt="KaioCorp" width={790} height={440} className="h-8 w-auto" />
               <span className="font-heading text-base font-extrabold tracking-[0.16em] text-white">KAIOCORP</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-slate-400">{t("tagline")}</p>
