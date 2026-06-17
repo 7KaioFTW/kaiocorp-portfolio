@@ -1,16 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { track } from "@/lib/track";
-import { PROOF, PROJECT_TYPES, BUDGETS, type ProjectType } from "@/content/site";
+import { PROOF, type ProjectType, type ProjectTypeOption } from "@/content/site";
 
 const field =
   "w-full rounded-lg border border-white/10 bg-surface-dark px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-accent focus:ring-2 focus:ring-accent/15";
 const label = "mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-400";
 
 export function BriefForm({ defaultType }: { defaultType?: ProjectType }) {
+  const t = useTranslations("b2b.form");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const projectTypes = t.raw("projectTypes") as ProjectTypeOption[];
+  const budgets = t.raw("budgets") as string[];
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -33,8 +37,8 @@ export function BriefForm({ defaultType }: { defaultType?: ProjectType }) {
   if (status === "sent") {
     return (
       <div className="rounded-2xl border border-accent/20 bg-accent/5 p-10 text-center animate-[fadeIn_0.3s_ease-out]">
-        <p className="font-heading text-lg font-bold text-accent">Message envoyé&nbsp;!</p>
-        <p className="mt-2 text-sm text-slate-400">Merci, on revient vers vous sous 24&nbsp;h pour discuter de votre projet.</p>
+        <p className="font-heading text-lg font-bold text-accent">{t("sentTitle")}</p>
+        <p className="mt-2 text-sm text-slate-400">{t("sentText")}</p>
       </div>
     );
   }
@@ -45,35 +49,35 @@ export function BriefForm({ defaultType }: { defaultType?: ProjectType }) {
       <input type="hidden" name="_subject" value="Nouveau brief — KaioCorp" />
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className={label} htmlFor="nom">Nom</label>
-          <input id="nom" name="nom" required placeholder="Votre nom" className={field} />
+          <label className={label} htmlFor="nom">{t("labelNom")}</label>
+          <input id="nom" name="nom" required placeholder={t("phNom")} className={field} />
         </div>
         <div>
-          <label className={label} htmlFor="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="vous@entreprise.com" className={field} />
+          <label className={label} htmlFor="email">{t("labelEmail")}</label>
+          <input id="email" name="email" type="email" required placeholder={t("phEmail")} className={field} />
         </div>
       </div>
       <div className="mt-4">
-        <label className={label} htmlFor="entreprise">Entreprise</label>
-        <input id="entreprise" name="entreprise" placeholder="Marque, agence, structure…" className={field} />
+        <label className={label} htmlFor="entreprise">{t("labelEntreprise")}</label>
+        <input id="entreprise" name="entreprise" placeholder={t("phEntreprise")} className={field} />
       </div>
       <div className="mt-4 grid gap-4 sm:grid-cols-2">
         <div>
-          <label className={label} htmlFor="project_type">Type de projet</label>
-          <select id="project_type" name="project_type" defaultValue={defaultType ?? PROJECT_TYPES[0]} className={field}>
-            {PROJECT_TYPES.map((t) => <option key={t}>{t}</option>)}
+          <label className={label} htmlFor="project_type">{t("labelType")}</label>
+          <select id="project_type" name="project_type" defaultValue={defaultType ?? projectTypes[0].value} className={field}>
+            {projectTypes.map((pt) => <option key={pt.value} value={pt.value}>{pt.label}</option>)}
           </select>
         </div>
         <div>
-          <label className={label} htmlFor="budget">Budget estimé</label>
+          <label className={label} htmlFor="budget">{t("labelBudget")}</label>
           <select id="budget" name="budget" className={field}>
-            {BUDGETS.map((b) => <option key={b}>{b}</option>)}
+            {budgets.map((b) => <option key={b}>{b}</option>)}
           </select>
         </div>
       </div>
       <div className="mt-4">
-        <label className={label} htmlFor="message">Message</label>
-        <textarea id="message" name="message" rows={4} placeholder="Décrivez votre idée, votre audience, votre objectif…" className={cn(field, "resize-none")} />
+        <label className={label} htmlFor="message">{t("labelMessage")}</label>
+        <textarea id="message" name="message" rows={4} placeholder={t("phMessage")} className={cn(field, "resize-none")} />
       </div>
       <button
         type="submit"
@@ -83,11 +87,11 @@ export function BriefForm({ defaultType }: { defaultType?: ProjectType }) {
           status === "sending" && "cursor-wait opacity-70"
         )}
       >
-        {status === "sending" ? "Envoi…" : "Discuter de votre projet →"}
+        {status === "sending" ? t("sending") : `${t("submit")} →`}
       </button>
       {status === "error" && (
         <p className="mt-3 text-xs text-red-300">
-          Une erreur est survenue. Écrivez-nous directement à{" "}
+          {t("errorText")}{" "}
           <a href={`mailto:${PROOF.email}`} className="underline">{PROOF.email}</a>.
         </p>
       )}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/sections/PageHero";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { Process } from "@/components/sections/Process";
@@ -7,15 +8,17 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { buildAlternates } from "@/lib/seo";
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: "b2b.pages.services" });
   return {
-    title: "Services UEFN, Verse & activation Fortnite",
-    description: "Development UEFN, Verse scripting, game design, systèmes ranked, UI, maintenance. Du concept à la publication.",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
     alternates: buildAlternates("/services", params.locale),
   };
 }
 
-export default function Page() {
+export default async function Page() {
+  const t = await getTranslations("b2b.pages.services");
   return (
     <main>
       <JsonLd
@@ -28,20 +31,16 @@ export default function Page() {
         }}
       />
       <PageHero
-        eyebrow="Services"
-        title="Des expériences Fortnite, du concept à la publication"
-        subtitle="Nous utilisons UEFN et Verse pour créer des mécaniques personnalisées : scoring, progression, classement, UI et gameplay sur-mesure. Chaque prestation sert un objectif d'engagement."
-        primaryCta={{ label: "Discuter de votre projet", href: "/contact" }}
-        secondaryCta={{ label: "Voir les réalisations", href: "/realisations" }}
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+        primaryCta={{ label: t("ctaPrimary"), href: "/contact" }}
+        secondaryCta={{ label: t("ctaSecondary"), href: "/realisations" }}
       />
       <ServicesGrid withCta={false} />
       <Process />
       <FaqB2B />
-      <FinalCta
-        eyebrow="Un besoin précis ?"
-        title="Parlons du périmètre de votre projet"
-        text="Activation, map compétitive, tycoon, système ranked ou simple maintenance — dites-nous ce dont vous avez besoin."
-      />
+      <FinalCta eyebrow={t("finalEyebrow")} title={t("finalTitle")} text={t("finalText")} />
     </main>
   );
 }

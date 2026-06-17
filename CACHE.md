@@ -11,6 +11,14 @@ de marque (pas « développeur de maps »).
 
 ## Dernières actions (cette session)
 
+### Internationalisation du contenu B2B (2026-06-17)
+
+- **Contenu B2B traduit dans les 13 locales** (FR source + EN, ES, DE, JA, ZH, AR, DA, NL, PT-BR, PT, RO, RU).
+- Architecture : tout le texte B2B (Hero, 10 sections, 6 pages, FAQ, formulaire, footer, nav) extrait dans le namespace `b2b` de `src/messages/*.json` (**178 clés/locale**). Sections → server components `async` + `getTranslations`/`t.raw()` ; `Header`/`BriefForm`/`LanguageSwitcher` (client) → `useTranslations`.
+- `site.ts`/`realisations.ts` réduits aux **données structurelles** (icônes, liens, types, données dérivées de maps.json). `PROJECT_TYPES` = `{value stable, label traduit}` (la soumission email reste cohérente).
+- `metadata.homeTitle`/`homeDescription` mises à jour B2B sur les 13 locales (les 11 périmées « map developer » corrigées).
+- Vérif : 13/13 JSON valides (0 clé manquante/extra), `tsc`+`eslint` OK, **build 395 pages exit 0**, rendu traduit confirmé (EN/DE/JA/AR/RU/ES, 0 fuite FR ni clé), Lighthouse `/en` desktop **100/100/100** (inchangé). Traductions IA générées par 12 sous-agents parallèles.
+
 ### Optimisation Lighthouse (2026-06-17)
 
 - **Lighthouse poussé à 100 sur Performance / Accessibility / Best Practices** (desktop) ; SEO 92\* (= 100 en prod).
@@ -58,7 +66,7 @@ de marque (pas « développeur de maps »).
 - [x] ~~Supprimer le fichier de vérif AdSense orphelin~~ — fait (supprimé + commité).
 - [x] ~~Viser 100 perf mobile via `experimental.optimizeCss`~~ — testé, **rejeté** (n'inline pas en App Router, aucun gain). Voir Dernières actions.
 - [ ] Lien Calendly si souhaité (actuellement email/mailto uniquement).
-- [ ] Porter le contenu B2B en **anglais** dans le système i18n (actuellement FR inline).
+- [x] ~~Porter le contenu B2B dans le système i18n~~ — **fait** : 13 locales traduites (au-delà d'EN). Relecture native conseillée pour les marchés clés (EN/ES/DE). Voir Dernières actions.
 - [ ] Optionnel : skill/script `refresh-map-stats` pour réactualiser fortnite.gg automatiquement.
 - [ ] Visuels/screenshots dédiés pour les cartes réalisations (au-delà des vignettes maps).
 

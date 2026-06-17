@@ -2,22 +2,24 @@
 
 import { useState, useEffect } from "react";
 import { Link, usePathname } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { Cta } from "@/components/ui/Cta";
 import { cn } from "@/lib/utils";
 
-const NAV = [
-  { label: "Activations", href: "/activations-de-marque" as const },
-  { label: "Agences", href: "/agences" as const },
-  { label: "Créateurs & Esport", href: "/createurs-esport" as const },
-  { label: "Réalisations", href: "/realisations" as const },
-  { label: "Services", href: "/services" as const },
-];
-
 export function Header() {
+  const t = useTranslations("b2b.nav");
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const NAV = [
+    { label: t("activations"), href: "/activations-de-marque" as const },
+    { label: t("agences"), href: "/agences" as const },
+    { label: t("createurs"), href: "/createurs-esport" as const },
+    { label: t("realisations"), href: "/realisations" as const },
+    { label: t("services"), href: "/services" as const },
+  ];
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
@@ -50,11 +52,11 @@ export function Header() {
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageSwitcher />
           <Cta href="/contact" variant="primary" event="cta_discuter_projet" eventParams={{ from: "header" }} className="h-10 px-5 text-xs">
-            Discuter de votre projet
+            {t("cta")}
           </Cta>
         </div>
 
-        <button className="flex flex-col gap-1.5 lg:hidden" onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open}>
+        <button className="flex flex-col gap-1.5 lg:hidden" onClick={() => setOpen(!open)} aria-label={t("menu")} aria-expanded={open}>
           <span className={cn("block h-0.5 w-6 bg-white transition-transform", open && "translate-y-2 rotate-45")} />
           <span className={cn("block h-0.5 w-6 bg-white transition-opacity", open && "opacity-0")} />
           <span className={cn("block h-0.5 w-6 bg-white transition-transform", open && "-translate-y-2 -rotate-45")} />
@@ -71,7 +73,7 @@ export function Header() {
           <div className="mt-2 flex items-center gap-3">
             <LanguageSwitcher />
             <Cta href="/contact" variant="primary" className="h-11 flex-1" event="cta_discuter_projet" eventParams={{ from: "mobile" }}>
-              Discuter de votre projet
+              {t("cta")}
             </Cta>
           </div>
         </div>

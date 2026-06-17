@@ -166,8 +166,8 @@
     "copyright": "© {year} Kaio Corporation. Toate drepturile rezervate."
   },
   "metadata": {
-    "homeTitle": "Kaio — Dezvoltator de Harti Fortnite UEFN | 4,7B+ Minute Jucate",
-    "homeDescription": "Dezvoltator profesionist de harti Fortnite UEFN. Peste 4,7 miliarde de minute jucate pe 15 harti. Colaborari cu Martoz, GamersOrigin, WZF. Disponibil pentru angajare.",
+    "homeTitle": "KaioCorp — Studio de experiente Fortnite personalizate (UEFN)",
+    "homeDescription": "Harti, mini-jocuri si activari de brand in Fortnite cu UEFN si Verse. Peste 4,7 miliarde de minute jucate. Hai sa discutam despre proiectul tau.",
     "mapsTitle": "Harti Fortnite UEFN de Kaio | Portofoliu de Harti Creative",
     "mapsDescription": "Exploreaza toate cele 15 harti Fortnite UEFN de Kaio. Peste 4,7B minute jucate in boxfights competitive, zone wars, realistics, tycoon-uri si moduri de joc personalizate.",
     "servicesTitle": "Angajeaza un Dezvoltator de Harti Fortnite | Servicii de Dezvoltare UEFN",
@@ -182,5 +182,292 @@
   "brandCollabs": {
     "title": "Colaborări cu branduri",
     "subtitle": "Experiențe Fortnite personalizate pentru branduri de top"
+  },
+  "b2b": {
+    "nav": {
+      "activations": "Activări",
+      "agences": "Agenții",
+      "createurs": "Creatori & Esport",
+      "realisations": "Realizări",
+      "services": "Servicii",
+      "cta": "Discută despre proiectul tău",
+      "menu": "Meniu",
+      "langLabel": "Schimbă limba"
+    },
+    "hero": {
+      "eyebrow": "UEFN · Verse · Unreal Engine 5 — Studio creativ Fortnite",
+      "title": "Creează-ți experiența Fortnite personalizată pentru a-ți captiva publicul.",
+      "subtitle": "KaioCorp concepe harti, mini-jocuri si activari de brand in Fortnite cu UEFN, Verse si Unreal Engine 5 — de la idee la prototip, pana la publicare si intretinere.",
+      "badgeMinutes": "minute jucate",
+      "badgeActivations": "Activări:",
+      "ctaPrimary": "Discută despre proiectul tău",
+      "ctaSecondary": "Vezi realizările",
+      "tagline": "De la idee la prototip, pana la publicare si intretinere."
+    },
+    "opportunity": {
+      "eyebrow": "Contextul",
+      "title": "Publicul tanar nu mai vrea doar sa priveasca o reclama. Vrea sa interactioneze.",
+      "lead": "Fortnite a devenit mult mai mult decat un joc: este un spatiu de atentie, de comunitate si de experienta. Pentru un brand, o agentie sau un creator, o experienta bine conceputa devine un adevarat activ de engagement — nu o campanie care se stinge in 48 de ore.",
+      "levers": ["Timp petrecut", "Interactiune", "Distribuire in comunitate", "Provocare", "Experienta de brand", "Vizibilitate organica", "Activare creatori"]
+    },
+    "audiences": {
+      "eyebrow": "Pentru cine?",
+      "title": "O singura expertiza, patru moduri de a o activa.",
+      "items": [
+        { "tag": "Branduri", "title": "Pentru branduri", "text": "Lanseaza o activare Fortnite in jurul universului tau, al unui produs, al unui eveniment sau al unei campanii Gen Z.", "examples": "Mini-joc de brand · cursa · tycoon · provocare in comunitate · experienta de eveniment.", "cta": "Imagineaza o activare" },
+        { "tag": "Agentii", "title": "Pentru agentii", "text": "Adauga Fortnite la recomandarile pentru clientii tai fara sa recrutezi o echipa UEFN interna.", "examples": "Parteneriat tehnic · productie in regim white-label · experiente pentru campanii de gaming.", "cta": "Gaseste un partener" },
+        { "tag": "Creatori", "title": "Pentru creatori", "text": "Creeaza o harta cu identitatea ta pentru a-ti implica comunitatea, a-ti prelungi continutul si a construi un activ durabil.", "examples": "1v1 · boxfight · zone wars · ranked maps · realistic fights.", "cta": "Creeaza-mi harta" },
+        { "tag": "Esport", "title": "Pentru esport", "text": "Anima-ti comunitatea cu o experienta Fortnite proprie: turnee, provocari, clasamente, sponsori.", "examples": "Ligi · evenimente in comunitate · sustinere sponsori · activ propriu.", "cta": "Creeaza o experienta esport" }
+      ]
+    },
+    "services": {
+      "eyebrow": "Servicii",
+      "title": "Experiente Fortnite gandite pentru engagement.",
+      "lead": "Folosim UEFN si Verse pentru a crea mecanici personalizate: scoring, progresie, clasament, UI si gameplay la comanda.",
+      "ctaMore": "Descopera formatele posibile",
+      "items": [
+        { "title": "Activări de brand", "benefit": "Transforma un brief de marketing intr-o experienta jucabila.", "example": "Ex. drop de produs, provocare de brand." },
+        { "title": "Harti competitive", "benefit": "Retentie puternica pe formate pe care jucatorii le rejoaca.", "example": "Ex. 1v1, boxfight, zone wars." },
+        { "title": "Mini-jocuri & provocări", "benefit": "Un format simplu, viral si usor de distribuit.", "example": "Ex. provocare de indemanare, cursa." },
+        { "title": "Tycoon-uri / simulatoare", "benefit": "Sesiuni lungi si o progresie care da dependenta.", "example": "Ex. Carlife Tycoon (~80 min/sesiune)." },
+        { "title": "Experiente de eveniment", "benefit": "Un moment cheie in jurul unei lansari.", "example": "Ex. scena virtuala, quest de festival." },
+        { "title": "Ranked / scoring / leaderboards", "benefit": "Competitie care te face sa revii.", "example": "Ex. clasament sezonier, ligi." },
+        { "title": "UI personalizat", "benefit": "Brandul tau prezent in fiecare ecran.", "example": "Ex. HUD, meniuri, branding in joc." },
+        { "title": "Verse scripting", "benefit": "Mecanici imposibile in Creative standard.", "example": "Ex. logica de joc, dispozitive custom." },
+        { "title": "Optimizare / performanta", "benefit": "O experienta fluida = jucatori care raman.", "example": "Ex. buget de memorie, draw calls." },
+        { "title": "Publicare & intretinere", "benefit": "Un activ viu, nu un one-shot.", "example": "Ex. echilibrare, versiuni noi." }
+      ]
+    },
+    "stats": {
+      "minutesPlayed": "Minute jucate",
+      "shipped": "Experiente livrate",
+      "creators": "Creatori si organizatii",
+      "brandActivations": "Activări de brand",
+      "brandsUnit": "branduri"
+    },
+    "realisations": {
+      "eyebrow": "Realizări",
+      "title": "Experiente jucate timp de miliarde de minute.",
+      "lead": "Harti care retin, branduri care activeaza, comunitati care revin.",
+      "ctaAll": "Vezi toate realizările",
+      "srHeading": "Toate realizările",
+      "ctaAllMaps": "Vezi toate hartile si statisticile lor",
+      "units": { "minutes": "min jucate", "favorites": "favorite" },
+      "projects": {
+        "clutch-realistics-1v2": { "type": "Competitiv · Martoz", "objective": "Implica o comunitate in jurul unui format clutch tensionat." },
+        "martoz-1v1-build-fights": { "type": "Competitiv · Martoz", "objective": "Un format de antrenament 1v1 pe care jucatorii il rejoaca in fiecare zi." },
+        "martoz-turtle-fights-ffa": { "type": "Competitiv · Martoz", "objective": "Un FFA distractiv si captivant, cu build-uri care se reseteaza continuu." },
+        "carlife-tycoon": { "type": "Activare · Recyclermonvehicule.fr", "objective": "Constientizare privind reciclarea auto printr-un tycoon jucabil, alaturi de GamersOrigin." },
+        "senses-rush": { "type": "Activare · Krys", "objective": "Aduce la viata universul brandului intr-o experienta imersiva, alaturi de GamersOrigin." },
+        "rift-racers-alpine": { "type": "Activare · Alpine", "objective": "Transforma experienta auto Alpine intr-un circuit jucabil, alaturi de GamersOrigin." }
+      }
+    },
+    "process": {
+      "eyebrow": "Proces",
+      "title": "Un proces simplu, de la idee la publicare.",
+      "items": [
+        { "title": "Brief strategic", "text": "Clarificam tinta, obiectivul, universul, mecanicile si constrangerile." },
+        { "title": "Concept & game design", "text": "Transformam ideea intr-o experienta jucabila cu mecanici captivante." },
+        { "title": "Prototip", "text": "O prima versiune jucabila pentru a valida rapid directia." },
+        { "title": "Dezvoltare UEFN / Verse", "text": "Gameplay, UI, scoring, optimizare, asset-uri si logica de joc." },
+        { "title": "Publicare & lansare", "text": "Trimitere, suport, iteratii si strategie de lansare." },
+        { "title": "Intretinere & optimizare", "text": "Corectii, versiuni noi, echilibrare, imbunatatire continua." }
+      ]
+    },
+    "why": {
+      "eyebrow": "De ce KaioCorp?",
+      "title": "O expertiza Fortnite dovedita prin utilizare reala.",
+      "minutesCaption": "minute jucate pe experientele dezvoltate",
+      "items": [
+        "<b>Miliarde de minute</b> jucate pe experientele noastre.",
+        "<b>Experienta de teren</b> despre ce retine cu adevarat jucatorii.",
+        "Stapanire tehnica <b>UEFN / Verse / Unreal Engine 5</b>.",
+        "Capacitatea de a lucra cu <b>creatori, agentii si branduri</b>.",
+        "O abordare deopotriva <b>game design, tehnica si marketing</b>.",
+        "Experiente optimizate pentru <b>engagement</b>, nu doar pentru estetica."
+      ]
+    },
+    "sectors": {
+      "eyebrow": "Idei de activări",
+      "title": "Ce tip de experienta Fortnite ai putea crea?",
+      "yourSector": "Sectorul tau?",
+      "ctaIdea": "Cere o idee de activare",
+      "items": [
+        { "title": "Sport", "text": "Provocare de indemanare, cursa, antrenament, competitie in comunitate." },
+        { "title": "Auto", "text": "Circuit, cursa, explorarea unui vehicul, provocare contra cronometru." },
+        { "title": "Moda / sneakers", "text": "Drop virtual, parcurs imersiv, mini-joc in jurul unei colectii." },
+        { "title": "Muzica / festival", "text": "Experienta de eveniment, scena virtuala, quest in jurul unui artist." },
+        { "title": "Educatie / tineret", "text": "Harta educationala, experienta ludica, provocare colectiva." },
+        { "title": "Entertainment", "text": "Univers imersiv, teasing de serial/film, misiune narativa." },
+        { "title": "Agentii", "text": "Activare la cheie de propus unui client." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Intrebarile pe care si le pun branduri, agentii & creatori.",
+      "items": [
+        { "q": "De ce sa creezi o experienta Fortnite pentru un brand?", "a": "Este singurul mediu in care publicul tau se joaca alaturi de tine in loc sa te priveasca doar: timp de atentie lung, interactiune reala, distribuire in comunitate si un activ care dureaza dincolo de o campanie." },
+        { "q": "Cat costa o harta Fortnite personalizata?", "a": "Depinde de amploare (format, mecanici, durata de viata). Formatele simple incep de la cateva mii; o activare de brand cu Verse custom este mai ridicata. Iti oferim o estimare clara dupa brief." },
+        { "q": "Cat dureaza sa creezi o experienta?", "a": "De la un prototip jucabil in 1-2 saptamani, pana la 6–12 saptamani pentru o experienta completa, in functie de complexitatea mecanicilor." },
+        { "q": "Se poate crea o activare punctuala?", "a": "Da: un moment cheie de eveniment sau un activ durabil. Adaptam formatul la obiectivul si la calendarul tau." },
+        { "q": "Se poate intretine o harta in timp?", "a": "Da, asta este punctul nostru forte: unele dintre hartile noastre depasesc versiunea 200, actualizate pe masura meta-ului Fortnite." },
+        { "q": "Lucrati cu agentii?", "a": "Da, in parteneriat tehnic sau in regim white-label. Tu pastrezi relatia cu clientul, noi producem experienta." },
+        { "q": "Se poate crea o experienta in regim white-label?", "a": "Da, fara ca numele nostru sa apara la clientul final." },
+        { "q": "Care este diferenta dintre o harta si o activare de brand?", "a": "O harta este un format de joc; o activare este o harta gandita in jurul universului tau, al obiectivelor tale de marketing si al masurarii performantei." },
+        { "q": "Este potrivit pentru un brand care nu a facut niciodata gaming?", "a": "Da: traducem brief-ul tau de marketing intr-o experienta jucabila, fara sa fie nevoie sa stapanesti partea tehnica." },
+        { "q": "Cum masuram rezultatele?", "a": "Minute jucate, retentie (D1/D7), favorite, varfuri de jucatori simultani, timp de sesiune — metrici concrete de engagement." }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "Hai sa discutam",
+      "title": "Pregatesti o campanie de gaming, o activare Gen Z sau o experienta Fortnite?",
+      "text": "Hai sa discutam despre ideea ta. Transformam un brief de marketing, o comunitate sau un univers de brand intr-o experienta Fortnite jucabila.",
+      "emailBtn": "Trimite un brief",
+      "responseNote": "Raspuns in 24 h"
+    },
+    "footer": {
+      "tagline": "Studio creativ de experiente Fortnite personalizate. UEFN · Verse · Unreal Engine 5.",
+      "minutesPlayed": "minute jucate",
+      "colSolutions": "Solutii",
+      "colStudio": "Studio",
+      "colContact": "Contact",
+      "linkActivations": "Activări de brand",
+      "linkAgences": "Agentii",
+      "linkCreateurs": "Creatori & Esport",
+      "linkServices": "Servicii",
+      "linkRealisations": "Realizări",
+      "linkMaps": "Harti",
+      "linkBlog": "Blog",
+      "linkContact": "Contact",
+      "discuss": "Discută despre proiectul tău",
+      "twitter": "Twitter / X",
+      "rights": "Toate drepturile rezervate.",
+      "epicDisclaimer": "Neafiliat cu Epic Games. Fortnite este o marca a Epic Games, Inc."
+    },
+    "form": {
+      "howItWorksTitle": "Cum se desfasoara",
+      "steps": [
+        "Iti descrii ideea, publicul si obiectivul.",
+        "Revenim in 24 h cu un prim feedback si cateva intrebari.",
+        "Iti propunem un concept, o amploare si o estimare clara."
+      ],
+      "labelNom": "Nume",
+      "labelEmail": "Email",
+      "labelEntreprise": "Companie",
+      "labelType": "Tip de proiect",
+      "labelBudget": "Buget estimat",
+      "labelMessage": "Mesaj",
+      "phNom": "Numele tau",
+      "phEmail": "tu@companie.com",
+      "phEntreprise": "Brand, agentie, structura…",
+      "phMessage": "Descrie-ti ideea, publicul, obiectivul…",
+      "submit": "Discută despre proiectul tău",
+      "sending": "Se trimite…",
+      "sentTitle": "Mesaj trimis!",
+      "sentText": "Multumim, revenim catre tine in 24 h pentru a discuta despre proiectul tau.",
+      "errorText": "Ceva nu a functionat. Scrie-ne direct la",
+      "projectTypes": [
+        { "value": "brand_activation", "label": "Activare de brand" },
+        { "value": "agency", "label": "Proiect agentie" },
+        { "value": "creator", "label": "Harta creator" },
+        { "value": "esport", "label": "Proiect esport" },
+        { "value": "maintenance", "label": "Intretinere / optimizare" },
+        { "value": "unsure", "label": "Inca nu stiu" }
+      ],
+      "budgets": ["De definit", "< 5 000 €", "5 000 – 15 000 €", "15 000 – 40 000 €", "> 40 000 €"]
+    },
+    "pages": {
+      "services": {
+        "eyebrow": "Servicii",
+        "title": "Experiente Fortnite, de la concept la publicare",
+        "subtitle": "Folosim UEFN si Verse pentru a crea mecanici personalizate: scoring, progresie, clasament, UI si gameplay la comanda. Fiecare serviciu serveste un obiectiv de engagement.",
+        "ctaPrimary": "Discută despre proiectul tău",
+        "ctaSecondary": "Vezi realizările",
+        "finalEyebrow": "O nevoie precisa?",
+        "finalTitle": "Hai sa discutam despre amploarea proiectului tau",
+        "finalText": "Activare, harta competitiva, tycoon, sistem ranked sau simpla intretinere — spune-ne de ce ai nevoie.",
+        "metaTitle": "Servicii UEFN, Verse & activare Fortnite",
+        "metaDescription": "Dezvoltare UEFN, Verse scripting, game design, sisteme ranked, UI, intretinere. De la concept la publicare."
+      },
+      "agences": {
+        "eyebrow": "Pentru agentii",
+        "title": "Partenerul tau tehnic Fortnite / UEFN pentru campaniile clientilor tai",
+        "subtitle": "Tu pastrezi relatia cu clientul. Noi concepem si dezvoltam experienta Fortnite — in regim white-label daca este nevoie.",
+        "ctaPrimary": "Gaseste un partener",
+        "ctaSecondary": "Vezi realizările",
+        "partnershipEyebrow": "Parteneriatul",
+        "partnershipTitle": "Adauga Fortnite la oferta ta, fara sa construiesti o echipa UEFN.",
+        "points": [
+          { "t": "White-label", "d": "Producem sub brandul tau. Numele nostru nu apare la clientul final daca asa doresti." },
+          { "t": "Inca din faza de concept", "d": "Intervenim devreme pentru a asigura fezabilitatea tehnica si o estimare corecta inainte de recomandarea ta." },
+          { "t": "Productie UEFN / Verse", "d": "Game design, gameplay, scoring, UI, optimizare si publicare — o echipa Fortnite fara recrutare." },
+          { "t": "Termene clare", "d": "Prototip in 1–2 saptamani, productie in 6–12 saptamani in functie de amploare. Conduci clientul cu incredere." }
+        ],
+        "casesEyebrow": "Cazuri de utilizare",
+        "casesTitle": "Ce producem pentru clientii tai.",
+        "finalEyebrow": "Parteneriat",
+        "finalTitle": "Un brief de client de activat in Fortnite?",
+        "finalText": "Trimite-ne contextul. Te ajutam sa incadrezi fezabilitatea, conceptul si estimarea pentru recomandarea ta.",
+        "metaTitle": "Partener tehnic Fortnite / UEFN pentru agentii",
+        "metaDescription": "Productie UEFN & Verse in regim white-label pentru campaniile clientilor tai. Tu pastrezi relatia, noi cream experienta."
+      },
+      "createurs": {
+        "eyebrow": "Creatori & Esport",
+        "title": "Creeaza o harta Fortnite cu identitatea ta",
+        "subtitle": "Implica-ti comunitatea, prelungeste-ti continutul si construieste un activ durabil. De la formate competitive la experiente esport proprii.",
+        "ctaPrimary": "Creeaza-mi harta",
+        "ctaSecondary": "Vezi realizările",
+        "buildEyebrow": "Ce construim",
+        "buildTitle": "O harta gandita pentru retentie si comunitate.",
+        "formats": [
+          { "t": "Formate competitive", "d": "1v1, boxfight, zone wars, realistics, ranked — formatele pe care comunitatea ta le rejoaca in fiecare zi." },
+          { "t": "Engagement in comunitate", "d": "O harta cu identitatea ta care iti prelungeste continutul si iti aduce inapoi viewerii intre doua stream-uri." },
+          { "t": "Clasamente & turnee", "d": "Sisteme ranked, leaderboard-uri sezoniere, evenimente si provocari pentru a anima comunitatea." },
+          { "t": "Sponsori & activ propriu", "d": "Un spatiu de brand pe care il controlezi: sustinere sponsori, branding si venituri din engagement." }
+        ],
+        "casesEyebrow": "Realizări creatori",
+        "casesTitle": "Harti de creatori jucate miliarde de minute.",
+        "casesLead": "Colaborarile noastre cu Martoz si alti creatori au generat o retentie printre cele mai bune din modul competitiv.",
+        "finalEyebrow": "Hai sa discutam",
+        "finalTitle": "Pregatit sa creezi harta comunitatii tale?",
+        "finalText": "Spune-ne universul, formatul si obiectivul tau. Transformam asta intr-o harta jucabila, optimizata pentru retentie.",
+        "metaTitle": "Creatori & Esport — Creeaza-ti harta Fortnite",
+        "metaDescription": "O harta cu identitatea ta: formate competitive, clasamente, turnee, sponsori. Implica-ti comunitatea si construieste un activ durabil."
+      },
+      "activations": {
+        "eyebrow": "Activări de brand",
+        "title": "Creeaza o activare Fortnite pentru a-ti implica publicul",
+        "subtitle": "Transforma un brief de marketing, un produs sau un eveniment intr-o experienta Fortnite jucabila. Atingi un public Gen Z acolo unde isi petrece timpul — jucand, nu deruland.",
+        "ctaPrimary": "Imagineaza o activare",
+        "ctaSecondary": "Vezi realizările",
+        "casesEyebrow": "Realizări",
+        "casesTitle": "Activări de brand deja jucate.",
+        "casesLead": "Branduri care trec de la mesaj la experienta interactiva.",
+        "finalEyebrow": "Hai sa discutam",
+        "finalTitle": "O campanie Gen Z, o lansare de produs, un eveniment?",
+        "finalText": "Hai sa discutam despre brief-ul tau. Iti propunem un concept de activare Fortnite adaptat universului si obiectivelor tale de marketing.",
+        "metaTitle": "Activare de brand Fortnite",
+        "metaDescription": "Implica-ti publicul Gen Z cu o activare Fortnite personalizata. De la idee la publicare. Pentru branduri & agentii."
+      },
+      "realisations": {
+        "eyebrow": "Realizări",
+        "title": "Experiente jucate timp de miliarde de minute",
+        "subtitle": "Harti care retin, branduri care activeaza, comunitati care revin. Fiecare proiect este prezentat prin obiectivul si rezultatul sau — nu doar prin tehnica.",
+        "ctaPrimary": "Discută despre proiectul tău",
+        "ctaSecondary": "Vezi clasamentul hartilor",
+        "finalEyebrow": "E randul tau",
+        "finalTitle": "Si daca urmatoarea realizare ar fi a ta?",
+        "finalText": "Brand, agentie, creator sau structura esport — hai sa discutam despre experienta Fortnite pe care vrei sa o creezi.",
+        "metaTitle": "Realizări — {minutes} minute jucate",
+        "metaDescription": "Harti de creatori, activari de brand si formate competitive jucate timp de miliarde de minute in Fortnite."
+      },
+      "contact": {
+        "eyebrow": "Contact",
+        "title": "Discută despre proiectul tău",
+        "subtitle": "Pregatesti o campanie de gaming, o activare Gen Z sau o experienta Fortnite? Trimite-ti brief-ul — revenim catre tine in 24 h.",
+        "metaTitle": "Discută despre proiectul tău Fortnite",
+        "metaDescription": "Trimite-ti brief-ul. Activare de brand, proiect agentie, harta creator sau esport — raspuns in 24 h."
+      }
+    }
   }
 }

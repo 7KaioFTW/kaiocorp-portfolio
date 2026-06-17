@@ -166,8 +166,8 @@
     "copyright": "© {year} Kaio Corporation. Todos los derechos reservados."
   },
   "metadata": {
-    "homeTitle": "Kaio — Desarrollador de mapas UEFN para Fortnite | Más de 4.700M de minutos jugados",
-    "homeDescription": "Desarrollador profesional de mapas UEFN para Fortnite. Más de 4.700M de minutos jugados. Colaboraciones con Martoz, GamersOrigin, WZF. Disponible para contratación.",
+    "homeTitle": "KaioCorp — Estudio de experiencias Fortnite a medida (UEFN)",
+    "homeDescription": "Mapas, minijuegos y activaciones de marca en Fortnite con UEFN y Verse. Más de 4.700M de minutos jugados. Hablemos de tu proyecto.",
     "mapsTitle": "Mapas de Fortnite UEFN por Kaio | Portafolio de mapas Creative",
     "mapsDescription": "Explore Los mapas de Fortnite UEFN de Kaio. Más de 4.700M de minutos jugados en boxfights competitivos, zone wars, realistics, tycoons y modos de juego personalizados.",
     "servicesTitle": "Contrate a un desarrollador de mapas de Fortnite | Servicios de desarrollo UEFN",
@@ -182,5 +182,292 @@
   "brandCollabs": {
     "title": "Colaboraciones de marca",
     "subtitle": "Experiencias Fortnite personalizadas para marcas líderes"
+  },
+  "b2b": {
+    "nav": {
+      "activations": "Activaciones",
+      "agences": "Agencias",
+      "createurs": "Creadores y Esport",
+      "realisations": "Proyectos",
+      "services": "Servicios",
+      "cta": "Hablar de tu proyecto",
+      "menu": "Menú",
+      "langLabel": "Cambiar idioma"
+    },
+    "hero": {
+      "eyebrow": "UEFN · Verse · Unreal Engine 5 — Estudio creativo Fortnite",
+      "title": "Crea tu experiencia Fortnite a medida para conectar con tu audiencia.",
+      "subtitle": "KaioCorp diseña mapas, minijuegos y activaciones de marca en Fortnite con UEFN, Verse y Unreal Engine 5 — de la idea al prototipo, hasta la publicación y el mantenimiento.",
+      "badgeMinutes": "minutos jugados",
+      "badgeActivations": "Activaciones:",
+      "ctaPrimary": "Hablar de tu proyecto",
+      "ctaSecondary": "Ver los proyectos",
+      "tagline": "De la idea al prototipo, hasta la publicación y el mantenimiento."
+    },
+    "opportunity": {
+      "eyebrow": "El contexto",
+      "title": "Las audiencias jóvenes ya no quieren solo ver un anuncio. Quieren interactuar.",
+      "lead": "Fortnite se ha convertido en mucho más que un juego: es un espacio de atención, comunidad y experiencia. Para una marca, una agencia o un creador, una experiencia bien diseñada se convierte en un verdadero activo de engagement — no en una campaña que se apaga en 48 horas.",
+      "levers": ["Tiempo de permanencia", "Interacción", "Difusión en comunidad", "Reto", "Experiencia de marca", "Visibilidad orgánica", "Activación de creadores"]
+    },
+    "audiences": {
+      "eyebrow": "¿Para quién?",
+      "title": "Una sola especialidad, cuatro formas de activarla.",
+      "items": [
+        { "tag": "Marcas", "title": "Para marcas", "text": "Lanza una activación en Fortnite en torno a tu universo, un producto, un evento o una campaña Gen Z.", "examples": "Minijuego de marca · carrera · tycoon · reto comunitario · experiencia para eventos.", "cta": "Imaginar una activación" },
+        { "tag": "Agencias", "title": "Para agencias", "text": "Añade Fortnite a tus recomendaciones de cliente sin tener que montar un equipo UEFN interno.", "examples": "Partner técnico · producción en marca blanca · experiencias para campañas gaming.", "cta": "Buscar un partner" },
+        { "tag": "Creadores", "title": "Para creadores", "text": "Crea un mapa con tu sello para conectar con tu comunidad, prolongar tu contenido y construir un activo duradero.", "examples": "1v1 · boxfight · zone wars · ranked maps · realistic fights.", "cta": "Crear mi mapa" },
+        { "tag": "Esport", "title": "Para el esport", "text": "Dinamiza tu comunidad con una experiencia Fortnite propia: torneos, retos, clasificaciones, patrocinadores.", "examples": "Ligas · eventos comunitarios · espacio para patrocinadores · activo propio.", "cta": "Crear una experiencia esport" }
+      ]
+    },
+    "services": {
+      "eyebrow": "Servicios",
+      "title": "Experiencias Fortnite pensadas para el engagement.",
+      "lead": "Usamos UEFN y Verse para crear mecánicas personalizadas: puntuación, progresión, clasificación, UI y jugabilidad a medida.",
+      "ctaMore": "Descubrir los formatos posibles",
+      "items": [
+        { "title": "Activaciones de marca", "benefit": "Convierte un brief de marketing en una experiencia jugable.", "example": "Ej. lanzamiento de producto, reto de marca." },
+        { "title": "Mapas competitivos", "benefit": "Una retención alta en formatos que los jugadores repiten.", "example": "Ej. 1v1, boxfight, zone wars." },
+        { "title": "Minijuegos y retos", "benefit": "Un formato sencillo, viral y compartible.", "example": "Ej. reto de habilidad, carrera." },
+        { "title": "Tycoons / simuladores", "benefit": "Sesiones largas y una progresión adictiva.", "example": "Ej. Carlife Tycoon (~80 min/sesión)." },
+        { "title": "Experiencias para eventos", "benefit": "Un momento clave en torno a un lanzamiento.", "example": "Ej. escenario virtual, misión de festival." },
+        { "title": "Ranked / puntuación / leaderboards", "benefit": "Competición que hace volver.", "example": "Ej. clasificación de temporada, ligas." },
+        { "title": "UI personalizada", "benefit": "Tu marca presente en cada pantalla.", "example": "Ej. HUD, menús, branding in-game." },
+        { "title": "Scripting en Verse", "benefit": "Mecánicas imposibles en Creative estándar.", "example": "Ej. lógica de juego, dispositivos custom." },
+        { "title": "Optimización / rendimiento", "benefit": "Una experiencia fluida = jugadores que se quedan.", "example": "Ej. presupuesto de memoria, draw calls." },
+        { "title": "Publicación y mantenimiento", "benefit": "Un activo vivo, no un one-shot.", "example": "Ej. equilibrado, nuevas versiones." }
+      ]
+    },
+    "stats": {
+      "minutesPlayed": "Minutos jugados",
+      "shipped": "Experiencias entregadas",
+      "creators": "Creadores y organizaciones",
+      "brandActivations": "Activaciones de marca",
+      "brandsUnit": "marcas"
+    },
+    "realisations": {
+      "eyebrow": "Proyectos",
+      "title": "Experiencias jugadas durante miles de millones de minutos.",
+      "lead": "Mapas que retienen, marcas que activan, comunidades que vuelven.",
+      "ctaAll": "Ver todos los proyectos",
+      "srHeading": "Todos los proyectos",
+      "ctaAllMaps": "Ver todos los mapas y sus estadísticas",
+      "units": { "minutes": "min jugados", "favorites": "favoritos" },
+      "projects": {
+        "clutch-realistics-1v2": { "type": "Competitivo · Martoz", "objective": "Conectar con una comunidad en torno a un formato clutch frenético." },
+        "martoz-1v1-build-fights": { "type": "Competitivo · Martoz", "objective": "Un formato de entrenamiento 1v1 que los jugadores repiten cada día." },
+        "martoz-turtle-fights-ffa": { "type": "Competitivo · Martoz", "objective": "Un FFA divertido y adictivo, con builds que se reinician en continuo." },
+        "carlife-tycoon": { "type": "Activación · Recyclermonvehicule.fr", "objective": "Sensibilizar sobre el reciclaje de vehículos mediante un tycoon jugable, con GamersOrigin." },
+        "senses-rush": { "type": "Activación · Krys", "objective": "Dar vida al universo de la marca en una experiencia inmersiva, con GamersOrigin." },
+        "rift-racers-alpine": { "type": "Activación · Alpine", "objective": "Convertir la experiencia automovilística de Alpine en un circuito jugable, con GamersOrigin." }
+      }
+    },
+    "process": {
+      "eyebrow": "Proceso",
+      "title": "Un proceso simple, de la idea a la publicación.",
+      "items": [
+        { "title": "Brief estratégico", "text": "Aclaramos el público, el objetivo, el universo, las mecánicas y las restricciones." },
+        { "title": "Concepto y game design", "text": "Transformamos la idea en una experiencia jugable con mecánicas que enganchan." },
+        { "title": "Prototipo", "text": "Una primera versión jugable para validar rápidamente la dirección." },
+        { "title": "Desarrollo UEFN / Verse", "text": "Jugabilidad, UI, puntuación, optimización, assets y lógica de juego." },
+        { "title": "Publicación y lanzamiento", "text": "Envío, soporte, iteraciones y estrategia de lanzamiento." },
+        { "title": "Mantenimiento y optimización", "text": "Correcciones, nuevas versiones, equilibrado, mejora continua." }
+      ]
+    },
+    "why": {
+      "eyebrow": "¿Por qué KaioCorp?",
+      "title": "Una experiencia en Fortnite probada por el uso real.",
+      "minutesCaption": "minutos jugados en las experiencias desarrolladas",
+      "items": [
+        "<b>Miles de millones de minutos</b> jugados en nuestras experiencias.",
+        "<b>Experiencia de campo</b> sobre lo que realmente retiene a los jugadores.",
+        "Dominio técnico de <b>UEFN / Verse / Unreal Engine 5</b>.",
+        "Capacidad para trabajar con <b>creadores, agencias y marcas</b>.",
+        "Un enfoque que combina <b>game design, técnica y marketing</b>.",
+        "Experiencias optimizadas para el <b>engagement</b>, no solo para la estética."
+      ]
+    },
+    "sectors": {
+      "eyebrow": "Ideas de activación",
+      "title": "¿Qué tipo de experiencia Fortnite podrías crear?",
+      "yourSector": "¿Tu sector?",
+      "ctaIdea": "Pedir una idea de activación",
+      "items": [
+        { "title": "Deporte", "text": "Reto de habilidad, carrera, entrenamiento, competición comunitaria." },
+        { "title": "Automoción", "text": "Circuito, carrera, exploración de vehículo, reto cronometrado." },
+        { "title": "Moda / sneakers", "text": "Drop virtual, recorrido inmersivo, minijuego en torno a una colección." },
+        { "title": "Música / festival", "text": "Experiencia para eventos, escenario virtual, misión en torno a un artista." },
+        { "title": "Educación / juventud", "text": "Mapa pedagógico, experiencia lúdica, reto colectivo." },
+        { "title": "Entertainment", "text": "Universo inmersivo, teaser de serie/película, misión narrativa." },
+        { "title": "Agencias", "text": "Activación llave en mano para proponer a un cliente." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "Las preguntas que se hacen marcas, agencias y creadores.",
+      "items": [
+        { "q": "¿Por qué crear una experiencia Fortnite para una marca?", "a": "Es el único medio donde tu audiencia juega contigo en lugar de solo verte: tiempo de atención prolongado, interacción real, difusión en comunidad y un activo que perdura más allá de una campaña." },
+        { "q": "¿Cuánto cuesta un mapa Fortnite a medida?", "a": "Depende del alcance (formato, mecánicas, vida útil). Los formatos sencillos parten de unos pocos miles; una activación de marca con Verse custom es más alta. Te damos un presupuesto claro tras el brief." },
+        { "q": "¿Cuánto tiempo se tarda en crear una experiencia?", "a": "Desde un prototipo jugable en 1 a 2 semanas, hasta 6–12 semanas para una experiencia completa, según la complejidad de las mecánicas." },
+        { "q": "¿Se puede crear una activación puntual?", "a": "Sí: un momento clave para un evento o un activo duradero. Adaptamos el formato a tu objetivo y tu calendario." },
+        { "q": "¿Se puede mantener un mapa a lo largo del tiempo?", "a": "Sí, es nuestro punto fuerte: algunos de nuestros mapas superan la versión 200, actualizados al ritmo de la meta de Fortnite." },
+        { "q": "¿Trabajáis con agencias?", "a": "Sí, como partner técnico o en marca blanca. Tú conservas la relación con el cliente, nosotros producimos la experiencia." },
+        { "q": "¿Se puede crear una experiencia en marca blanca?", "a": "Sí, sin que nuestro nombre aparezca de cara al cliente final." },
+        { "q": "¿Qué diferencia hay entre un mapa y una activación de marca?", "a": "Un mapa es un formato de juego; una activación es un mapa pensado en torno a tu universo, tus objetivos de marketing y tu medición de resultados." },
+        { "q": "¿Es adecuado para una marca que nunca ha hecho gaming?", "a": "Sí: traducimos tu brief de marketing en una experiencia jugable, sin que tengas que dominar la parte técnica." },
+        { "q": "¿Cómo se miden los resultados?", "a": "Minutos jugados, retención (D1/D7), favoritos, picos de jugadores simultáneos, tiempo de sesión — métricas concretas de engagement." }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "Hablemos",
+      "title": "¿Estás preparando una campaña gaming, una activación Gen Z o una experiencia Fortnite?",
+      "text": "Hablemos de tu idea. Transformamos un brief de marketing, una comunidad o un universo de marca en una experiencia Fortnite jugable.",
+      "emailBtn": "Enviar un brief",
+      "responseNote": "Respuesta en 24 h"
+    },
+    "footer": {
+      "tagline": "Estudio creativo de experiencias Fortnite a medida. UEFN · Verse · Unreal Engine 5.",
+      "minutesPlayed": "minutos jugados",
+      "colSolutions": "Soluciones",
+      "colStudio": "Estudio",
+      "colContact": "Contacto",
+      "linkActivations": "Activaciones de marca",
+      "linkAgences": "Agencias",
+      "linkCreateurs": "Creadores y Esport",
+      "linkServices": "Servicios",
+      "linkRealisations": "Proyectos",
+      "linkMaps": "Mapas",
+      "linkBlog": "Blog",
+      "linkContact": "Contacto",
+      "discuss": "Hablar de tu proyecto",
+      "twitter": "Twitter / X",
+      "rights": "Todos los derechos reservados.",
+      "epicDisclaimer": "No afiliado a Epic Games. Fortnite es una marca de Epic Games, Inc."
+    },
+    "form": {
+      "howItWorksTitle": "Cómo funciona",
+      "steps": [
+        "Describes tu idea, tu audiencia y tu objetivo.",
+        "Volvemos en 24 h con un primer feedback y algunas preguntas.",
+        "Te proponemos un concepto, un alcance y un presupuesto claro."
+      ],
+      "labelNom": "Nombre",
+      "labelEmail": "Email",
+      "labelEntreprise": "Empresa",
+      "labelType": "Tipo de proyecto",
+      "labelBudget": "Presupuesto estimado",
+      "labelMessage": "Mensaje",
+      "phNom": "Tu nombre",
+      "phEmail": "tu@empresa.com",
+      "phEntreprise": "Marca, agencia, estructura…",
+      "phMessage": "Describe tu idea, tu audiencia, tu objetivo…",
+      "submit": "Hablar de tu proyecto",
+      "sending": "Enviando…",
+      "sentTitle": "¡Mensaje enviado!",
+      "sentText": "Gracias, volvemos contigo en 24 h para hablar de tu proyecto.",
+      "errorText": "Se ha producido un error. Escríbenos directamente a",
+      "projectTypes": [
+        { "value": "brand_activation", "label": "Activación de marca" },
+        { "value": "agency", "label": "Proyecto de agencia" },
+        { "value": "creator", "label": "Mapa de creador" },
+        { "value": "esport", "label": "Proyecto esport" },
+        { "value": "maintenance", "label": "Mantenimiento / optimización" },
+        { "value": "unsure", "label": "Aún no lo sé" }
+      ],
+      "budgets": ["Por definir", "< 5 000 €", "5 000 – 15 000 €", "15 000 – 40 000 €", "> 40 000 €"]
+    },
+    "pages": {
+      "services": {
+        "eyebrow": "Servicios",
+        "title": "Experiencias Fortnite, del concepto a la publicación",
+        "subtitle": "Usamos UEFN y Verse para crear mecánicas personalizadas: puntuación, progresión, clasificación, UI y jugabilidad a medida. Cada servicio responde a un objetivo de engagement.",
+        "ctaPrimary": "Hablar de tu proyecto",
+        "ctaSecondary": "Ver los proyectos",
+        "finalEyebrow": "¿Una necesidad concreta?",
+        "finalTitle": "Hablemos del alcance de tu proyecto",
+        "finalText": "Activación, mapa competitivo, tycoon, sistema ranked o simple mantenimiento — dinos qué necesitas.",
+        "metaTitle": "Servicios UEFN, Verse y activación Fortnite",
+        "metaDescription": "Desarrollo UEFN, scripting en Verse, game design, sistemas ranked, UI, mantenimiento. Del concepto a la publicación."
+      },
+      "agences": {
+        "eyebrow": "Para agencias",
+        "title": "Tu partner técnico Fortnite / UEFN para las campañas de tus clientes",
+        "subtitle": "Tú conservas la relación con el cliente. Nosotros diseñamos y desarrollamos la experiencia Fortnite — en marca blanca si hace falta.",
+        "ctaPrimary": "Buscar un partner",
+        "ctaSecondary": "Ver los proyectos",
+        "partnershipEyebrow": "La colaboración",
+        "partnershipTitle": "Añade Fortnite a tu oferta, sin montar un equipo UEFN.",
+        "points": [
+          { "t": "Marca blanca", "d": "Producimos bajo tu marca. Nuestro nombre no aparece de cara al cliente final si así lo prefieres." },
+          { "t": "Desde la fase de concepto", "d": "Intervenimos pronto para asegurar la viabilidad técnica y presupuestar con precisión antes de tu recomendación." },
+          { "t": "Producción UEFN / Verse", "d": "Game design, jugabilidad, puntuación, UI, optimización y publicación — un equipo Fortnite sin necesidad de contratar." },
+          { "t": "Plazos claros", "d": "Prototipo en 1–2 semanas, producción en 6–12 semanas según el alcance. Diriges al cliente con confianza." }
+        ],
+        "casesEyebrow": "Casos de uso",
+        "casesTitle": "Lo que producimos para tus clientes.",
+        "finalEyebrow": "Colaboración",
+        "finalTitle": "¿Un brief de cliente para activar en Fortnite?",
+        "finalText": "Envíanos el contexto. Te ayudamos a encuadrar la viabilidad, el concepto y el presupuesto para tu recomendación.",
+        "metaTitle": "Partner técnico Fortnite / UEFN para agencias",
+        "metaDescription": "Producción UEFN y Verse en marca blanca para las campañas de tus clientes. Tú conservas la relación, nosotros creamos la experiencia."
+      },
+      "createurs": {
+        "eyebrow": "Creadores y Esport",
+        "title": "Crea un mapa Fortnite con tu sello",
+        "subtitle": "Conecta con tu comunidad, prolonga tu contenido y construye un activo duradero. Desde formatos competitivos hasta experiencias esport propias.",
+        "ctaPrimary": "Crear mi mapa",
+        "ctaSecondary": "Ver los proyectos",
+        "buildEyebrow": "Lo que construimos",
+        "buildTitle": "Un mapa pensado para la retención y la comunidad.",
+        "formats": [
+          { "t": "Formatos competitivos", "d": "1v1, boxfight, zone wars, realistics, ranked — los formatos que tu comunidad repite todos los días." },
+          { "t": "Engagement comunitario", "d": "Un mapa con tu sello que prolonga tu contenido y hace volver a tus viewers entre stream y stream." },
+          { "t": "Clasificaciones y torneos", "d": "Sistemas ranked, leaderboards de temporada, eventos y retos para dinamizar la comunidad." },
+          { "t": "Patrocinadores y activo propio", "d": "Un espacio de marca que tú controlas: espacio para patrocinadores, branding e ingresos por engagement." }
+        ],
+        "casesEyebrow": "Proyectos de creadores",
+        "casesTitle": "Mapas de creadores jugados durante miles de millones de minutos.",
+        "casesLead": "Nuestras colaboraciones con Martoz y otros creadores han generado una retención entre las mejores del modo competitivo.",
+        "finalEyebrow": "Hablemos",
+        "finalTitle": "¿Listo para crear el mapa de tu comunidad?",
+        "finalText": "Dinos tu universo, tu formato y tu objetivo. Lo convertimos en un mapa jugable, optimizado para la retención.",
+        "metaTitle": "Creadores y Esport — Crea tu mapa Fortnite",
+        "metaDescription": "Un mapa con tu sello: formatos competitivos, clasificaciones, torneos, patrocinadores. Conecta con tu comunidad y construye un activo duradero."
+      },
+      "activations": {
+        "eyebrow": "Activaciones de marca",
+        "title": "Crea una activación Fortnite para conectar con tu audiencia",
+        "subtitle": "Transforma un brief de marketing, un producto o un evento en una experiencia Fortnite jugable. Llegas a una audiencia Gen Z allí donde pasa su tiempo — jugando, no haciendo scroll.",
+        "ctaPrimary": "Imaginar una activación",
+        "ctaSecondary": "Ver los proyectos",
+        "casesEyebrow": "Proyectos",
+        "casesTitle": "Activaciones de marca ya jugadas.",
+        "casesLead": "Marcas que pasan del mensaje a la experiencia interactiva.",
+        "finalEyebrow": "Hablemos",
+        "finalTitle": "¿Una campaña Gen Z, un lanzamiento de producto, un evento?",
+        "finalText": "Hablemos de tu brief. Te proponemos un concepto de activación Fortnite adaptado a tu universo y a tus objetivos de marketing.",
+        "metaTitle": "Activación de marca Fortnite",
+        "metaDescription": "Conecta con tu audiencia Gen Z con una activación Fortnite a medida. De la idea a la publicación. Para marcas y agencias."
+      },
+      "realisations": {
+        "eyebrow": "Proyectos",
+        "title": "Experiencias jugadas durante miles de millones de minutos",
+        "subtitle": "Mapas que retienen, marcas que activan, comunidades que vuelven. Cada proyecto se presenta por su objetivo y su resultado — no solo por su técnica.",
+        "ctaPrimary": "Hablar de tu proyecto",
+        "ctaSecondary": "Ver la clasificación de mapas",
+        "finalEyebrow": "Te toca",
+        "finalTitle": "¿Y si el próximo proyecto fuera el tuyo?",
+        "finalText": "Marca, agencia, creador o estructura esport — hablemos de la experiencia Fortnite que quieres crear.",
+        "metaTitle": "Proyectos — {minutes} minutos jugados",
+        "metaDescription": "Mapas de creadores, activaciones de marca y formatos competitivos jugados durante miles de millones de minutos en Fortnite."
+      },
+      "contact": {
+        "eyebrow": "Contacto",
+        "title": "Hablar de tu proyecto",
+        "subtitle": "¿Estás preparando una campaña gaming, una activación Gen Z o una experiencia Fortnite? Envía tu brief — volvemos contigo en 24 h.",
+        "metaTitle": "Hablar de tu proyecto Fortnite",
+        "metaDescription": "Envía tu brief. Activación de marca, proyecto de agencia, mapa de creador o esport — respuesta en 24 h."
+      }
+    }
   }
 }

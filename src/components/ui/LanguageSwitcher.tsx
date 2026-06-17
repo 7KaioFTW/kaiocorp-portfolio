@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname, localeNames, type Locale } from "@/i18n/routing";
 import { locales } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 export function LanguageSwitcher() {
   const locale = useLocale() as Locale;
+  const t = useTranslations("b2b.nav");
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -35,7 +36,7 @@ export function LanguageSwitcher() {
       <button
         onClick={() => setOpen(!open)}
         className="rounded-md border border-white/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400 transition-all hover:border-white/20 hover:text-white"
-        aria-label={`Change language (${locale.toUpperCase()})`}
+        aria-label={`${t("langLabel")} (${locale.toUpperCase()})`}
         aria-expanded={open}
         aria-haspopup="listbox"
       >

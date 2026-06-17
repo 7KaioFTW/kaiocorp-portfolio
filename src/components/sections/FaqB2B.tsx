@@ -1,21 +1,24 @@
+import { getTranslations } from "next-intl/server";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { FAQ } from "@/content/site";
+import type { QA } from "@/content/site";
 
-export function FaqB2B() {
+export async function FaqB2B() {
+  const t = await getTranslations("b2b.faq");
+  const items = t.raw("items") as QA[];
   return (
     <section id="faq" className="bg-surface-dark py-20 md:py-24">
       <JsonLd
         data={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: FAQ.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+          mainEntity: items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
         }}
       />
       <div className="mx-auto max-w-3xl px-6">
-        <SectionHead center eyebrow="FAQ" title="Les questions que se posent marques, agences & créateurs." />
+        <SectionHead center eyebrow={t("eyebrow")} title={t("title")} />
         <div className="mt-10 space-y-2.5">
-          {FAQ.map((f) => (
+          {items.map((f) => (
             <details key={f.q} className="group rounded-xl border border-white/[0.07] bg-white/[0.02]">
               <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 text-[15px] font-semibold text-white [&::-webkit-details-marker]:hidden">
                 {f.q}

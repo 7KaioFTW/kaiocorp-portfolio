@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 import { PageHero } from "@/components/sections/PageHero";
 import { Opportunity } from "@/components/sections/Opportunity";
 import { SectorIdeas } from "@/components/sections/SectorIdeas";
@@ -8,45 +9,42 @@ import { FaqB2B } from "@/components/sections/FaqB2B";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { buildAlternates } from "@/lib/seo";
-import { REALISATIONS, BRAND_CASES } from "@/content/realisations";
+import { REALISATIONS_META, BRAND_CASES_META } from "@/content/realisations";
 
-export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: "b2b.pages.activations" });
   return {
-    title: "Activation de marque Fortnite",
-    description: "Engagez votre audience Gen Z avec une activation Fortnite sur-mesure. De l'idée à la publication. Pour marques & agences.",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
     alternates: buildAlternates("/activations-de-marque", params.locale),
   };
 }
 
-export default function Page() {
-  const brandCases = BRAND_CASES;
+export default async function Page() {
+  const t = await getTranslations("b2b.pages.activations");
+  const brandCases = BRAND_CASES_META;
   return (
     <main>
       <PageHero
-        eyebrow="Activations de marque"
-        title="Créez une activation Fortnite pour engager votre audience"
-        subtitle="Transformez un brief marketing, un produit ou un événement en expérience Fortnite jouable. Vous touchez une audience Gen Z là où elle passe son temps — en jouant, pas en scrollant."
-        primaryCta={{ label: "Imaginer une activation", href: "/contact" }}
-        secondaryCta={{ label: "Voir les réalisations", href: "/realisations" }}
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+        primaryCta={{ label: t("ctaPrimary"), href: "/contact" }}
+        secondaryCta={{ label: t("ctaSecondary"), href: "/realisations" }}
       />
       <Opportunity />
       <SectorIdeas />
       <section className="border-t border-white/5 bg-surface-dark py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHead eyebrow="Réalisations" title="Des activations de marque déjà jouées." lead="Des marques qui passent du message à l'expérience interactive." />
+          <SectionHead eyebrow={t("casesEyebrow")} title={t("casesTitle")} lead={t("casesLead")} />
           <div className="mt-10">
-            <ProjectGrid items={brandCases.length ? brandCases : REALISATIONS.slice(0, 3)} />
+            <ProjectGrid items={brandCases.length ? brandCases : REALISATIONS_META.slice(0, 3)} />
           </div>
         </div>
       </section>
       <Process />
       <FaqB2B />
-      <FinalCta
-        eyebrow="Discutons"
-        title="Une campagne Gen Z, un lancement produit, un événement ?"
-        text="Parlons de votre brief. On vous propose un concept d'activation Fortnite adapté à votre univers et vos objectifs marketing."
-        defaultType="Activation de marque"
-      />
+      <FinalCta eyebrow={t("finalEyebrow")} title={t("finalTitle")} text={t("finalText")} defaultType="brand_activation" />
     </main>
   );
 }

@@ -166,8 +166,8 @@
     "copyright": "© {year} Kaio Corporation. 保留所有权利。"
   },
   "metadata": {
-    "homeTitle": "Kaio — Fortnite UEFN 地图开发者 | 47亿+分钟游玩时长",
-    "homeDescription": "专业 Fortnite UEFN 地图开发者。累计超过 47 亿分钟游玩时长。与 Martoz、GamersOrigin、WZF 合作。可接受委托。",
+    "homeTitle": "KaioCorp — 定制化 Fortnite 体验创意工作室（UEFN）",
+    "homeDescription": "用 UEFN 与 Verse 在 Fortnite 中打造地图、小游戏与品牌联动。累计超 47 亿分钟游玩时长。聊聊你的项目吧。",
     "mapsTitle": "Kaio 的 Fortnite UEFN 地图 | Creative 地图作品集",
     "mapsDescription": "浏览 Kaio 制作的全部 15 张 Fortnite UEFN 地图。竞技箱斗、区域战争、仿真对抗、大亨和自定义游戏模式，累计超过 47 亿分钟游玩时长。",
     "servicesTitle": "聘请 Fortnite 地图开发者 | UEFN 开发服务",
@@ -182,5 +182,292 @@
   "brandCollabs": {
     "title": "品牌合作",
     "subtitle": "为知名品牌打造定制Fortnite体验"
+  },
+  "b2b": {
+    "nav": {
+      "activations": "品牌联动",
+      "agences": "代理机构",
+      "createurs": "创作者与电竞",
+      "realisations": "案例作品",
+      "services": "服务",
+      "cta": "聊聊你的项目",
+      "menu": "菜单",
+      "langLabel": "切换语言"
+    },
+    "hero": {
+      "eyebrow": "UEFN · Verse · Unreal Engine 5 — Fortnite 创意工作室",
+      "title": "打造你的定制 Fortnite 体验，真正吸引你的受众。",
+      "subtitle": "KaioCorp 运用 UEFN、Verse 与 Unreal Engine 5，在 Fortnite 中设计地图、小游戏与品牌联动——从创意到原型，再到发布与持续维护。",
+      "badgeMinutes": "分钟游玩时长",
+      "badgeActivations": "品牌联动：",
+      "ctaPrimary": "聊聊你的项目",
+      "ctaSecondary": "查看案例作品",
+      "tagline": "从创意到原型，再到发布与持续维护。"
+    },
+    "opportunity": {
+      "eyebrow": "市场背景",
+      "title": "年轻受众不再满足于观看广告，他们想要参与互动。",
+      "lead": "Fortnite 早已不只是一款游戏：它是注意力、社区与体验的聚集地。对品牌、代理机构或创作者而言，一个精心设计的体验会成为真正的互动资产——而不是 48 小时后就熄灭的活动。",
+      "levers": ["停留时长", "互动参与", "社区分享", "挑战", "品牌体验", "自然曝光", "创作者联动"]
+    },
+    "audiences": {
+      "eyebrow": "为谁打造？",
+      "title": "同一份专业能力，四种激活方式。",
+      "items": [
+        { "tag": "品牌", "title": "面向品牌", "text": "围绕你的品牌世界、某款产品、某场活动或某个 Gen Z 营销战役，发起一次 Fortnite 品牌联动。", "examples": "品牌小游戏 · 竞速 · 大亨 · 社区挑战 · 活动体验。", "cta": "构思一次联动" },
+        { "tag": "代理机构", "title": "面向代理机构", "text": "无需在内部组建 UEFN 团队，即可将 Fortnite 纳入你给客户的提案。", "examples": "技术合作 · 白标制作 · 为游戏营销战役打造的体验。", "cta": "寻找合作伙伴" },
+        { "tag": "创作者", "title": "面向创作者", "text": "打造一张专属于你的地图，凝聚你的社区、延展你的内容，并构建一份长期资产。", "examples": "1v1 · boxfight · zone wars · ranked maps · realistic fights。", "cta": "打造我的地图" },
+        { "tag": "电竞", "title": "面向电竞", "text": "用一个专属的 Fortnite 体验激活你的社区：赛事、挑战、排行榜、赞助。", "examples": "联赛 · 社区活动 · 赞助支持 · 专属资产。", "cta": "打造电竞体验" }
+      ]
+    },
+    "services": {
+      "eyebrow": "服务",
+      "title": "为互动而生的 Fortnite 体验。",
+      "lead": "我们运用 UEFN 与 Verse 打造定制机制：计分、进度、排名、UI 与量身定制的玩法。",
+      "ctaMore": "了解可选的形式",
+      "items": [
+        { "title": "品牌联动", "benefit": "把一份营销简报变成可玩的体验。", "example": "如：产品发布、品牌挑战。" },
+        { "title": "竞技地图", "benefit": "在玩家反复重玩的形式上实现强留存。", "example": "如：1v1、boxfight、zone wars。" },
+        { "title": "小游戏与挑战", "benefit": "简单、易传播、可分享的形式。", "example": "如：技巧挑战、竞速。" },
+        { "title": "大亨 / 模拟经营", "benefit": "更长的游玩时长与令人上瘾的进度。", "example": "如：Carlife Tycoon（约 80 分钟/局）。" },
+        { "title": "活动体验", "benefit": "围绕一次发布打造高光时刻。", "example": "如：虚拟舞台、节庆任务。" },
+        { "title": "排位 / 计分 / 排行榜", "benefit": "让人不断回归的竞技性。", "example": "如：赛季排名、联赛。" },
+        { "title": "定制 UI", "benefit": "让你的品牌出现在每一个画面里。", "example": "如：HUD、菜单、游戏内品牌植入。" },
+        { "title": "Verse 脚本开发", "benefit": "标准 Creative 无法实现的机制。", "example": "如：游戏逻辑、自定义设备。" },
+        { "title": "优化 / 性能", "benefit": "流畅的体验 = 留得住的玩家。", "example": "如：内存预算、draw call。" },
+        { "title": "发布与维护", "benefit": "一份持续生长的资产，而非一次性投放。", "example": "如：平衡性调整、版本更新。" }
+      ]
+    },
+    "stats": {
+      "minutesPlayed": "分钟游玩时长",
+      "shipped": "已交付体验",
+      "creators": "创作者与组织",
+      "brandActivations": "品牌联动",
+      "brandsUnit": "个品牌"
+    },
+    "realisations": {
+      "eyebrow": "案例作品",
+      "title": "被游玩了数十亿分钟的体验。",
+      "lead": "留得住玩家的地图，做得起联动的品牌，不断回归的社区。",
+      "ctaAll": "查看全部案例作品",
+      "srHeading": "全部案例作品",
+      "ctaAllMaps": "查看全部地图及其数据",
+      "units": { "minutes": "分钟游玩", "favorites": "收藏" },
+      "projects": {
+        "clutch-realistics-1v2": { "type": "竞技 · Martoz", "objective": "围绕一种紧张刺激的 clutch 形式凝聚社区。" },
+        "martoz-1v1-build-fights": { "type": "竞技 · Martoz", "objective": "一种让玩家每天重玩的 1v1 训练形式。" },
+        "martoz-turtle-fights-ffa": { "type": "竞技 · Martoz", "objective": "一个有趣又上瘾的 FFA，建筑持续不断地重置。" },
+        "carlife-tycoon": { "type": "品牌联动 · Recyclermonvehicule.fr", "objective": "携手 GamersOrigin，通过一款可玩的大亨游戏普及汽车回收理念。" },
+        "senses-rush": { "type": "品牌联动 · Krys", "objective": "携手 GamersOrigin，在一个沉浸式体验中让品牌世界鲜活起来。" },
+        "rift-racers-alpine": { "type": "品牌联动 · Alpine", "objective": "携手 GamersOrigin，把 Alpine 的汽车体验变成可玩的赛道。" }
+      }
+    },
+    "process": {
+      "eyebrow": "流程",
+      "title": "从创意到发布，一套简单的流程。",
+      "items": [
+        { "title": "战略简报", "text": "我们厘清目标人群、目标、品牌世界、机制与约束条件。" },
+        { "title": "概念与游戏设计", "text": "我们把创意转化为带有吸引人机制的可玩体验。" },
+        { "title": "原型", "text": "一个可玩的初版，用于快速验证方向。" },
+        { "title": "UEFN / Verse 开发", "text": "玩法、UI、计分、优化、资源与游戏逻辑。" },
+        { "title": "发布与上线", "text": "提交审核、支持、迭代与上线策略。" },
+        { "title": "维护与优化", "text": "修复、版本更新、平衡调整、持续改进。" }
+      ]
+    },
+    "why": {
+      "eyebrow": "为什么选择 KaioCorp？",
+      "title": "经真实使用验证的 Fortnite 专业能力。",
+      "minutesCaption": "在已开发体验上的分钟游玩时长",
+      "items": [
+        "我们的体验已被游玩<b>数十亿分钟</b>。",
+        "对玩家究竟为何留下，拥有<b>一线实战经验</b>。",
+        "扎实的 <b>UEFN / Verse / Unreal Engine 5</b> 技术功底。",
+        "具备与<b>创作者、代理机构和品牌</b>协作的能力。",
+        "一种兼顾<b>游戏设计、技术与营销</b>的方法论。",
+        "为<b>互动参与</b>而非仅仅美观而优化的体验。"
+      ]
+    },
+    "sectors": {
+      "eyebrow": "联动创意",
+      "title": "你可以打造怎样的 Fortnite 体验？",
+      "yourSector": "你所在的行业？",
+      "ctaIdea": "索取一个联动创意",
+      "items": [
+        { "title": "体育", "text": "技巧挑战、竞速、训练、社区竞赛。" },
+        { "title": "汽车", "text": "赛道、竞速、车辆探索、限时挑战。" },
+        { "title": "时尚 / 球鞋", "text": "虚拟发售、沉浸式路线、围绕系列产品的小游戏。" },
+        { "title": "音乐 / 节庆", "text": "活动体验、虚拟舞台、围绕某位艺人的任务。" },
+        { "title": "教育 / 青少年", "text": "教学地图、寓教于乐的体验、集体挑战。" },
+        { "title": "娱乐", "text": "沉浸式世界、剧集/电影预热、叙事任务。" },
+        { "title": "代理机构", "text": "可向客户提案的交钥匙联动方案。" }
+      ]
+    },
+    "faq": {
+      "eyebrow": "常见问题",
+      "title": "品牌、代理机构与创作者最常问的问题。",
+      "items": [
+        { "q": "为什么要为品牌打造一个 Fortnite 体验？", "a": "这是唯一一种让受众与你一起游玩、而不只是观看你的媒介：注意力停留时间长、真实互动、社区分享，以及一份在活动结束后依然存续的资产。" },
+        { "q": "一张定制 Fortnite 地图要多少钱？", "a": "这取决于项目范围（形式、机制、生命周期）。简单的形式起步价在数千欧元；带定制 Verse 的品牌联动会更高。在简报沟通后，我们会给你一份清晰的报价。" },
+        { "q": "打造一个体验需要多长时间？", "a": "可玩原型 1 至 2 周即可完成；完整体验则需 6–12 周，具体取决于机制的复杂程度。" },
+        { "q": "可以做一次性的联动吗？", "a": "可以：既能是一次活动高光时刻，也能是一份长期资产。我们会根据你的目标和时间表来调整形式。" },
+        { "q": "可以长期维护一张地图吗？", "a": "可以，这正是我们的强项：我们的部分地图迭代已超过 200 版，并随 Fortnite 版本更新而持续更新。" },
+        { "q": "你们与代理机构合作吗？", "a": "合作，可采用技术合作或白标方式。你保留客户关系，我们负责制作体验。" },
+        { "q": "可以做白标体验吗？", "a": "可以，在最终客户一侧不会出现我们的名字。" },
+        { "q": "地图和品牌联动有什么区别？", "a": "地图是一种游戏形式；联动则是一张围绕你的品牌世界、营销目标和效果衡量来设计的地图。" },
+        { "q": "这适合从未做过游戏营销的品牌吗？", "a": "适合：我们会把你的营销简报转化为可玩的体验，你无需精通技术细节。" },
+        { "q": "如何衡量成效？", "a": "游玩分钟数、留存率（D1/D7）、收藏数、同时在线峰值、单局时长——都是实打实的互动指标。" }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "聊一聊",
+      "title": "正在筹备一场游戏营销战役、一次 Gen Z 品牌联动，或一个 Fortnite 体验？",
+      "text": "聊聊你的创意吧。我们能把一份营销简报、一个社区或一个品牌世界，变成可玩的 Fortnite 体验。",
+      "emailBtn": "发送项目简报",
+      "responseNote": "24 小时内回复"
+    },
+    "footer": {
+      "tagline": "打造定制化 Fortnite 体验的创意工作室。UEFN · Verse · Unreal Engine 5。",
+      "minutesPlayed": "分钟游玩时长",
+      "colSolutions": "解决方案",
+      "colStudio": "工作室",
+      "colContact": "联系",
+      "linkActivations": "品牌联动",
+      "linkAgences": "代理机构",
+      "linkCreateurs": "创作者与电竞",
+      "linkServices": "服务",
+      "linkRealisations": "案例作品",
+      "linkMaps": "地图",
+      "linkBlog": "博客",
+      "linkContact": "联系",
+      "discuss": "聊聊你的项目",
+      "twitter": "Twitter / X",
+      "rights": "保留所有权利。",
+      "epicDisclaimer": "与 Epic Games 无关联。Fortnite 是 Epic Games, Inc. 的商标。"
+    },
+    "form": {
+      "howItWorksTitle": "合作流程",
+      "steps": [
+        "你描述你的创意、受众与目标。",
+        "我们在 24 小时内带着初步反馈与问题回复你。",
+        "我们向你提出一个概念、一个项目范围和一份清晰的报价。"
+      ],
+      "labelNom": "姓名",
+      "labelEmail": "邮箱",
+      "labelEntreprise": "公司",
+      "labelType": "项目类型",
+      "labelBudget": "预算估算",
+      "labelMessage": "留言",
+      "phNom": "你的姓名",
+      "phEmail": "you@company.com",
+      "phEntreprise": "品牌、代理机构、组织……",
+      "phMessage": "描述你的创意、你的受众、你的目标……",
+      "submit": "聊聊你的项目",
+      "sending": "发送中……",
+      "sentTitle": "消息已发送！",
+      "sentText": "谢谢，我们会在 24 小时内联系你，一起聊聊你的项目。",
+      "errorText": "出了点问题。请直接发邮件给我们：",
+      "projectTypes": [
+        { "value": "brand_activation", "label": "品牌联动" },
+        { "value": "agency", "label": "代理机构项目" },
+        { "value": "creator", "label": "创作者地图" },
+        { "value": "esport", "label": "电竞项目" },
+        { "value": "maintenance", "label": "维护 / 优化" },
+        { "value": "unsure", "label": "我还不确定" }
+      ],
+      "budgets": ["待定", "< 5 000 €", "5 000 – 15 000 €", "15 000 – 40 000 €", "> 40 000 €"]
+    },
+    "pages": {
+      "services": {
+        "eyebrow": "服务",
+        "title": "Fortnite 体验，从概念到发布",
+        "subtitle": "我们运用 UEFN 与 Verse 打造定制机制：计分、进度、排名、UI 与量身定制的玩法。每一项服务都服务于互动参与这一目标。",
+        "ctaPrimary": "聊聊你的项目",
+        "ctaSecondary": "查看案例作品",
+        "finalEyebrow": "有明确的需求？",
+        "finalTitle": "聊聊你项目的范围",
+        "finalText": "品牌联动、竞技地图、大亨、排位系统，或仅仅是维护——告诉我们你需要什么。",
+        "metaTitle": "UEFN、Verse 与 Fortnite 品牌联动服务",
+        "metaDescription": "UEFN 开发、Verse 脚本、游戏设计、排位系统、UI、维护。从概念到发布。"
+      },
+      "agences": {
+        "eyebrow": "面向代理机构",
+        "title": "为你的客户营销战役而生的 Fortnite / UEFN 技术合作伙伴",
+        "subtitle": "你保留客户关系。我们负责设计与开发 Fortnite 体验——需要时可采用白标方式。",
+        "ctaPrimary": "寻找合作伙伴",
+        "ctaSecondary": "查看案例作品",
+        "partnershipEyebrow": "合作方式",
+        "partnershipTitle": "无需组建 UEFN 团队，即可把 Fortnite 加入你的服务清单。",
+        "points": [
+          { "t": "白标", "d": "我们以你的品牌名义制作。如你所愿，我们的名字不会出现在最终客户一侧。" },
+          { "t": "从概念阶段介入", "d": "我们尽早介入，在你提案之前确保技术可行性并给出准确报价。" },
+          { "t": "UEFN / Verse 制作", "d": "游戏设计、玩法、计分、UI、优化与发布——一支无需招聘的 Fortnite 团队。" },
+          { "t": "清晰的时间表", "d": "原型 1–2 周，制作 6–12 周，视项目范围而定。让你从容地把控客户。" }
+        ],
+        "casesEyebrow": "应用场景",
+        "casesTitle": "我们为你的客户打造的成果。",
+        "finalEyebrow": "合作",
+        "finalTitle": "有一份客户简报想在 Fortnite 中落地？",
+        "finalText": "把背景发给我们。我们帮你厘清可行性、概念与报价，为你的提案助力。",
+        "metaTitle": "面向代理机构的 Fortnite / UEFN 技术合作伙伴",
+        "metaDescription": "为你的客户营销战役提供白标 UEFN 与 Verse 制作。你保留客户关系，我们打造体验。"
+      },
+      "createurs": {
+        "eyebrow": "创作者与电竞",
+        "title": "打造一张专属于你的 Fortnite 地图",
+        "subtitle": "凝聚你的社区、延展你的内容、构建一份长期资产。从竞技形式到专属电竞体验。",
+        "ctaPrimary": "打造我的地图",
+        "ctaSecondary": "查看案例作品",
+        "buildEyebrow": "我们打造什么",
+        "buildTitle": "一张为留存与社区而生的地图。",
+        "formats": [
+          { "t": "竞技形式", "d": "1v1、boxfight、zone wars、realistics、ranked——你的社区每天都会重玩的形式。" },
+          { "t": "社区互动", "d": "一张专属于你的地图，延展你的内容，让观众在两次直播之间也愿意回来。" },
+          { "t": "排行榜与赛事", "d": "ranked 系统、赛季排行榜、活动与挑战，让社区始终活跃。" },
+          { "t": "赞助与专属资产", "d": "一个由你掌控的品牌空间：赞助支持、品牌植入与互动收益。" }
+        ],
+        "casesEyebrow": "创作者案例",
+        "casesTitle": "被游玩了数十亿分钟的创作者地图。",
+        "casesLead": "我们与 Martoz 及其他创作者的合作，实现了竞技模式中名列前茅的留存表现。",
+        "finalEyebrow": "聊一聊",
+        "finalTitle": "准备好打造属于你社区的地图了吗？",
+        "finalText": "告诉我们你的品牌世界、形式与目标。我们会把它变成一张为留存而优化的可玩地图。",
+        "metaTitle": "创作者与电竞 — 打造你的 Fortnite 地图",
+        "metaDescription": "一张专属于你的地图：竞技形式、排行榜、赛事、赞助。凝聚你的社区，构建长期资产。"
+      },
+      "activations": {
+        "eyebrow": "品牌联动",
+        "title": "打造一次 Fortnite 品牌联动，真正吸引你的受众",
+        "subtitle": "把一份营销简报、一款产品或一场活动，变成可玩的 Fortnite 体验。你在 Gen Z 受众消磨时间的地方触达他们——是在游玩，而不是在刷屏。",
+        "ctaPrimary": "构思一次联动",
+        "ctaSecondary": "查看案例作品",
+        "casesEyebrow": "案例作品",
+        "casesTitle": "已经被游玩过的品牌联动。",
+        "casesLead": "从信息传递走向互动体验的品牌。",
+        "finalEyebrow": "聊一聊",
+        "finalTitle": "一场 Gen Z 战役、一次产品发布，还是一场活动？",
+        "finalText": "聊聊你的简报。我们会为你提出一个契合你品牌世界与营销目标的 Fortnite 联动概念。",
+        "metaTitle": "Fortnite 品牌联动",
+        "metaDescription": "用一次定制 Fortnite 联动吸引你的 Gen Z 受众。从创意到发布。面向品牌与代理机构。"
+      },
+      "realisations": {
+        "eyebrow": "案例作品",
+        "title": "被游玩了数十亿分钟的体验",
+        "subtitle": "留得住玩家的地图，做得起联动的品牌，不断回归的社区。每个项目都以其目标与成果呈现——而不仅仅是技术。",
+        "ctaPrimary": "聊聊你的项目",
+        "ctaSecondary": "查看地图排行榜",
+        "finalEyebrow": "轮到你了",
+        "finalTitle": "下一个案例作品，会不会就是你的？",
+        "finalText": "品牌、代理机构、创作者或电竞组织——聊聊你想打造的 Fortnite 体验吧。",
+        "metaTitle": "案例作品 — {minutes} 分钟游玩时长",
+        "metaDescription": "创作者地图、品牌联动与竞技形式，在 Fortnite 中被游玩了数十亿分钟。"
+      },
+      "contact": {
+        "eyebrow": "联系",
+        "title": "聊聊你的项目",
+        "subtitle": "正在筹备一场游戏营销战役、一次 Gen Z 品牌联动，或一个 Fortnite 体验？发送你的简报——我们会在 24 小时内回复你。",
+        "metaTitle": "聊聊你的 Fortnite 项目",
+        "metaDescription": "发送你的简报。品牌联动、代理机构项目、创作者地图或电竞——24 小时内回复。"
+      }
+    }
   }
 }

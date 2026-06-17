@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Cta } from "@/components/ui/Cta";
 import { PROOF } from "@/content/site";
 import { TOTAL_MINUTES_LABEL } from "@/lib/stats";
@@ -11,7 +12,8 @@ interface PageHeroProps {
   showProof?: boolean;
 }
 
-export function PageHero({ eyebrow, title, subtitle, primaryCta, secondaryCta, showProof = true }: PageHeroProps) {
+export async function PageHero({ eyebrow, title, subtitle, primaryCta, secondaryCta, showProof = true }: PageHeroProps) {
+  const t = await getTranslations("b2b");
   return (
     <section className="relative overflow-hidden bg-surface-dark pb-16 pt-36 md:pt-40">
       <div
@@ -32,7 +34,7 @@ export function PageHero({ eyebrow, title, subtitle, primaryCta, secondaryCta, s
         )}
         {showProof && (
           <p className="mt-7 text-sm text-slate-500">
-            <span className="font-heading font-bold text-white">{TOTAL_MINUTES_LABEL}</span> minutes jouées · {PROOF.collaborators.join(" · ")}
+            <span className="font-heading font-bold text-white">{TOTAL_MINUTES_LABEL}</span> {t("hero.badgeMinutes")} · {PROOF.collaborators.join(" · ")}
           </p>
         )}
       </div>

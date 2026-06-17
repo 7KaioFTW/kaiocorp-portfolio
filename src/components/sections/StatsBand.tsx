@@ -1,19 +1,21 @@
+import { getTranslations } from "next-intl/server";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import creatorData from "@/data/creator.json";
 import mapsData from "@/data/maps.json";
 import { TOTAL_MINUTES_LABEL } from "@/lib/stats";
 
-const brandCount = (mapsData as { brand?: string }[]).filter((m) => m.brand).length;
-const { totalMaps, totalCollaborators } = creatorData.aggregateStats;
+export async function StatsBand() {
+  const t = await getTranslations("b2b.stats");
+  const brandCount = (mapsData as { brand?: string }[]).filter((m) => m.brand).length;
+  const { totalMaps, totalCollaborators } = creatorData.aggregateStats;
 
-const STATS = [
-  { num: TOTAL_MINUTES_LABEL, lbl: "Minutes jouées" },
-  { num: `${totalMaps}+`, lbl: "Expériences livrées" },
-  { num: `${totalCollaborators}`, lbl: "Créateurs & organisations" },
-  { num: `${brandCount} marques`, lbl: "Activations de marque" },
-];
+  const STATS = [
+    { num: TOTAL_MINUTES_LABEL, lbl: t("minutesPlayed") },
+    { num: `${totalMaps}+`, lbl: t("shipped") },
+    { num: `${totalCollaborators}`, lbl: t("creators") },
+    { num: `${brandCount} ${t("brandsUnit")}`, lbl: t("brandActivations") },
+  ];
 
-export function StatsBand() {
   return (
     <section className="border-y border-white/5 bg-gradient-to-b from-primary/[0.07] to-transparent">
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 py-14 text-center lg:grid-cols-4">

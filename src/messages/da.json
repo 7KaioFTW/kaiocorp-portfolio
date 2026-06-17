@@ -166,8 +166,8 @@
     "copyright": "© {year} Kaio Corporation. Alle rettigheder forbeholdes."
   },
   "metadata": {
-    "homeTitle": "Kaio — Fortnite UEFN-mapudvikler | 4,7B+ Minutter Spillet",
-    "homeDescription": "Professionel Fortnite UEFN-mapudvikler. 4,7B+ minutter spillet . Samarbejder med Martoz, GamersOrigin, WZF. Tilgængelig for hire.",
+    "homeTitle": "KaioCorp — Studie for skræddersyede Fortnite-oplevelser (UEFN)",
+    "homeDescription": "Maps, mini-spil og brandaktiveringer i Fortnite med UEFN & Verse. 4,7 mia.+ minutter spillet. Lad os tale om dit projekt.",
     "mapsTitle": "Fortnite UEFN Maps af Kaio | Creative Map Portefølje",
     "mapsDescription": "Se Fortnite UEFN maps af Kaio. Over 4,7B minutter spillet i konkurrence-boxfights, zone wars, realistics, tycoons og tilpassede spiltilstande.",
     "servicesTitle": "Hyr en Fortnite-mapudvikler | UEFN Udviklingstjenester",
@@ -182,5 +182,292 @@
   "brandCollabs": {
     "title": "Brand-samarbejder",
     "subtitle": "Skræddersyede Fortnite-oplevelser bygget til førende brands"
+  },
+  "b2b": {
+    "nav": {
+      "activations": "Aktiveringer",
+      "agences": "Bureauer",
+      "createurs": "Skabere & Esport",
+      "realisations": "Cases",
+      "services": "Tjenester",
+      "cta": "Tal om dit projekt",
+      "menu": "Menu",
+      "langLabel": "Skift sprog"
+    },
+    "hero": {
+      "eyebrow": "UEFN · Verse · Unreal Engine 5 — Kreativt Fortnite-studie",
+      "title": "Skab din skræddersyede Fortnite-oplevelse, der engagerer dit publikum.",
+      "subtitle": "KaioCorp designer maps, mini-spil og brandaktiveringer i Fortnite med UEFN, Verse og Unreal Engine 5 — fra idé til prototype, helt frem til udgivelse og vedligeholdelse.",
+      "badgeMinutes": "minutter spillet",
+      "badgeActivations": "Aktiveringer:",
+      "ctaPrimary": "Tal om dit projekt",
+      "ctaSecondary": "Se vores cases",
+      "tagline": "Fra idé til prototype, helt frem til udgivelse og vedligeholdelse."
+    },
+    "opportunity": {
+      "eyebrow": "Konteksten",
+      "title": "Unge målgrupper vil ikke længere bare se en reklame. De vil interagere.",
+      "lead": "Fortnite er blevet meget mere end et spil: det er et rum for opmærksomhed, fællesskab og oplevelse. For et brand, et bureau eller en skaber bliver en veldesignet oplevelse et reelt engagementsaktiv — ikke en kampagne, der dør ud på 48 timer.",
+      "levers": ["Tid brugt", "Interaktion", "Deling i fællesskabet", "Challenge", "Brandoplevelse", "Organisk synlighed", "Aktivering af skabere"]
+    },
+    "audiences": {
+      "eyebrow": "Til hvem?",
+      "title": "Én ekspertise, fire måder at aktivere den på.",
+      "items": [
+        { "tag": "Brands", "title": "Til brands", "text": "Lancér en Fortnite-aktivering omkring dit univers, et produkt, et event eller en Gen Z-kampagne.", "examples": "Branded mini-spil · race · tycoon · community-challenge · event-oplevelse.", "cta": "Forestil dig en aktivering" },
+        { "tag": "Bureauer", "title": "Til bureauer", "text": "Tilføj Fortnite til dine kundeanbefalinger uden at opbygge et UEFN-team internt.", "examples": "Teknisk partnerskab · white label-produktion · oplevelser til gaming-kampagner.", "cta": "Find en partner" },
+        { "tag": "Skabere", "title": "Til skabere", "text": "Skab et map i dit eget billede, der engagerer dit fællesskab, forlænger dit indhold og bygger et varigt aktiv.", "examples": "1v1 · boxfight · zone wars · ranked maps · realistic fights.", "cta": "Skab mit map" },
+        { "tag": "Esport", "title": "Til esport", "text": "Aktivér dit fællesskab med en egen Fortnite-oplevelse: turneringer, challenges, ranglister, sponsorer.", "examples": "Ligaer · community-events · sponsorstøtte · ejet aktiv.", "cta": "Skab en esport-oplevelse" }
+      ]
+    },
+    "services": {
+      "eyebrow": "Tjenester",
+      "title": "Fortnite-oplevelser skabt til engagement.",
+      "lead": "Vi bruger UEFN og Verse til at skabe tilpassede mekanikker: scoring, progression, ranglister, UI og skræddersyet gameplay.",
+      "ctaMore": "Udforsk de mulige formater",
+      "items": [
+        { "title": "Brandaktiveringer", "benefit": "Forvandl en marketingbriefing til en spilbar oplevelse.", "example": "F.eks. produktlancering, brand-challenge." },
+        { "title": "Konkurrencemaps", "benefit": "Stærk fastholdelse på formater, som spillere spiller igen og igen.", "example": "F.eks. 1v1, boxfight, zone wars." },
+        { "title": "Mini-spil & challenges", "benefit": "Et enkelt, viralt og delbart format.", "example": "F.eks. færdighedschallenge, race." },
+        { "title": "Tycoons / simulatorer", "benefit": "Lange sessioner og vanedannende progression.", "example": "F.eks. Carlife Tycoon (~80 min/session)." },
+        { "title": "Event-oplevelser", "benefit": "Et højdepunkt omkring en lancering.", "example": "F.eks. virtuel scene, festival-quest." },
+        { "title": "Ranked / scoring / leaderboards", "benefit": "Konkurrence, der får folk til at vende tilbage.", "example": "F.eks. sæsonrangliste, ligaer." },
+        { "title": "Tilpasset UI", "benefit": "Dit brand til stede på hver eneste skærm.", "example": "F.eks. HUD, menuer, in-game branding." },
+        { "title": "Verse scripting", "benefit": "Mekanikker, der er umulige i standard Creative.", "example": "F.eks. spillogik, custom enheder." },
+        { "title": "Optimering / ydeevne", "benefit": "En flydende oplevelse = spillere, der bliver.", "example": "F.eks. hukommelsesbudget, draw calls." },
+        { "title": "Udgivelse & vedligeholdelse", "benefit": "Et levende aktiv, ikke et one-shot.", "example": "F.eks. balancering, nye versioner." }
+      ]
+    },
+    "stats": {
+      "minutesPlayed": "Minutter spillet",
+      "shipped": "Oplevelser leveret",
+      "creators": "Skabere & organisationer",
+      "brandActivations": "Brandaktiveringer",
+      "brandsUnit": "brands"
+    },
+    "realisations": {
+      "eyebrow": "Cases",
+      "title": "Oplevelser spillet i milliarder af minutter.",
+      "lead": "Maps der fastholder, brands der aktiverer, fællesskaber der vender tilbage.",
+      "ctaAll": "Se alle cases",
+      "srHeading": "Alle cases",
+      "ctaAllMaps": "Se alle maps & deres statistik",
+      "units": { "minutes": "min spillet", "favorites": "favoritter" },
+      "projects": {
+        "clutch-realistics-1v2": { "type": "Konkurrence · Martoz", "objective": "Engagér et fællesskab omkring et intenst clutch-format." },
+        "martoz-1v1-build-fights": { "type": "Konkurrence · Martoz", "objective": "Et 1v1-træningsformat, som spillere spiller igen hver dag." },
+        "martoz-turtle-fights-ffa": { "type": "Konkurrence · Martoz", "objective": "En sjov og vanedannende FFA med builds, der løbende nulstilles." },
+        "carlife-tycoon": { "type": "Aktivering · Recyclermonvehicule.fr", "objective": "Skab opmærksomhed om bilrecycling via en spilbar tycoon, sammen med GamersOrigin." },
+        "senses-rush": { "type": "Aktivering · Krys", "objective": "Bring brandets univers til live i en fordybende oplevelse, sammen med GamersOrigin." },
+        "rift-racers-alpine": { "type": "Aktivering · Alpine", "objective": "Forvandl Alpines biloplevelse til en spilbar bane, sammen med GamersOrigin." }
+      }
+    },
+    "process": {
+      "eyebrow": "Proces",
+      "title": "En enkel proces, fra idé til udgivelse.",
+      "items": [
+        { "title": "Strategisk briefing", "text": "Vi afklarer målgruppen, målet, universet, mekanikkerne og rammerne." },
+        { "title": "Koncept & game design", "text": "Vi forvandler idéen til en spilbar oplevelse med engagerende mekanikker." },
+        { "title": "Prototype", "text": "En første spilbar version til hurtigt at validere retningen." },
+        { "title": "UEFN- / Verse-udvikling", "text": "Gameplay, UI, scoring, optimering, assets og spillogik." },
+        { "title": "Udgivelse & lancering", "text": "Indsendelse, support, iterationer og lanceringsstrategi." },
+        { "title": "Vedligeholdelse & optimering", "text": "Rettelser, nye versioner, balancering, løbende forbedring." }
+      ]
+    },
+    "why": {
+      "eyebrow": "Hvorfor KaioCorp?",
+      "title": "En Fortnite-ekspertise bevist i virkelig brug.",
+      "minutesCaption": "minutter spillet på de udviklede oplevelser",
+      "items": [
+        "<b>Milliarder af minutter</b> spillet på vores oplevelser.",
+        "<b>Erfaring fra marken</b> med, hvad der reelt fastholder spillere.",
+        "Teknisk mestring af <b>UEFN / Verse / Unreal Engine 5</b>.",
+        "Evne til at arbejde med <b>skabere, bureauer og brands</b>.",
+        "En tilgang, der er både <b>game design, teknik og marketing</b>.",
+        "Oplevelser optimeret til <b>engagement</b>, ikke kun æstetik."
+      ]
+    },
+    "sectors": {
+      "eyebrow": "Idéer til aktiveringer",
+      "title": "Hvilken slags Fortnite-oplevelse kunne du skabe?",
+      "yourSector": "Din branche?",
+      "ctaIdea": "Bed om en aktiveringsidé",
+      "items": [
+        { "title": "Sport", "text": "Færdighedschallenge, race, træning, community-konkurrence." },
+        { "title": "Bil", "text": "Bane, race, udforskning af køretøj, challenge på tid." },
+        { "title": "Mode / sneakers", "text": "Virtuelt drop, fordybende rute, mini-spil omkring en kollektion." },
+        { "title": "Musik / festival", "text": "Event-oplevelse, virtuel scene, quest omkring en kunstner." },
+        { "title": "Uddannelse / unge", "text": "Pædagogisk map, legende oplevelse, fælles challenge." },
+        { "title": "Entertainment", "text": "Fordybende univers, teasing af serie/film, narrativ mission." },
+        { "title": "Bureauer", "text": "En nøglefærdig aktivering at tilbyde en kunde." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "De spørgsmål, brands, bureauer & skabere stiller.",
+      "items": [
+        { "q": "Hvorfor skabe en Fortnite-oplevelse for et brand?", "a": "Det er det eneste medie, hvor dit publikum spiller med dig i stedet for bare at se dig: lang opmærksomhedstid, reel interaktion, deling i fællesskabet og et aktiv, der varer ud over en kampagne." },
+        { "q": "Hvad koster et skræddersyet Fortnite-map?", "a": "Det afhænger af omfanget (format, mekanikker, levetid). Simple formater starter i de lave tusinder; en brandaktivering med custom Verse er højere. Vi giver dig en klar prisramme efter briefingen." },
+        { "q": "Hvor lang tid tager det at skabe en oplevelse?", "a": "Fra en spilbar prototype på 1-2 uger til 6-12 uger for en komplet oplevelse, afhængigt af mekanikkernes kompleksitet." },
+        { "q": "Kan man skabe en enkeltstående aktivering?", "a": "Ja: et event-højdepunkt såvel som et varigt aktiv. Vi tilpasser formatet til dit mål og din kalender." },
+        { "q": "Kan man vedligeholde et map over tid?", "a": "Ja, det er vores styrke: nogle af vores maps er over version 200, opdateret i takt med Fortnite-metaen." },
+        { "q": "Arbejder I med bureauer?", "a": "Ja, som teknisk partner eller white label. I beholder kunderelationen, vi producerer oplevelsen." },
+        { "q": "Kan man skabe en white label-oplevelse?", "a": "Ja, uden at vores navn fremgår over for slutkunden." },
+        { "q": "Hvad er forskellen på et map og en brandaktivering?", "a": "Et map er et spilformat; en aktivering er et map bygget omkring dit univers, dine marketingmål og din performance-måling." },
+        { "q": "Er det egnet til et brand, der aldrig har lavet gaming?", "a": "Ja: vi oversætter din marketingbriefing til en spilbar oplevelse, uden at du behøver at mestre det tekniske." },
+        { "q": "Hvordan måler man resultaterne?", "a": "Minutter spillet, fastholdelse (D1/D7), favoritter, højeste samtidige spillere, sessionstid — konkrete engagementsmålinger." }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "Lad os tale sammen",
+      "title": "Forbereder du en gaming-kampagne, en Gen Z-aktivering eller en Fortnite-oplevelse?",
+      "text": "Lad os tale om din idé. Vi forvandler en marketingbriefing, et fællesskab eller et brandunivers til en spilbar Fortnite-oplevelse.",
+      "emailBtn": "Send en briefing",
+      "responseNote": "Svar inden for 24 t"
+    },
+    "footer": {
+      "tagline": "Kreativt studie for skræddersyede Fortnite-oplevelser. UEFN · Verse · Unreal Engine 5.",
+      "minutesPlayed": "minutter spillet",
+      "colSolutions": "Løsninger",
+      "colStudio": "Studie",
+      "colContact": "Kontakt",
+      "linkActivations": "Brandaktiveringer",
+      "linkAgences": "Bureauer",
+      "linkCreateurs": "Skabere & Esport",
+      "linkServices": "Tjenester",
+      "linkRealisations": "Cases",
+      "linkMaps": "Maps",
+      "linkBlog": "Blog",
+      "linkContact": "Kontakt",
+      "discuss": "Tal om dit projekt",
+      "twitter": "Twitter / X",
+      "rights": "Alle rettigheder forbeholdes.",
+      "epicDisclaimer": "Ikke tilknyttet Epic Games. Fortnite er et varemærke tilhørende Epic Games, Inc."
+    },
+    "form": {
+      "howItWorksTitle": "Sådan foregår det",
+      "steps": [
+        "Du beskriver din idé, dit publikum og dit mål.",
+        "Vi vender tilbage inden for 24 t med en første tilbagemelding og spørgsmål.",
+        "Vi foreslår dig et koncept, et omfang og en klar prisramme."
+      ],
+      "labelNom": "Navn",
+      "labelEmail": "Email",
+      "labelEntreprise": "Virksomhed",
+      "labelType": "Projekttype",
+      "labelBudget": "Anslået budget",
+      "labelMessage": "Besked",
+      "phNom": "Dit navn",
+      "phEmail": "dig@virksomhed.com",
+      "phEntreprise": "Brand, bureau, organisation…",
+      "phMessage": "Beskriv din idé, dit publikum, dit mål…",
+      "submit": "Tal om dit projekt",
+      "sending": "Sender…",
+      "sentTitle": "Besked sendt!",
+      "sentText": "Tak, vi vender tilbage til dig inden for 24 t for at tale om dit projekt.",
+      "errorText": "Noget gik galt. Skriv direkte til os på",
+      "projectTypes": [
+        { "value": "brand_activation", "label": "Brandaktivering" },
+        { "value": "agency", "label": "Bureauprojekt" },
+        { "value": "creator", "label": "Skaber-map" },
+        { "value": "esport", "label": "Esport-projekt" },
+        { "value": "maintenance", "label": "Vedligeholdelse / optimering" },
+        { "value": "unsure", "label": "Jeg ved det ikke endnu" }
+      ],
+      "budgets": ["Skal defineres", "< 5 000 €", "5 000 – 15 000 €", "15 000 – 40 000 €", "> 40 000 €"]
+    },
+    "pages": {
+      "services": {
+        "eyebrow": "Tjenester",
+        "title": "Fortnite-oplevelser, fra koncept til udgivelse",
+        "subtitle": "Vi bruger UEFN og Verse til at skabe tilpassede mekanikker: scoring, progression, ranglister, UI og skræddersyet gameplay. Hver ydelse tjener et engagementsmål.",
+        "ctaPrimary": "Tal om dit projekt",
+        "ctaSecondary": "Se vores cases",
+        "finalEyebrow": "Et konkret behov?",
+        "finalTitle": "Lad os tale om dit projekts omfang",
+        "finalText": "Aktivering, konkurrencemap, tycoon, ranked-system eller bare vedligeholdelse — fortæl os, hvad du har brug for.",
+        "metaTitle": "UEFN-, Verse- & Fortnite-aktiveringstjenester",
+        "metaDescription": "UEFN-udvikling, Verse scripting, game design, ranked-systemer, UI, vedligeholdelse. Fra koncept til udgivelse."
+      },
+      "agences": {
+        "eyebrow": "Til bureauer",
+        "title": "Din tekniske Fortnite- / UEFN-partner til dine kundekampagner",
+        "subtitle": "I beholder kunderelationen. Vi designer og udvikler Fortnite-oplevelsen — som white label om nødvendigt.",
+        "ctaPrimary": "Find en partner",
+        "ctaSecondary": "Se vores cases",
+        "partnershipEyebrow": "Partnerskabet",
+        "partnershipTitle": "Tilføj Fortnite til dit tilbud uden at opbygge et UEFN-team.",
+        "points": [
+          { "t": "White label", "d": "Vi producerer under dit brand. Vores navn fremgår ikke over for slutkunden, hvis du ønsker det." },
+          { "t": "Allerede fra konceptfasen", "d": "Vi går ind tidligt for at sikre den tekniske gennemførlighed og prissætte præcist før din anbefaling." },
+          { "t": "UEFN- / Verse-produktion", "d": "Game design, gameplay, scoring, UI, optimering og udgivelse — et Fortnite-team uden rekruttering." },
+          { "t": "Klare deadlines", "d": "Prototype på 1-2 uger, produktion på 6-12 uger afhængigt af omfanget. I styrer kunden med tryghed." }
+        ],
+        "casesEyebrow": "Anvendelser",
+        "casesTitle": "Det vi producerer til jeres kunder.",
+        "finalEyebrow": "Partnerskab",
+        "finalTitle": "En kundebriefing, der skal aktiveres i Fortnite?",
+        "finalText": "Send os konteksten. Vi hjælper jer med at ramme gennemførligheden, konceptet og prissætningen til jeres anbefaling.",
+        "metaTitle": "Teknisk Fortnite- / UEFN-partner for bureauer",
+        "metaDescription": "White label UEFN- & Verse-produktion til jeres kundekampagner. I beholder relationen, vi skaber oplevelsen."
+      },
+      "createurs": {
+        "eyebrow": "Skabere & Esport",
+        "title": "Skab et Fortnite-map i dit eget billede",
+        "subtitle": "Engagér dit fællesskab, forlæng dit indhold og byg et varigt aktiv. Fra konkurrenceformater til egne esport-oplevelser.",
+        "ctaPrimary": "Skab mit map",
+        "ctaSecondary": "Se vores cases",
+        "buildEyebrow": "Det vi bygger",
+        "buildTitle": "Et map bygget til fastholdelse og fællesskab.",
+        "formats": [
+          { "t": "Konkurrenceformater", "d": "1v1, boxfight, zone wars, realistics, ranked — de formater, dit fællesskab spiller igen hver dag." },
+          { "t": "Community-engagement", "d": "Et map i dit eget billede, der forlænger dit indhold og får dine viewers til at vende tilbage mellem to streams." },
+          { "t": "Ranglister & turneringer", "d": "Ranked-systemer, sæson-leaderboards, events og challenges til at aktivere fællesskabet." },
+          { "t": "Sponsorer & ejet aktiv", "d": "Et brandrum, du styrer: sponsorstøtte, branding og engagementsindtægter." }
+        ],
+        "casesEyebrow": "Skaber-cases",
+        "casesTitle": "Skaber-maps spillet i milliarder af minutter.",
+        "casesLead": "Vores samarbejder med Martoz og andre skabere har genereret en fastholdelse blandt de bedste i konkurrencetilstanden.",
+        "finalEyebrow": "Lad os tale om det",
+        "finalTitle": "Klar til at skabe dit fællesskabs map?",
+        "finalText": "Fortæl os dit univers, dit format og dit mål. Vi forvandler det til et spilbart map, optimeret til fastholdelse.",
+        "metaTitle": "Skabere & Esport — Skab dit Fortnite-map",
+        "metaDescription": "Et map i dit eget billede: konkurrenceformater, ranglister, turneringer, sponsorer. Engagér dit fællesskab og byg et varigt aktiv."
+      },
+      "activations": {
+        "eyebrow": "Brandaktiveringer",
+        "title": "Skab en Fortnite-aktivering, der engagerer dit publikum",
+        "subtitle": "Forvandl en marketingbriefing, et produkt eller et event til en spilbar Fortnite-oplevelse. Du når et Gen Z-publikum dér, hvor det bruger sin tid — ved at spille, ikke ved at scrolle.",
+        "ctaPrimary": "Forestil dig en aktivering",
+        "ctaSecondary": "Se vores cases",
+        "casesEyebrow": "Cases",
+        "casesTitle": "Brandaktiveringer, der allerede er spillet.",
+        "casesLead": "Brands der går fra budskab til interaktiv oplevelse.",
+        "finalEyebrow": "Lad os tale sammen",
+        "finalTitle": "En Gen Z-kampagne, en produktlancering, et event?",
+        "finalText": "Lad os tale om din briefing. Vi foreslår dig et Fortnite-aktiveringskoncept tilpasset dit univers og dine marketingmål.",
+        "metaTitle": "Fortnite-brandaktivering",
+        "metaDescription": "Engagér dit Gen Z-publikum med en skræddersyet Fortnite-aktivering. Fra idé til udgivelse. Til brands & bureauer."
+      },
+      "realisations": {
+        "eyebrow": "Cases",
+        "title": "Oplevelser spillet i milliarder af minutter",
+        "subtitle": "Maps der fastholder, brands der aktiverer, fællesskaber der vender tilbage. Hvert projekt præsenteres ud fra sit mål og sit resultat — ikke kun sin teknik.",
+        "ctaPrimary": "Tal om dit projekt",
+        "ctaSecondary": "Se map-ranglisten",
+        "finalEyebrow": "Din tur",
+        "finalTitle": "Hvad nu, hvis den næste case var din?",
+        "finalText": "Brand, bureau, skaber eller esport-organisation — lad os tale om den Fortnite-oplevelse, du vil skabe.",
+        "metaTitle": "Cases — {minutes} minutter spillet",
+        "metaDescription": "Skaber-maps, brandaktiveringer og konkurrenceformater spillet i milliarder af minutter i Fortnite."
+      },
+      "contact": {
+        "eyebrow": "Kontakt",
+        "title": "Tal om dit projekt",
+        "subtitle": "Forbereder du en gaming-kampagne, en Gen Z-aktivering eller en Fortnite-oplevelse? Send din briefing — vi vender tilbage til dig inden for 24 t.",
+        "metaTitle": "Tal om dit Fortnite-projekt",
+        "metaDescription": "Send din briefing. Brandaktivering, bureauprojekt, skaber-map eller esport — svar inden for 24 t."
+      }
+    }
   }
 }

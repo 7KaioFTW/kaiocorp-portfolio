@@ -166,8 +166,8 @@
     "copyright": "© {year} Kaio Corporation. Alle rechten voorbehouden."
   },
   "metadata": {
-    "homeTitle": "Kaio — Fortnite UEFN-mapontwikkelaar | 4,7B+ Minuten Gespeeld",
-    "homeDescription": "Professionele Fortnite UEFN-mapontwikkelaar. 4,7B+ minuten gespeeld. Samenwerkingen met Martoz, GamersOrigin, WZF. Beschikbaar voor inhuur.",
+    "homeTitle": "KaioCorp — Studio voor Fortnite-ervaringen op maat (UEFN)",
+    "homeDescription": "Maps, mini-games en merkactivaties in Fortnite met UEFN & Verse. 4,7 mld+ minuten gespeeld. Laten we het over jouw project hebben.",
     "mapsTitle": "Fortnite UEFN Maps door Kaio | Creative Map Portfolio",
     "mapsDescription": "Bekijk Fortnite UEFN maps van Kaio. Meer dan 4,7B minuten gespeeld in competitieve boxfights, zone wars, realistics, tycoons en aangepaste spelmodi.",
     "servicesTitle": "Huur een Fortnite-mapontwikkelaar | UEFN Ontwikkeldiensten",
@@ -182,5 +182,292 @@
   "brandCollabs": {
     "title": "Merksamenwerkingen",
     "subtitle": "Op maat gemaakte Fortnite-ervaringen voor toonaangevende merken"
+  },
+  "b2b": {
+    "nav": {
+      "activations": "Activaties",
+      "agences": "Bureaus",
+      "createurs": "Creators & Esport",
+      "realisations": "Realisaties",
+      "services": "Diensten",
+      "cta": "Praat over jouw project",
+      "menu": "Menu",
+      "langLabel": "Taal wijzigen"
+    },
+    "hero": {
+      "eyebrow": "UEFN · Verse · Unreal Engine 5 — Creatieve Fortnite-studio",
+      "title": "Creëer jouw Fortnite-ervaring op maat en activeer je publiek.",
+      "subtitle": "KaioCorp ontwerpt maps, mini-games en merkactivaties in Fortnite met UEFN, Verse en Unreal Engine 5 — van idee tot prototype, tot publicatie en onderhoud.",
+      "badgeMinutes": "minuten gespeeld",
+      "badgeActivations": "Activaties:",
+      "ctaPrimary": "Praat over jouw project",
+      "ctaSecondary": "Bekijk de realisaties",
+      "tagline": "Van idee tot prototype, tot publicatie en onderhoud."
+    },
+    "opportunity": {
+      "eyebrow": "De context",
+      "title": "Jonge doelgroepen willen niet langer alleen een advertentie bekijken. Ze willen meedoen.",
+      "lead": "Fortnite is veel meer dan een game geworden: het is een ruimte van aandacht, community en beleving. Voor een merk, bureau of creator wordt een goed ontworpen ervaring een echt engagement-asset — geen campagne die na 48 uur uitdooft.",
+      "levers": ["Tijd doorgebracht", "Interactie", "Community-deling", "Challenge", "Merkbeleving", "Organisch bereik", "Creator-activatie"]
+    },
+    "audiences": {
+      "eyebrow": "Voor wie?",
+      "title": "Eén expertise, vier manieren om die te activeren.",
+      "items": [
+        { "tag": "Merken", "title": "Voor merken", "text": "Lanceer een Fortnite-activatie rond jouw universum, een product, een evenement of een Gen Z-campagne.", "examples": "Merk-minigame · race · tycoon · community-challenge · evenementbeleving.", "cta": "Een activatie bedenken" },
+        { "tag": "Bureaus", "title": "Voor bureaus", "text": "Voeg Fortnite toe aan je klantadviezen zonder zelf een UEFN-team te werven.", "examples": "Technisch partnerschap · white-label productie · ervaringen voor gamingcampagnes.", "cta": "Een partner vinden" },
+        { "tag": "Creators", "title": "Voor creators", "text": "Creëer een map in jouw stijl om je community te activeren, je content te verlengen en een duurzaam asset op te bouwen.", "examples": "1v1 · boxfight · zone wars · ranked maps · realistic fights.", "cta": "Mijn map maken" },
+        { "tag": "Esport", "title": "Voor esport", "text": "Activeer je community met een eigen Fortnite-ervaring: toernooien, challenges, ranglijsten, sponsors.", "examples": "Competities · community-evenementen · sponsor-ondersteuning · eigen asset.", "cta": "Een esport-ervaring maken" }
+      ]
+    },
+    "services": {
+      "eyebrow": "Diensten",
+      "title": "Fortnite-ervaringen gebouwd voor engagement.",
+      "lead": "We gebruiken UEFN en Verse om aangepaste mechanismen te creëren: scoring, progressie, ranglijsten, UI en gameplay op maat.",
+      "ctaMore": "Ontdek de mogelijke formats",
+      "items": [
+        { "title": "Merkactivaties", "benefit": "Verander een marketingbriefing in een speelbare ervaring.", "example": "Bijv. productdrop, merk-challenge." },
+        { "title": "Competitieve maps", "benefit": "Sterke retentie op formats die spelers steeds opnieuw spelen.", "example": "Bijv. 1v1, boxfight, zone wars." },
+        { "title": "Mini-games & challenges", "benefit": "Een eenvoudig, viraal en deelbaar format.", "example": "Bijv. behendigheidschallenge, race." },
+        { "title": "Tycoons / simulators", "benefit": "Lange sessies en verslavende progressie.", "example": "Bijv. Carlife Tycoon (~80 min/sessie)." },
+        { "title": "Evenementervaringen", "benefit": "Een hoogtepunt rond een lancering.", "example": "Bijv. virtueel podium, festivalquest." },
+        { "title": "Ranked / scoring / leaderboards", "benefit": "Competitie die spelers laat terugkomen.", "example": "Bijv. seizoensranglijst, competities." },
+        { "title": "Aangepaste UI", "benefit": "Jouw merk aanwezig in elk scherm.", "example": "Bijv. HUD, menu's, in-game branding." },
+        { "title": "Verse scripting", "benefit": "Mechanismen die onmogelijk zijn in standaard Creative.", "example": "Bijv. spellogica, custom devices." },
+        { "title": "Optimalisatie / performance", "benefit": "Een vloeiende ervaring = spelers die blijven.", "example": "Bijv. geheugenbudget, draw calls." },
+        { "title": "Publicatie & onderhoud", "benefit": "Een levend asset, geen one-shot.", "example": "Bijv. balancing, nieuwe versies." }
+      ]
+    },
+    "stats": {
+      "minutesPlayed": "Minuten gespeeld",
+      "shipped": "Geleverde ervaringen",
+      "creators": "Creators & organisaties",
+      "brandActivations": "Merkactivaties",
+      "brandsUnit": "merken"
+    },
+    "realisations": {
+      "eyebrow": "Realisaties",
+      "title": "Ervaringen die miljarden minuten lang gespeeld zijn.",
+      "lead": "Maps die vasthouden, merken die activeren, communities die terugkeren.",
+      "ctaAll": "Bekijk alle realisaties",
+      "srHeading": "Alle realisaties",
+      "ctaAllMaps": "Bekijk alle maps & hun statistieken",
+      "units": { "minutes": "min gespeeld", "favorites": "favorieten" },
+      "projects": {
+        "clutch-realistics-1v2": { "type": "Competitief · Martoz", "objective": "Een community activeren rond een gespannen clutch-format." },
+        "martoz-1v1-build-fights": { "type": "Competitief · Martoz", "objective": "Een 1v1-trainingsformat dat spelers elke dag opnieuw spelen." },
+        "martoz-turtle-fights-ffa": { "type": "Competitief · Martoz", "objective": "Een leuke en verslavende FFA, met builds die continu resetten." },
+        "carlife-tycoon": { "type": "Activatie · Recyclermonvehicule.fr", "objective": "Bewustwording rond autorecycling via een speelbare tycoon, met GamersOrigin." },
+        "senses-rush": { "type": "Activatie · Krys", "objective": "Het universum van het merk tot leven brengen in een meeslepende ervaring, met GamersOrigin." },
+        "rift-racers-alpine": { "type": "Activatie · Alpine", "objective": "De Alpine-rijervaring omzetten in een speelbaar circuit, met GamersOrigin." }
+      }
+    },
+    "process": {
+      "eyebrow": "Proces",
+      "title": "Een eenvoudig proces, van idee tot publicatie.",
+      "items": [
+        { "title": "Strategische briefing", "text": "We brengen de doelgroep, het doel, het universum, de mechanismen en de beperkingen in kaart." },
+        { "title": "Concept & game design", "text": "We zetten het idee om in een speelbare ervaring met boeiende mechanismen." },
+        { "title": "Prototype", "text": "Een eerste speelbare versie om de richting snel te valideren." },
+        { "title": "UEFN / Verse-ontwikkeling", "text": "Gameplay, UI, scoring, optimalisatie, assets en spellogica." },
+        { "title": "Publicatie & lancering", "text": "Indiening, support, iteraties en lanceringsstrategie." },
+        { "title": "Onderhoud & optimalisatie", "text": "Correcties, nieuwe versies, balancing, continue verbetering." }
+      ]
+    },
+    "why": {
+      "eyebrow": "Waarom KaioCorp?",
+      "title": "Fortnite-expertise bewezen door echt gebruik.",
+      "minutesCaption": "minuten gespeeld op de ontwikkelde ervaringen",
+      "items": [
+        "<b>Miljarden minuten</b> gespeeld op onze ervaringen.",
+        "<b>Praktijkervaring</b> met wat spelers écht vasthoudt.",
+        "Technische beheersing van <b>UEFN / Verse / Unreal Engine 5</b>.",
+        "In staat om samen te werken met <b>creators, bureaus en merken</b>.",
+        "Een aanpak die <b>game design, techniek én marketing</b> combineert.",
+        "Ervaringen geoptimaliseerd voor <b>engagement</b>, niet alleen esthetiek."
+      ]
+    },
+    "sectors": {
+      "eyebrow": "Activatie-ideeën",
+      "title": "Welk type Fortnite-ervaring zou jij kunnen creëren?",
+      "yourSector": "Jouw sector?",
+      "ctaIdea": "Vraag een activatie-idee aan",
+      "items": [
+        { "title": "Sport", "text": "Behendigheidschallenge, race, training, community-competitie." },
+        { "title": "Automotive", "text": "Circuit, race, voertuigverkenning, challenge op tijd." },
+        { "title": "Mode / sneakers", "text": "Virtuele drop, meeslepend parcours, minigame rond een collectie." },
+        { "title": "Muziek / festival", "text": "Evenementbeleving, virtueel podium, quest rond een artiest." },
+        { "title": "Onderwijs / jeugd", "text": "Educatieve map, speelse ervaring, gezamenlijke challenge." },
+        { "title": "Entertainment", "text": "Meeslepend universum, teaser van serie/film, verhalende missie." },
+        { "title": "Bureaus", "text": "Kant-en-klare activatie om aan een klant voor te stellen." }
+      ]
+    },
+    "faq": {
+      "eyebrow": "FAQ",
+      "title": "De vragen die merken, bureaus & creators zich stellen.",
+      "items": [
+        { "q": "Waarom een Fortnite-ervaring maken voor een merk?", "a": "Het is het enige medium waar je publiek mét je speelt in plaats van je alleen te bekijken: lange aandachtsduur, echte interactie, community-deling, en een asset dat langer meegaat dan een campagne." },
+        { "q": "Hoeveel kost een Fortnite-map op maat?", "a": "Dat hangt af van de scope (format, mechanismen, levensduur). Eenvoudige formats beginnen in de lage duizenden; een merkactivatie met custom Verse ligt hoger. We geven je een heldere raming na de briefing." },
+        { "q": "Hoe lang duurt het om een ervaring te maken?", "a": "Van een speelbaar prototype in 1 tot 2 weken, tot 6–12 weken voor een volledige ervaring, afhankelijk van de complexiteit van de mechanismen." },
+        { "q": "Kunnen jullie een eenmalige activatie maken?", "a": "Ja: een evenementhoogtepunt of een duurzaam asset. We stemmen het format af op jouw doel en planning." },
+        { "q": "Kunnen jullie een map in de tijd onderhouden?", "a": "Ja, dat is onze kracht: sommige van onze maps gaan voorbij versie 200, bijgewerkt in lijn met de Fortnite-meta." },
+        { "q": "Werken jullie met bureaus?", "a": "Ja, als technisch partner of white-label. Jij behoudt de klantrelatie, wij produceren de ervaring." },
+        { "q": "Kunnen jullie een white-label ervaring maken?", "a": "Ja, zonder dat onze naam aan de kant van de eindklant verschijnt." },
+        { "q": "Wat is het verschil tussen een map en een merkactivatie?", "a": "Een map is een spelformat; een activatie is een map ontworpen rond jouw universum, jouw marketingdoelen en jouw prestatiemeting." },
+        { "q": "Is dit geschikt voor een merk dat nooit aan gaming heeft gedaan?", "a": "Ja: we vertalen jouw marketingbriefing naar een speelbare ervaring, zonder dat je het technische aspect hoeft te beheersen." },
+        { "q": "Hoe meten we de resultaten?", "a": "Minuten gespeeld, retentie (D1/D7), favorieten, pieken in gelijktijdige spelers, sessieduur — concrete engagement-metrieken." }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "Laten we praten",
+      "title": "Bereid je een gamingcampagne, een Gen Z-activatie of een Fortnite-ervaring voor?",
+      "text": "Laten we het over je idee hebben. Wij zetten een marketingbriefing, een community of een merkuniversum om in een speelbare Fortnite-ervaring.",
+      "emailBtn": "Stuur een briefing",
+      "responseNote": "Reactie binnen 24 u"
+    },
+    "footer": {
+      "tagline": "Creatieve studio voor Fortnite-ervaringen op maat. UEFN · Verse · Unreal Engine 5.",
+      "minutesPlayed": "minuten gespeeld",
+      "colSolutions": "Oplossingen",
+      "colStudio": "Studio",
+      "colContact": "Contact",
+      "linkActivations": "Merkactivaties",
+      "linkAgences": "Bureaus",
+      "linkCreateurs": "Creators & Esport",
+      "linkServices": "Diensten",
+      "linkRealisations": "Realisaties",
+      "linkMaps": "Maps",
+      "linkBlog": "Blog",
+      "linkContact": "Contact",
+      "discuss": "Praat over jouw project",
+      "twitter": "Twitter / X",
+      "rights": "Alle rechten voorbehouden.",
+      "epicDisclaimer": "Niet gelieerd aan Epic Games. Fortnite is een handelsmerk van Epic Games, Inc."
+    },
+    "form": {
+      "howItWorksTitle": "Hoe het werkt",
+      "steps": [
+        "Je beschrijft je idee, je publiek en je doel.",
+        "We komen binnen 24 u terug met een eerste reactie en vragen.",
+        "We stellen je een concept, een scope en een heldere raming voor."
+      ],
+      "labelNom": "Naam",
+      "labelEmail": "E-mail",
+      "labelEntreprise": "Bedrijf",
+      "labelType": "Projecttype",
+      "labelBudget": "Geschat budget",
+      "labelMessage": "Bericht",
+      "phNom": "Jouw naam",
+      "phEmail": "jij@bedrijf.com",
+      "phEntreprise": "Merk, bureau, organisatie…",
+      "phMessage": "Beschrijf je idee, je publiek, je doel…",
+      "submit": "Praat over jouw project",
+      "sending": "Versturen…",
+      "sentTitle": "Bericht verzonden!",
+      "sentText": "Bedankt, we komen binnen 24 u bij je terug om je project te bespreken.",
+      "errorText": "Er ging iets mis. Mail ons rechtstreeks op",
+      "projectTypes": [
+        { "value": "brand_activation", "label": "Merkactivatie" },
+        { "value": "agency", "label": "Bureauproject" },
+        { "value": "creator", "label": "Creator-map" },
+        { "value": "esport", "label": "Esport-project" },
+        { "value": "maintenance", "label": "Onderhoud / optimalisatie" },
+        { "value": "unsure", "label": "Ik weet het nog niet" }
+      ],
+      "budgets": ["Nader te bepalen", "< 5 000 €", "5 000 – 15 000 €", "15 000 – 40 000 €", "> 40 000 €"]
+    },
+    "pages": {
+      "services": {
+        "eyebrow": "Diensten",
+        "title": "Fortnite-ervaringen, van concept tot publicatie",
+        "subtitle": "We gebruiken UEFN en Verse om aangepaste mechanismen te creëren: scoring, progressie, ranglijsten, UI en gameplay op maat. Elke dienst dient een engagement-doel.",
+        "ctaPrimary": "Praat over jouw project",
+        "ctaSecondary": "Bekijk de realisaties",
+        "finalEyebrow": "Een specifieke behoefte?",
+        "finalTitle": "Laten we de scope van je project bespreken",
+        "finalText": "Activatie, competitieve map, tycoon, ranked-systeem of gewoon onderhoud — vertel ons wat je nodig hebt.",
+        "metaTitle": "UEFN-, Verse- & Fortnite-activatiediensten",
+        "metaDescription": "UEFN-ontwikkeling, Verse scripting, game design, ranked-systemen, UI, onderhoud. Van concept tot publicatie."
+      },
+      "agences": {
+        "eyebrow": "Voor bureaus",
+        "title": "Jouw technische Fortnite / UEFN-partner voor je klantcampagnes",
+        "subtitle": "Jij behoudt de klantrelatie. Wij ontwerpen en ontwikkelen de Fortnite-ervaring — white-label indien nodig.",
+        "ctaPrimary": "Een partner vinden",
+        "ctaSecondary": "Bekijk de realisaties",
+        "partnershipEyebrow": "Het partnerschap",
+        "partnershipTitle": "Voeg Fortnite toe aan je aanbod, zonder een UEFN-team op te zetten.",
+        "points": [
+          { "t": "White-label", "d": "Wij produceren onder jouw merk. Onze naam verschijnt niet aan de kant van de eindklant als je dat wilt." },
+          { "t": "Vanaf de conceptfase", "d": "We komen vroeg in beeld om de technische haalbaarheid te borgen en correct te ramen vóór je aanbeveling." },
+          { "t": "UEFN / Verse-productie", "d": "Game design, gameplay, scoring, UI, optimalisatie en publicatie — een Fortnite-team zonder werving." },
+          { "t": "Heldere deadlines", "d": "Prototype in 1–2 weken, productie in 6–12 weken afhankelijk van de scope. Jij stuurt de klant met vertrouwen aan." }
+        ],
+        "casesEyebrow": "Use cases",
+        "casesTitle": "Wat we voor jouw klanten produceren.",
+        "finalEyebrow": "Partnerschap",
+        "finalTitle": "Een klantbriefing om in Fortnite te activeren?",
+        "finalText": "Stuur ons de context. We helpen je de haalbaarheid, het concept en de raming af te bakenen voor je aanbeveling.",
+        "metaTitle": "Technische Fortnite / UEFN-partner voor bureaus",
+        "metaDescription": "White-label UEFN- & Verse-productie voor je klantcampagnes. Jij behoudt de relatie, wij creëren de ervaring."
+      },
+      "createurs": {
+        "eyebrow": "Creators & Esport",
+        "title": "Creëer een Fortnite-map in jouw stijl",
+        "subtitle": "Activeer je community, verleng je content en bouw een duurzaam asset op. Van competitieve formats tot eigen esport-ervaringen.",
+        "ctaPrimary": "Mijn map maken",
+        "ctaSecondary": "Bekijk de realisaties",
+        "buildEyebrow": "Wat we bouwen",
+        "buildTitle": "Een map ontworpen voor retentie en community.",
+        "formats": [
+          { "t": "Competitieve formats", "d": "1v1, boxfight, zone wars, realistics, ranked — de formats die je community elke dag opnieuw speelt." },
+          { "t": "Community-engagement", "d": "Een map in jouw stijl die je content verlengt en je kijkers tussen twee streams door laat terugkomen." },
+          { "t": "Ranglijsten & toernooien", "d": "Ranked-systemen, seizoensgebonden leaderboards, evenementen en challenges om de community te activeren." },
+          { "t": "Sponsors & eigen asset", "d": "Een merkruimte die jij beheert: sponsor-ondersteuning, branding en engagement-inkomsten." }
+        ],
+        "casesEyebrow": "Creator-realisaties",
+        "casesTitle": "Creator-maps die miljarden minuten gespeeld zijn.",
+        "casesLead": "Onze samenwerkingen met Martoz en andere creators hebben een van de hoogste retenties in de competitieve modus opgeleverd.",
+        "finalEyebrow": "Laten we praten",
+        "finalTitle": "Klaar om de map van je community te maken?",
+        "finalText": "Vertel ons je universum, je format en je doel. Wij zetten dat om in een speelbare map, geoptimaliseerd voor retentie.",
+        "metaTitle": "Creators & Esport — Maak jouw Fortnite-map",
+        "metaDescription": "Een map in jouw stijl: competitieve formats, ranglijsten, toernooien, sponsors. Activeer je community en bouw een duurzaam asset op."
+      },
+      "activations": {
+        "eyebrow": "Merkactivaties",
+        "title": "Creëer een Fortnite-activatie om je publiek te activeren",
+        "subtitle": "Verander een marketingbriefing, een product of een evenement in een speelbare Fortnite-ervaring. Je bereikt een Gen Z-publiek waar het zijn tijd doorbrengt — spelend, niet scrollend.",
+        "ctaPrimary": "Een activatie bedenken",
+        "ctaSecondary": "Bekijk de realisaties",
+        "casesEyebrow": "Realisaties",
+        "casesTitle": "Merkactivaties die al gespeeld zijn.",
+        "casesLead": "Merken die van boodschap naar interactieve ervaring gaan.",
+        "finalEyebrow": "Laten we praten",
+        "finalTitle": "Een Gen Z-campagne, een productlancering, een evenement?",
+        "finalText": "Laten we het over je briefing hebben. We stellen je een Fortnite-activatieconcept voor dat past bij jouw universum en je marketingdoelen.",
+        "metaTitle": "Fortnite-merkactivatie",
+        "metaDescription": "Activeer je Gen Z-publiek met een Fortnite-activatie op maat. Van idee tot publicatie. Voor merken & bureaus."
+      },
+      "realisations": {
+        "eyebrow": "Realisaties",
+        "title": "Ervaringen die miljarden minuten lang gespeeld zijn",
+        "subtitle": "Maps die vasthouden, merken die activeren, communities die terugkeren. Elk project wordt gepresenteerd via zijn doel en zijn resultaat — niet alleen zijn techniek.",
+        "ctaPrimary": "Praat over jouw project",
+        "ctaSecondary": "Bekijk de ranglijst van maps",
+        "finalEyebrow": "Jouw beurt",
+        "finalTitle": "En als de volgende realisatie de jouwe was?",
+        "finalText": "Merk, bureau, creator of esport-organisatie — laten we het over de Fortnite-ervaring hebben die jij wilt creëren.",
+        "metaTitle": "Realisaties — {minutes} minuten gespeeld",
+        "metaDescription": "Creator-maps, merkactivaties en competitieve formats die miljarden minuten lang gespeeld zijn in Fortnite."
+      },
+      "contact": {
+        "eyebrow": "Contact",
+        "title": "Praat over jouw project",
+        "subtitle": "Bereid je een gamingcampagne, een Gen Z-activatie of een Fortnite-ervaring voor? Stuur je briefing — we komen binnen 24 u bij je terug.",
+        "metaTitle": "Praat over jouw Fortnite-project",
+        "metaDescription": "Stuur je briefing. Merkactivatie, bureauproject, creator-map of esport — reactie binnen 24 u."
+      }
+    }
   }
 }
