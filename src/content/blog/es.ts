@@ -52,7 +52,7 @@ Epic Games ha pagado más de **722 millones de dólares** a creadores de islas d
 - Las organizaciones de esports encargan mapas competitivos personalizados
 - Los creadores de contenido se asocian con desarrolladores para mapas exclusivos
 
-A modo de contexto, nuestros mapas en [Kaio Corporation](/about) han acumulado más de **4.800 millones de minutos jugados**, trabajando con creadores como Martoz, GamersOrigin y WZF.
+A modo de contexto, nuestros mapas en [Kaio Corporation](/about) han acumulado más de **4.700 millones de minutos jugados**, trabajando con creadores como Martoz, GamersOrigin y WZF.
 
 ## Habilidades necesarias
 
@@ -99,7 +99,7 @@ La fórmula exacta de pago no se ha divulgado públicamente, pero basándonos en
 
 No todos los minutos valen lo mismo. Esto es lo que realmente importa:
 
-**Minutos jugados** — La métrica principal. Es el tiempo de juego total acumulado entre todos los jugadores. Nuestro portfolio combinado supera los [4.800 millones de minutos](/maps), situándonos entre los mayores generadores de engagement de la plataforma.
+**Minutos jugados** — La métrica principal. Es el tiempo de juego total acumulado entre todos los jugadores. Nuestro portfolio combinado supera los [4.700 millones de minutos](/maps), situándonos entre los mayores generadores de engagement de la plataforma.
 
 **Favoritos** — Las islas con más favoritos obtienen mejor posicionamiento en Descubrir. Nuestros mapas tienen más de **3,2 millones de favoritos** combinados, lo que impulsa el descubrimiento orgánico.
 
@@ -331,7 +331,7 @@ Esta guía cubre lo más básico. Para profundizar:
 
 Construir dispositivos personalizados en Verse es lo que separa a los desarrolladores profesionales de UEFN de los aficionados. Si necesitas mecánicas personalizadas complejas para tu mapa, [nuestro equipo está especializado en scripting de Verse](/services) — desde sistemas de puntuación personalizados hasta frameworks completos de modos de juego.
 
-Echa un vistazo a nuestro [portfolio](/maps) para ver Verse en acción con más de 4.800 millones de minutos jugados.`,
+Echa un vistazo a nuestro [portfolio](/maps) para ver Verse en acción con más de 4.700 millones de minutos jugados.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",

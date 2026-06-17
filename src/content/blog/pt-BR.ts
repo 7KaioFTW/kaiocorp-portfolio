@@ -52,7 +52,7 @@ A Epic Games já pagou mais de **US$ 722 milhões** a criadores de ilhas Fortnit
 - Organizações de esports encomendam mapas competitivos personalizados
 - Criadores de conteúdo fazem parcerias com desenvolvedores para mapas exclusivos
 
-Para contextualizar, nossos mapas na [Kaio Corporation](/about) acumularam mais de **4,8 bilhões de minutos jogados**, trabalhando com criadores como Martoz, GamersOrigin e WZF.
+Para contextualizar, nossos mapas na [Kaio Corporation](/about) acumularam mais de **4,7 bilhões de minutos jogados**, trabalhando com criadores como Martoz, GamersOrigin e WZF.
 
 ## Habilidades Necessárias
 
@@ -99,7 +99,7 @@ A fórmula exata de pagamento não é divulgada publicamente, mas com base em da
 
 Nem todos os minutos são iguais. Veja o que realmente importa:
 
-**Minutos Jogados** — A métrica principal. É o tempo de jogo cumulativo total de todos os jogadores. Nosso portfólio combinado tem mais de [4,8 bilhões de minutos](/maps), nos colocando entre os maiores geradores de engajamento na plataforma.
+**Minutos Jogados** — A métrica principal. É o tempo de jogo cumulativo total de todos os jogadores. Nosso portfólio combinado tem mais de [4,7 bilhões de minutos](/maps), nos colocando entre os maiores geradores de engajamento na plataforma.
 
 **Favoritos** — Ilhas com mais favoritos têm melhor posicionamento no Discover. Nossos mapas têm mais de **3,2 milhões de favoritos** combinados, o que impulsiona a descoberta orgânica.
 
@@ -331,7 +331,7 @@ Esse guia cobre o básico absoluto. Para se aprofundar:
 
 Construir dispositivos Verse personalizados é o que separa desenvolvedores UEFN profissionais de hobbyistas. Se você precisa de mecânicas personalizadas complexas para seu mapa, [nosso time é especialista em programação Verse](/services) — de sistemas de pontuação personalizados a frameworks completos de modos de jogo.
 
-Confira nosso [portfólio](/maps) para ver o Verse em ação com mais de 4,8 bilhões de minutos jogados.`,
+Confira nosso [portfólio](/maps) para ver o Verse em ação com mais de 4,7 bilhões de minutos jogados.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",

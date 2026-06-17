@@ -52,7 +52,7 @@ Epic Games har udbetalt over **$722 millioner** til Fortnite ø-skabere gennem d
 - Esports-organisationer bestiller brugerdefinerede kompetitive maps
 - Content creators samarbejder med udviklere om eksklusive maps
 
-For kontekst har vores maps hos [Kaio Corporation](/about) akkumuleret over **4,8 milliarder spillede minutter** i samarbejde med skabere som Martoz, GamersOrigin og WZF.
+For kontekst har vores maps hos [Kaio Corporation](/about) akkumuleret over **4,7 milliarder spillede minutter** i samarbejde med skabere som Martoz, GamersOrigin og WZF.
 
 ## Nødvendige færdigheder
 
@@ -99,7 +99,7 @@ Den præcise udbetalingsformel er ikke offentligt tilgængelig, men baseret på 
 
 Ikke alle minutter er skabt lige. Her er, hvad der virkelig betyder noget:
 
-**Spillede minutter** — Den primære metrik. Dette er den samlede kumulative spilletid på tværs af alle spillere. Vores samlede portfolio har over [4,8 milliarder minutter](/maps), hvilket placerer os blandt de førende engagementsgeneratorer på platformen.
+**Spillede minutter** — Den primære metrik. Dette er den samlede kumulative spilletid på tværs af alle spillere. Vores samlede portfolio har over [4,7 milliarder minutter](/maps), hvilket placerer os blandt de førende engagementsgeneratorer på platformen.
 
 **Favoritter** — Øer med flere favoritter får bedre placering i Discover. Vores maps har tilsammen over **3,2 millioner favoritter**, hvilket driver organisk opdagelse.
 
@@ -331,7 +331,7 @@ Denne guide dækker det absolutte grundlæggende. For at gå dybere:
 
 At bygge brugerdefinerede Verse devices er det, der adskiller professionelle UEFN developers fra hobbyister. Hvis du har brug for komplekse brugerdefinerede mekanikker til din map, [vores team er specialiseret i Verse scripting](/services) — fra brugerdefinerede scoresystemer til komplette game mode-frameworks.
 
-Tjek vores [portfolio](/maps) for at se Verse i aktion med over 4,8 milliarder spillede minutter.`,
+Tjek vores [portfolio](/maps) for at se Verse i aktion med over 4,7 milliarder spillede minutter.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",

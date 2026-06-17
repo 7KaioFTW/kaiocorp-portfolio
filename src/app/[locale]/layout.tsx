@@ -21,7 +21,7 @@ export function generateStaticParams() {
 function buildHreflangAlternates() {
   const languages: Record<string, string> = {};
   for (const loc of locales) {
-    languages[loc] = loc === "en" ? "https://kaiocorp.com" : `https://kaiocorp.com/${loc}`;
+    languages[loc] = loc === "fr" ? "https://kaiocorp.com" : `https://kaiocorp.com/${loc}`;
   }
   languages["x-default"] = "https://kaiocorp.com";
   return languages;
@@ -29,13 +29,13 @@ function buildHreflangAlternates() {
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale: params.locale, namespace: "metadata" });
-  const canonicalUrl = params.locale === "en" ? "https://kaiocorp.com" : `https://kaiocorp.com/${params.locale}`;
+  const canonicalUrl = params.locale === "fr" ? "https://kaiocorp.com" : `https://kaiocorp.com/${params.locale}`;
 
   return {
     metadataBase: new URL("https://kaiocorp.com"),
-    title: { template: "%s | Kaio — Fortnite UEFN Map Developer", default: t("homeTitle") },
+    title: { template: "%s | KaioCorp — Studio Fortnite UEFN", default: t("homeTitle") },
     description: t("homeDescription"),
-    openGraph: { type: "website", siteName: "Kaio UEFN Portfolio", locale: params.locale },
+    openGraph: { type: "website", siteName: "KaioCorp", locale: params.locale },
     twitter: { card: "summary_large_image", creator: "@7KaioFTW" },
     robots: { index: true, follow: true, "max-image-preview": "large" as const },
     alternates: {
@@ -65,7 +65,6 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#7B2FBE" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3020506952463600" crossOrigin="anonymous"></script>
       </head>
       <body className="font-body bg-surface-dark text-slate-200 antialiased">
         <NextIntlClientProvider messages={messages}>

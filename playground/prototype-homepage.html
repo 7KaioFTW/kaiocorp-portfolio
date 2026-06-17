@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KaioCorp — Studio d'expériences Fortnite sur-mesure (UEFN · Verse)</title>
+<meta name="description" content="Maps, mini-jeux et activations de marque dans Fortnite avec UEFN & Verse. 4,7 Md+ minutes jouées. Discutons de votre projet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --surface-dark:#0A0A0F; --surface:#12121A; --surface-light:#1A1A2E;
+    --primary:#7B2FBE; --primary-light:#9B59D0; --accent:#00D4FF; --accent-dark:#00A8CC;
+    --text:#F4F5FA; --muted:#9AA0B5; --muted-dark:#6C7185; --line:rgba(255,255,255,.07);
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',sans-serif;background:var(--surface-dark);color:var(--text);
+    line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  h1,h2,h3,.font-head{font-family:'Orbitron',sans-serif;letter-spacing:.01em;line-height:1.12}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{position:relative}
+  .eyebrow{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .lead{color:var(--muted);font-size:clamp(15px,1.4vw,18px);max-width:680px}
+  .grad-text{background:linear-gradient(100deg,#fff 0%,#cdb6ff 45%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;border-radius:10px;padding:14px 24px;cursor:pointer;transition:.25s;border:1px solid transparent;white-space:nowrap}
+  .btn-primary{background:linear-gradient(100deg,var(--primary),var(--accent));color:#06070d;box-shadow:0 8px 30px -8px rgba(0,212,255,.5)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px -8px rgba(0,212,255,.65)}
+  .btn-ghost{border-color:var(--line);background:rgba(255,255,255,.02);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,.06)}
+  .btn-sm{padding:11px 18px;font-size:13px}
+  .micro{display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:600;font-size:14px;transition:.2s}
+  .micro:hover{gap:11px;color:var(--accent-dark)}
+
+  /* Header */
+  header{position:fixed;inset:0 0 auto;z-index:50;transition:.3s}
+  header.scrolled{background:rgba(10,10,15,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:var(--maxw);margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Orbitron';font-weight:800;letter-spacing:.18em;font-size:18px}
+  .logo .mark{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--accent));display:grid;place-items:center;font-size:15px;color:#06070d}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;transition:.2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .lang{font-size:12px;color:var(--muted-dark);font-weight:600;letter-spacing:.05em}
+  .lang b{color:var(--text)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+  .mobile-menu{display:none}
+
+  /* Hero */
+  .hero{padding:160px 0 90px;position:relative;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(60% 50% at 75% 15%,rgba(123,47,190,.32),transparent 70%),
+      radial-gradient(50% 45% at 12% 85%,rgba(0,212,255,.18),transparent 70%);}
+  .grid-overlay{position:absolute;inset:0;z-index:0;opacity:.4;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;-webkit-mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent);mask-image:radial-gradient(70% 60% at 50% 30%,#000,transparent)}
+  .hero .wrap{position:relative;z-index:2}
+  .hero h1{font-size:clamp(34px,5.4vw,62px);font-weight:800;max-width:14ch;margin:22px 0 20px}
+  .hero .lead{font-size:clamp(16px,1.6vw,20px);max-width:620px}
+  .proof-row{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 30px}
+  .pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:100px;padding:9px 16px;font-size:13px;color:var(--muted);font-weight:500}
+  .pill b{color:var(--text);font-family:'Orbitron';font-weight:700}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px}
+  .reassure{color:var(--muted-dark);font-size:13px;display:flex;align-items:center;gap:8px}
+
+  /* generic section spacing */
+  .sec{padding:84px 0}
+  .sec-head{max-width:760px;margin-bottom:46px}
+  .sec-head h2{font-size:clamp(26px,3.4vw,40px);font-weight:700;margin:14px 0}
+
+  /* opportunity */
+  .levers{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:8px}
+  .lever{border:1px solid var(--line);border-radius:12px;padding:18px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);transition:.25s}
+  .lever:hover{border-color:rgba(0,212,255,.4);transform:translateY(-3px)}
+  .lever .ic{font-size:20px;margin-bottom:8px;display:block}
+  .lever h4{font-family:'Inter';font-size:14px;font-weight:600}
+
+  /* audience cards */
+  .cards-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .acard{border:1px solid var(--line);border-radius:16px;padding:26px 22px;background:linear-gradient(180deg,var(--surface),rgba(18,18,26,.4));display:flex;flex-direction:column;transition:.28s;position:relative;overflow:hidden}
+  .acard::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 50% 0%,rgba(123,47,190,.16),transparent 70%);opacity:0;transition:.3s}
+  .acard:hover{border-color:rgba(0,212,255,.45);transform:translateY(-5px)}
+  .acard:hover::before{opacity:1}
+  .acard .tag{font-family:'Orbitron';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  .acard h3{font-size:19px;font-weight:700;margin:10px 0 10px;position:relative}
+  .acard p{color:var(--muted);font-size:14px;flex:0 0 auto}
+  .acard .ex{color:var(--muted-dark);font-size:12.5px;margin:14px 0 18px;border-left:2px solid var(--primary);padding-left:11px}
+  .acard .micro{margin-top:auto}
+
+  /* services grid */
+  .cards-svc{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px}
+  .scard{border:1px solid var(--line);border-radius:14px;padding:22px;background:rgba(255,255,255,.02);transition:.25s;cursor:pointer}
+  .scard:hover{border-color:rgba(0,212,255,.4);background:rgba(0,212,255,.04);transform:translateY(-3px)}
+  .scard .ic{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,rgba(123,47,190,.3),rgba(0,212,255,.25));display:grid;place-items:center;font-size:19px;margin-bottom:14px}
+  .scard h3{font-family:'Inter';font-size:15.5px;font-weight:700;margin-bottom:7px}
+  .scard p{color:var(--muted);font-size:13px}
+  .scard .ex{color:var(--muted-dark);font-size:12px;margin-top:9px}
+
+  /* stats band */
+  .band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(123,47,190,.07),transparent)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;padding:50px 0}
+  .stat .num{font-family:'Orbitron';font-weight:800;font-size:clamp(28px,3.6vw,44px);background:linear-gradient(100deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .lbl{color:var(--muted);font-size:13px;margin-top:4px}
+
+  /* portfolio */
+  .cards-proj{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .pcard{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface);transition:.28s;display:flex;flex-direction:column}
+  .pcard:hover{border-color:rgba(0,212,255,.45);transform:translateY(-5px)}
+  .pcard .thumb{aspect-ratio:16/10;background:linear-gradient(135deg,#1b1430,#0c1730);position:relative;display:grid;place-items:center;overflow:hidden}
+  .pcard .thumb span{font-family:'Orbitron';font-weight:700;color:rgba(255,255,255,.12);font-size:34px;letter-spacing:.1em}
+  .pcard .thumb .ptype{position:absolute;top:12px;left:12px;font-size:11px;font-weight:600;background:rgba(10,10,15,.7);border:1px solid var(--line);padding:5px 10px;border-radius:100px;color:var(--accent);letter-spacing:.04em}
+  .pcard .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .pcard h3{font-family:'Inter';font-size:16px;font-weight:700}
+  .pcard .obj{color:var(--muted);font-size:13px}
+  .pcard .res{margin-top:auto;font-size:13px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px;padding-top:8px}
+  .pcard .res .dot{background:#5ce6a0;box-shadow:0 0 10px #5ce6a0}
+
+  /* process timeline */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+  .step{border:1px solid var(--line);border-radius:14px;padding:22px;background:rgba(255,255,255,.02);position:relative}
+  .step .n{font-family:'Orbitron';font-weight:800;font-size:14px;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--accent));color:#06070d;margin-bottom:13px}
+  .step h3{font-family:'Inter';font-size:15px;font-weight:700;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:13px}
+
+  /* why two-col */
+  .why-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  .why-list{display:flex;flex-direction:column;gap:14px}
+  .why-item{display:flex;gap:13px;align-items:flex-start}
+  .why-item .chk{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:rgba(0,212,255,.12);border:1px solid rgba(0,212,255,.3);display:grid;place-items:center;color:var(--accent);font-size:13px;font-weight:700}
+  .why-item p{font-size:14.5px}
+  .why-item b{color:var(--text)}
+  .why-visual{border:1px solid var(--line);border-radius:18px;padding:34px;background:radial-gradient(70% 60% at 70% 10%,rgba(123,47,190,.2),transparent),var(--surface);text-align:center}
+  .why-visual .big{font-family:'Orbitron';font-weight:800;font-size:clamp(40px,6vw,64px);background:linear-gradient(100deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  /* sector ideas */
+  .sectors{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:14px}
+  .sector{border:1px solid var(--line);border-radius:14px;padding:20px;background:rgba(255,255,255,.02);transition:.25s}
+  .sector:hover{border-color:rgba(123,47,190,.5);background:rgba(123,47,190,.06)}
+  .sector h3{font-family:'Inter';font-size:15px;font-weight:700;display:flex;align-items:center;gap:9px;margin-bottom:7px}
+  .sector p{color:var(--muted);font-size:13px}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  .qa{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:rgba(255,255,255,.02);overflow:hidden}
+  .qa summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .qa summary::-webkit-details-marker{display:none}
+  .qa summary .plus{color:var(--accent);font-size:20px;transition:.25s;flex:0 0 auto}
+  .qa[open] summary .plus{transform:rotate(45deg)}
+  .qa .ans{padding:0 22px 20px;color:var(--muted);font-size:14px}
+
+  /* final CTA + form */
+  .final{border-top:1px solid var(--line);background:radial-gradient(60% 80% at 50% 0%,rgba(123,47,190,.16),transparent 70%)}
+  .final-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .final h2{font-size:clamp(26px,3.4vw,38px);font-weight:700;margin-bottom:16px}
+  .alt-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+  form{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--surface)}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:6px;letter-spacing:.02em}
+  .field input,.field select,.field textarea{width:100%;background:var(--surface-dark);border:1px solid var(--line);border-radius:10px;padding:12px 14px;color:var(--text);font-family:inherit;font-size:14px;transition:.2s}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,212,255,.12)}
+  .field textarea{resize:vertical;min-height:90px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn-primary{width:100%;justify-content:center;margin-top:6px}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:54px 0 30px;background:var(--surface-dark)}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+  .foot-grid h5{font-family:'Orbitron';font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-dark);margin-bottom:14px}
+  .foot-grid a{display:block;color:var(--muted);font-size:13.5px;margin-bottom:9px;transition:.2s}
+  .foot-grid a:hover{color:var(--accent)}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted-dark);font-size:12.5px;flex-wrap:wrap}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* responsive */
+  @media(max-width:980px){
+    .cards-4{grid-template-columns:repeat(2,1fr)}
+    .cards-proj{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .why-grid{grid-template-columns:1fr;gap:28px}
+    .final-grid{grid-template-columns:1fr;gap:30px}
+    .stats{grid-template-columns:repeat(2,1fr);gap:30px 16px}
+  }
+  @media(max-width:680px){
+    .nav-links,.nav-right .btn,.nav-right .lang{display:none}
+    .burger{display:flex}
+    .mobile-menu{display:block;max-height:0;overflow:hidden;transition:.35s;background:rgba(10,10,15,.97);border-bottom:1px solid var(--line)}
+    .mobile-menu.open{max-height:420px}
+    .mobile-menu .inner{padding:18px 24px;display:flex;flex-direction:column;gap:16px}
+    .mobile-menu a{color:var(--muted);font-size:15px;text-transform:uppercase;letter-spacing:.05em;font-size:13px}
+    .hero{padding:130px 0 60px}
+    .cards-4,.cards-proj,.steps,.sectors,.cards-svc{grid-template-columns:1fr}
+    .two{grid-template-columns:1fr}
+    .sec{padding:60px 0}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  .pcard .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .pcard:hover .thumb img{transform:scale(1.05)}
+  .pcard .thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(18,18,26,.9),transparent 62%)}
+  .pcard .thumb .ptype{z-index:2}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hd">
+  <div class="nav">
+    <a href="#top" class="logo"><span class="mark">K</span>KAIOCORP</a>
+    <nav class="nav-links">
+      <a href="#pour-qui">Activations</a>
+      <a href="#pour-qui">Agences</a>
+      <a href="#pour-qui">Créateurs &amp; Esport</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#services">Services</a>
+    </nav>
+    <div class="nav-right">
+      <span class="lang"><b>FR</b> / EN</span>
+      <a href="#contact" class="btn btn-primary btn-sm">Discuter de votre projet</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile">
+    <div class="inner">
+      <a href="#pour-qui">Activations</a>
+      <a href="#pour-qui">Agences</a>
+      <a href="#pour-qui">Créateurs &amp; Esport</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="btn btn-primary" style="justify-content:center">Discuter de votre projet</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="grid-overlay"></div>
+  <div class="wrap">
+    <span class="eyebrow">UEFN · Verse · Unreal Engine 5 — Studio créatif Fortnite</span>
+    <h1 class="grad-text">Créez votre expérience Fortnite sur-mesure pour engager votre audience.</h1>
+    <p class="lead">KaioCorp conçoit des maps, mini-jeux et activations de marque dans Fortnite avec UEFN, Verse et Unreal Engine 5 — de l'idée au prototype, jusqu'à la publication et la maintenance.</p>
+    <div class="proof-row">
+      <span class="pill"><span class="dot"></span><b>4,7&nbsp;Md+</b> minutes jouées</span>
+      <span class="pill"><span class="dot"></span>Martoz · GamersOrigin · WZF · Greencat · Teekzie</span>
+      <span class="pill"><span class="dot"></span>Activations : Recyclermonvehicule.fr · Krys · Alpine</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Discuter de votre projet →</a>
+      <a href="#realisations" class="btn btn-ghost">Voir les réalisations</a>
+    </div>
+    <p class="reassure"><span class="dot" style="background:var(--primary-light);box-shadow:0 0 8px var(--primary-light)"></span>De l'idée au prototype, jusqu'à la publication et la maintenance.</p>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section class="sec" id="opportunite">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Le contexte</span>
+      <h2>Les audiences jeunes ne veulent plus seulement regarder une publicité. Elles veulent interagir.</h2>
+      <p class="lead">Fortnite est devenu bien plus qu'un jeu : c'est un espace d'attention, de communauté et d'expérience. Pour une marque, une agence ou un créateur, une expérience bien conçue devient un véritable actif d'engagement — pas une campagne qui s'éteint en 48&nbsp;heures.</p>
+    </div>
+    <div class="levers reveal">
+      <div class="lever"><span class="ic">⏱️</span><h4>Temps passé</h4></div>
+      <div class="lever"><span class="ic">🎮</span><h4>Interaction</h4></div>
+      <div class="lever"><span class="ic">🔁</span><h4>Partage communautaire</h4></div>
+      <div class="lever"><span class="ic">🏆</span><h4>Challenge</h4></div>
+      <div class="lever"><span class="ic">✨</span><h4>Expérience de marque</h4></div>
+      <div class="lever"><span class="ic">📈</span><h4>Visibilité organique</h4></div>
+      <div class="lever"><span class="ic">🤝</span><h4>Activation créateurs</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section class="sec" id="pour-qui">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Pour qui ?</span>
+      <h2>Une seule expertise, quatre façons de l'activer.</h2>
+    </div>
+    <div class="cards-4">
+      <div class="acard reveal">
+        <span class="tag">Marques</span>
+        <h3>Pour les marques</h3>
+        <p>Lancez une activation Fortnite autour de votre univers, d'un produit, d'un événement ou d'une campagne Gen&nbsp;Z.</p>
+        <p class="ex">Mini-jeu de marque · course · tycoon · challenge communautaire · expérience événementielle.</p>
+        <a href="#contact" class="micro">Imaginer une activation →</a>
+      </div>
+      <div class="acard reveal">
+        <span class="tag">Agences</span>
+        <h3>Pour les agences</h3>
+        <p>Ajoutez Fortnite à vos recommandations clients sans recruter une équipe UEFN en interne.</p>
+        <p class="ex">Partenariat technique · production en marque blanche · expériences pour campagnes gaming.</p>
+        <a href="#contact" class="micro">Trouver un partenaire →</a>
+      </div>
+      <div class="acard reveal">
+        <span class="tag">Créateurs</span>
+        <h3>Pour les créateurs</h3>
+        <p>Créez une map à votre image pour engager votre communauté, prolonger votre contenu et bâtir un actif durable.</p>
+        <p class="ex">1v1 · boxfight · zone wars · ranked maps · realistic fights.</p>
+        <a href="#contact" class="micro">Créer ma map →</a>
+      </div>
+      <div class="acard reveal">
+        <span class="tag">Esport</span>
+        <h3>Pour l'esport</h3>
+        <p>Animez votre communauté avec une expérience Fortnite propriétaire : tournois, challenges, classements, sponsors.</p>
+        <p class="ex">Ligues · événements communautaires · support sponsor · actif propriétaire.</p>
+        <a href="#contact" class="micro">Créer une expérience esport →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Services</span>
+      <h2>Des expériences Fortnite pensées pour l'engagement.</h2>
+      <p class="lead">Nous utilisons UEFN et Verse pour créer des mécaniques personnalisées : scoring, progression, classement, UI et gameplay sur-mesure.</p>
+    </div>
+    <div class="cards-svc">
+      <div class="scard reveal"><div class="ic">🚀</div><h3>Activations de marque</h3><p>Transformez un brief marketing en expérience jouable.</p><p class="ex">Ex. drop produit, challenge de marque.</p></div>
+      <div class="scard reveal"><div class="ic">⚔️</div><h3>Maps compétitives</h3><p>Une rétention forte sur des formats que les joueurs rejouent.</p><p class="ex">Ex. 1v1, boxfight, zone wars.</p></div>
+      <div class="scard reveal"><div class="ic">🎯</div><h3>Mini-jeux &amp; challenges</h3><p>Un format simple, viral et partageable.</p><p class="ex">Ex. challenge d'adresse, course.</p></div>
+      <div class="scard reveal"><div class="ic">🏗️</div><h3>Tycoons / simulateurs</h3><p>Des sessions longues et une progression addictive.</p><p class="ex">Ex. Carlife Tycoon (~80 min/session).</p></div>
+      <div class="scard reveal"><div class="ic">🎪</div><h3>Expériences événementielles</h3><p>Un temps fort autour d'un lancement.</p><p class="ex">Ex. scène virtuelle, quête de festival.</p></div>
+      <div class="scard reveal"><div class="ic">📊</div><h3>Ranked / scoring / leaderboards</h3><p>De la compétition qui fait revenir.</p><p class="ex">Ex. classement saisonnier, ligues.</p></div>
+      <div class="scard reveal"><div class="ic">🖥️</div><h3>UI personnalisée</h3><p>Votre marque présente dans chaque écran.</p><p class="ex">Ex. HUD, menus, branding in-game.</p></div>
+      <div class="scard reveal"><div class="ic">⚙️</div><h3>Verse scripting</h3><p>Des mécaniques impossibles en Creative standard.</p><p class="ex">Ex. logique de jeu, devices custom.</p></div>
+      <div class="scard reveal"><div class="ic">⚡</div><h3>Optimisation / performance</h3><p>Une expérience fluide = des joueurs qui restent.</p><p class="ex">Ex. budget mémoire, draw calls.</p></div>
+      <div class="scard reveal"><div class="ic">🔧</div><h3>Publication &amp; maintenance</h3><p>Un actif vivant, pas un one-shot.</p><p class="ex">Ex. équilibrage, nouvelles versions.</p></div>
+    </div>
+    <div style="margin-top:30px" class="reveal"><a href="#contact" class="micro">Découvrir les formats possibles →</a></div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="band">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-count="4.7" data-suffix=" Md+">0</div><div class="lbl">Minutes jouées</div></div>
+      <div class="stat reveal"><div class="num" data-count="15" data-suffix="+">0</div><div class="lbl">Expériences livrées</div></div>
+      <div class="stat reveal"><div class="num" data-count="5" data-suffix="">0</div><div class="lbl">Créateurs &amp; organisations</div></div>
+      <div class="stat reveal"><div class="num" data-count="3" data-suffix=" marques">0</div><div class="lbl">Activations réalisées</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section class="sec" id="realisations">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Réalisations</span>
+      <h2>Des expériences jouées pendant des milliards de minutes.</h2>
+      <p class="lead">Des maps qui retiennent, des marques qui activent, des communautés qui reviennent.</p>
+    </div>
+    <div class="cards-proj">
+      <article class="pcard reveal"><div class="thumb"><img src="public/images/maps/clutch-realistics-1v2.jpg" alt="1V2 Clutch Realistics" loading="lazy"><span class="ptype">Compétitif · Martoz</span></div>
+        <div class="body"><h3>1V2 Clutch Realistics</h3><p class="obj">Engager une communauté autour d'un format clutch nerveux.</p><p class="res"><span class="dot"></span>1.6B min jouées · 1.2M favoris · v255</p></div></article>
+      <article class="pcard reveal"><div class="thumb"><img src="public/images/maps/martoz-1v1-build-fights.jpg" alt="Martoz 1v1 Build Fights" loading="lazy"><span class="ptype">Compétitif · Martoz</span></div>
+        <div class="body"><h3>Martoz 1v1 Build Fights</h3><p class="obj">Un format d'entraînement 1v1 que les joueurs rejouent chaque jour.</p><p class="res"><span class="dot"></span>1.5B min jouées · 794K favoris · v131</p></div></article>
+      <article class="pcard reveal"><div class="thumb"><img src="public/images/maps/martoz-turtle-fights-ffa.jpg" alt="Martoz Turtle Fights FFA" loading="lazy"><span class="ptype">Compétitif · Martoz</span></div>
+        <div class="body"><h3>Martoz Turtle Fights FFA</h3><p class="obj">Un FFA fun et addictif, builds qui se réinitialisent en continu.</p><p class="res"><span class="dot"></span>1.3B min jouées · 1.1M favoris · v330</p></div></article>
+      <article class="pcard reveal"><div class="thumb"><img src="public/images/maps/carlife-tycoon.jpg" alt="Carlife Tycoon" loading="lazy"><span class="ptype">Activation · Recyclermonvehicule.fr</span></div>
+        <div class="body"><h3>Carlife Tycoon</h3><p class="obj">Sensibiliser au recyclage automobile via un tycoon jouable, avec GamersOrigin.</p><p class="res"><span class="dot"></span>1.6M min jouées · 6.7K favoris · v8</p></div></article>
+      <article class="pcard reveal"><div class="thumb"><img src="public/images/maps/senses-rush.jpg" alt="Senses Rush" loading="lazy"><span class="ptype">Activation · Krys</span></div>
+        <div class="body"><h3>Senses Rush</h3><p class="obj">Faire vivre l'univers de la marque dans une expérience immersive, avec GamersOrigin.</p><p class="res"><span class="dot"></span>553.9K min jouées · 6.6K favoris · v8</p></div></article>
+      <article class="pcard reveal"><div class="thumb"><img src="public/images/maps/rift-racers-alpine.jpg" alt="Rift Racers Alpine" loading="lazy"><span class="ptype">Activation · Alpine</span></div>
+        <div class="body"><h3>Rift Racers — Alpine</h3><p class="obj">Transformer l'expérience automobile Alpine en circuit jouable, avec GamersOrigin.</p><p class="res"><span class="dot"></span>210.7K min jouées · 2.1K favoris · v12</p></div></article>
+    </div>
+    <div style="margin-top:30px" class="reveal"><a href="#realisations" class="micro">Voir toutes les réalisations →</a></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Process</span>
+      <h2>Un process simple, de l'idée à la publication.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><h3>Brief stratégique</h3><p>On clarifie la cible, l'objectif, l'univers, les mécaniques et les contraintes.</p></div>
+      <div class="step reveal"><div class="n">2</div><h3>Concept &amp; game design</h3><p>On transforme l'idée en expérience jouable avec des mécaniques engageantes.</p></div>
+      <div class="step reveal"><div class="n">3</div><h3>Prototype</h3><p>Une première version jouable pour valider rapidement la direction.</p></div>
+      <div class="step reveal"><div class="n">4</div><h3>Développement UEFN / Verse</h3><p>Gameplay, UI, scoring, optimisation, assets et logique de jeu.</p></div>
+      <div class="step reveal"><div class="n">5</div><h3>Publication &amp; lancement</h3><p>Soumission, support, itérations et stratégie de lancement.</p></div>
+      <div class="step reveal"><div class="n">6</div><h3>Maintenance &amp; optimisation</h3><p>Corrections, nouvelles versions, équilibrage, amélioration continue.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="pourquoi">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="reveal">
+        <span class="eyebrow">Pourquoi KaioCorp ?</span>
+        <h2 style="font-size:clamp(26px,3.4vw,40px);font-weight:700;margin:14px 0 26px">Une expertise Fortnite prouvée par l'usage réel.</h2>
+        <div class="why-list">
+          <div class="why-item"><span class="chk">✓</span><p>Des <b>milliards de minutes</b> jouées sur nos expériences.</p></div>
+          <div class="why-item"><span class="chk">✓</span><p>Une <b>expérience terrain</b> sur ce qui retient réellement les joueurs.</p></div>
+          <div class="why-item"><span class="chk">✓</span><p>Maîtrise technique <b>UEFN / Verse / Unreal Engine 5</b>.</p></div>
+          <div class="why-item"><span class="chk">✓</span><p>Capacité à travailler avec <b>créateurs, agences et marques</b>.</p></div>
+          <div class="why-item"><span class="chk">✓</span><p>Une approche à la fois <b>game design, technique et marketing</b>.</p></div>
+          <div class="why-item"><span class="chk">✓</span><p>Des expériences optimisées pour <b>l'engagement</b>, pas seulement l'esthétique.</p></div>
+        </div>
+      </div>
+      <div class="why-visual reveal">
+        <div class="big">4,7&nbsp;Md+</div>
+        <p style="color:var(--muted);margin-top:6px">minutes jouées sur les expériences développées</p>
+        <div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+          <span class="pill">Martoz</span><span class="pill">GamersOrigin</span><span class="pill">WZF</span><span class="pill">Greencat</span><span class="pill">Teekzie</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTOR IDEAS -->
+<section class="sec" id="idees">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Idées d'activations</span>
+      <h2>Quel type d'expérience Fortnite pourriez-vous créer ?</h2>
+    </div>
+    <div class="sectors">
+      <div class="sector reveal"><h3>🏅 Sport</h3><p>Challenge d'adresse, course, entraînement, compétition communautaire.</p></div>
+      <div class="sector reveal"><h3>🏎️ Automobile</h3><p>Circuit, course, exploration de véhicule, challenge chronométré.</p></div>
+      <div class="sector reveal"><h3>👟 Mode / sneakers</h3><p>Drop virtuel, parcours immersif, mini-jeu autour d'une collection.</p></div>
+      <div class="sector reveal"><h3>🎵 Musique / festival</h3><p>Expérience événementielle, scène virtuelle, quête autour d'un artiste.</p></div>
+      <div class="sector reveal"><h3>🎓 Éducation / jeunesse</h3><p>Map pédagogique, expérience ludique, challenge collectif.</p></div>
+      <div class="sector reveal"><h3>🎬 Entertainment</h3><p>Univers immersif, teasing de série/film, mission narrative.</p></div>
+      <div class="sector reveal"><h3>🧩 Agences</h3><p>Activation clé en main à proposer à un client.</p></div>
+      <div class="sector reveal" style="display:flex;flex-direction:column;justify-content:center;border-color:rgba(0,212,255,.35);background:rgba(0,212,255,.05)"><h3>💡 Votre secteur ?</h3><a href="#contact" class="micro">Demander une idée d'activation →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin:0 auto 40px;text-align:center">
+      <span class="eyebrow">FAQ</span>
+      <h2>Les questions que se posent marques, agences &amp; créateurs.</h2>
+    </div>
+    <div class="faq reveal">
+      <details class="qa"><summary>Pourquoi créer une expérience Fortnite pour une marque ?<span class="plus">+</span></summary><div class="ans">C'est le seul média où votre audience <em>joue</em> avec vous au lieu de simplement vous regarder : temps d'attention long, interaction réelle, partage communautaire, et un actif qui dure au-delà d'une campagne.</div></details>
+      <details class="qa"><summary>Combien coûte une map Fortnite sur-mesure ?<span class="plus">+</span></summary><div class="ans">Cela dépend du périmètre (format, mécaniques, durée de vie). Les formats simples démarrent dans les bas milliers ; une activation de marque avec Verse custom est plus élevée. On vous donne un chiffrage clair après le brief.</div></details>
+      <details class="qa"><summary>Combien de temps faut-il pour créer une expérience ?<span class="plus">+</span></summary><div class="ans">D'un prototype jouable en 1 à 2 semaines, à 6–12 semaines pour une expérience complète, selon la complexité des mécaniques.</div></details>
+      <details class="qa"><summary>Peut-on créer une activation ponctuelle ?<span class="plus">+</span></summary><div class="ans">Oui : un temps fort événementiel comme un actif durable. On adapte le format à votre objectif et votre calendrier.</div></details>
+      <details class="qa"><summary>Peut-on maintenir une map dans le temps ?<span class="plus">+</span></summary><div class="ans">Oui, c'est notre force : certaines de nos maps dépassent la version 200, mises à jour au fil du meta Fortnite.</div></details>
+      <details class="qa"><summary>Travaillez-vous avec des agences ?<span class="plus">+</span></summary><div class="ans">Oui, en partenariat technique ou en marque blanche. Vous gardez la relation client, nous produisons l'expérience.</div></details>
+      <details class="qa"><summary>Peut-on créer une expérience en marque blanche ?<span class="plus">+</span></summary><div class="ans">Oui, sans que notre nom apparaisse côté client final.</div></details>
+      <details class="qa"><summary>Quelle différence entre une map et une activation de marque ?<span class="plus">+</span></summary><div class="ans">Une map est un format de jeu ; une activation est une map pensée autour de votre univers, vos objectifs marketing et votre mesure de performance.</div></details>
+      <details class="qa"><summary>Est-ce adapté à une marque qui n'a jamais fait de gaming ?<span class="plus">+</span></summary><div class="ans">Oui : on traduit votre brief marketing en expérience jouable, sans que vous ayez à maîtriser l'aspect technique.</div></details>
+      <details class="qa"><summary>Comment mesure-t-on les résultats ?<span class="plus">+</span></summary><div class="ans">Minutes jouées, rétention (D1/D7), favoris, pics de joueurs simultanés, temps de session — des métriques concrètes d'engagement.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA + FORM -->
+<section class="sec final" id="contact">
+  <div class="wrap">
+    <div class="final-grid">
+      <div class="reveal">
+        <span class="eyebrow">Discutons</span>
+        <h2>Vous préparez une campagne gaming, une activation Gen&nbsp;Z ou une expérience Fortnite ?</h2>
+        <p class="lead">Parlons de votre idée. Nous transformons un brief marketing, une communauté ou un univers de marque en expérience Fortnite jouable.</p>
+        <div class="alt-cta">
+          <a href="mailto:contact@kaiocorp.com?subject=Brief%20projet%20Fortnite" class="btn btn-ghost">✉️ Envoyer un brief</a>
+          <a href="#contact" class="btn btn-ghost">📅 Réserver un appel de 15 min</a>
+        </div>
+        <p class="reassure" style="margin-top:22px"><span class="dot"></span>Réponse sous 24&nbsp;h · contact@kaiocorp.com</p>
+      </div>
+      <form id="briefForm" onsubmit="return sendBrief(event)">
+        <div class="two">
+          <div class="field"><label>Nom</label><input name="nom" required placeholder="Votre nom"></div>
+          <div class="field"><label>Email</label><input name="email" type="email" required placeholder="vous@entreprise.com"></div>
+        </div>
+        <div class="field"><label>Entreprise</label><input name="entreprise" placeholder="Marque, agence, structure…"></div>
+        <div class="two">
+          <div class="field"><label>Type de projet</label>
+            <select name="type">
+              <option>Activation de marque</option>
+              <option>Projet agence</option>
+              <option>Map créateur</option>
+              <option>Projet esport</option>
+              <option>Maintenance / optimisation</option>
+              <option>Je ne sais pas encore</option>
+            </select>
+          </div>
+          <div class="field"><label>Budget estimé</label>
+            <select name="budget">
+              <option>À définir</option>
+              <option>&lt; 5 000 €</option>
+              <option>5 000 – 15 000 €</option>
+              <option>15 000 – 40 000 €</option>
+              <option>&gt; 40 000 €</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="Décrivez votre idée, votre audience, votre objectif…"></textarea></div>
+        <button type="submit" class="btn btn-primary">Discuter de votre projet →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:14px"><span class="mark">K</span>KAIOCORP</a>
+        <p style="color:var(--muted);font-size:13.5px;max-width:300px">Studio créatif d'expériences Fortnite sur-mesure. UEFN · Verse · Unreal Engine 5.</p>
+        <p style="color:var(--muted-dark);font-size:13px;margin-top:14px">4,7&nbsp;Md+ minutes jouées</p>
+      </div>
+      <div>
+        <h5>Solutions</h5>
+        <a href="#pour-qui">Activations de marque</a>
+        <a href="#pour-qui">Agences</a>
+        <a href="#pour-qui">Créateurs</a>
+        <a href="#pour-qui">Esport</a>
+      </div>
+      <div>
+        <h5>Studio</h5>
+        <a href="#realisations">Réalisations</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="mailto:contact@kaiocorp.com">contact@kaiocorp.com</a>
+        <a href="#contact">Discuter de votre projet</a>
+        <a href="#contact">Réserver un appel</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 KaioCorp — Kaio Corporation. Tous droits réservés.</span>
+      <span>Non affilié à Epic Games. Fortnite est une marque d'Epic Games, Inc.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // header scroll
+  const hd=document.getElementById('hd');
+  addEventListener('scroll',()=>hd.classList.toggle('scrolled',scrollY>40),{passive:true});
+  // mobile menu
+  const burger=document.getElementById('burger'),mobile=document.getElementById('mobile');
+  burger.addEventListener('click',()=>mobile.classList.toggle('open'));
+  mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobile.classList.remove('open')));
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // count up
+  const cio=new IntersectionObserver((es)=>es.forEach(e=>{
+    if(!e.isIntersecting)return; cio.unobserve(e.target);
+    const el=e.target,target=parseFloat(el.dataset.count),suf=el.dataset.suffix||'',dec=(target%1!==0)?1:0;
+    let cur=0,steps=45,inc=target/steps;
+    const t=setInterval(()=>{cur+=inc;if(cur>=target){cur=target;clearInterval(t)}el.textContent=cur.toFixed(dec).replace('.',',')+suf;},22);
+  }),{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+  // form -> mailto
+  function sendBrief(ev){
+    ev.preventDefault();
+    const f=ev.target,g=n=>f.elements[n].value;
+    const body=`Nom: ${g('nom')}%0D%0AEmail: ${g('email')}%0D%0AEntreprise: ${g('entreprise')}%0D%0AType de projet: ${g('type')}%0D%0ABudget: ${g('budget')}%0D%0A%0D%0A${encodeURIComponent(g('message'))}`;
+    window.location.href=`mailto:contact@kaiocorp.com?subject=${encodeURIComponent('Brief projet Fortnite — '+g('entreprise'))}&body=${body}`;
+    return false;
+  }
+</script>
+</body>
+</html>

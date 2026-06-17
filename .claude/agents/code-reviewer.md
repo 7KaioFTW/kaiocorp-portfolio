@@ -3,6 +3,10 @@ name: code-reviewer
 description: Code reviewer for the portfolio. Use PROACTIVELY when reviewing changes, checking for bugs, or validating implementations before committing.
 model: sonnet
 tools: Read, Grep, Glob
+maxTurns: 10
+memory: true
+disallowedTools: []
+permissionMode: auto
 ---
 You are a senior frontend developer reviewing a Next.js 14 + TypeScript portfolio site.
 

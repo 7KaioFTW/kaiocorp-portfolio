@@ -52,7 +52,7 @@ Epic Games has paid out over **$722 million** to Fortnite island creators throug
 - Esports organizations commission custom competitive maps
 - Content creators partner with developers for exclusive maps
 
-For context, our maps at [Kaio Corporation](/about) have accumulated over **4.8 billion minutes played** , working with creators like Martoz, GamersOrigin, and WZF.
+For context, our maps at [Kaio Corporation](/about) have accumulated over **4.7 billion minutes played** , working with creators like Martoz, GamersOrigin, and WZF.
 
 ## Skills Required
 
@@ -99,7 +99,7 @@ The exact payout formula isn't publicly disclosed, but based on public data and 
 
 Not all minutes are created equal. Here's what actually matters:
 
-**Minutes Played** — The primary metric. This is total cumulative playtime across all players. Our combined portfolio has over [4.8 billion minutes](/maps), placing us among the top engagement generators on the platform.
+**Minutes Played** — The primary metric. This is total cumulative playtime across all players. Our combined portfolio has over [4.7 billion minutes](/maps), placing us among the top engagement generators on the platform.
 
 **Favorites** — Islands with more favorites get better placement in Discover. Our maps have over **3.2 million favorites** combined, which drives organic discovery.
 
@@ -331,7 +331,7 @@ This guide covers the absolute basics. To go deeper:
 
 Building custom Verse devices is what separates professional UEFN developers from hobbyists. If you need complex custom mechanics for your map, [our team specializes in Verse scripting](/services) — from custom scoring systems to full game mode frameworks.
 
-Check out our [portfolio](/maps) to see Verse in action with over 4.8 billion minutes played.`,
+Check out our [portfolio](/maps) to see Verse in action with over 4.7 billion minutes played.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",

@@ -52,7 +52,7 @@ Epic Games heeft meer dan **$722 miljoen** uitbetaald aan Fortnite eilandmakers 
 - Esports-organisaties bestellen aangepaste competitieve maps
 - Content creators werken samen met ontwikkelaars voor exclusieve maps
 
-Ter context: onze maps bij [Kaio Corporation](/about) hebben samen meer dan **4,8 miljard gespeelde minuten** verzameld over 10 gepubliceerde eilanden, in samenwerking met makers als Martoz, GamersOrigin en WZF.
+Ter context: onze maps bij [Kaio Corporation](/about) hebben samen meer dan **4,7 miljard gespeelde minuten** verzameld over 15 gepubliceerde eilanden, in samenwerking met makers als Martoz, GamersOrigin en WZF.
 
 ## Vereiste vaardigheden
 
@@ -99,7 +99,7 @@ De exacte uitbetalingsformule is niet openbaar, maar op basis van openbare data 
 
 Niet alle minuten zijn gelijk. Dit is wat werkelijk telt:
 
-**Gespeelde minuten** — De primaire metriek. Dit is de totale cumulatieve speeltijd over alle spelers. Ons gecombineerde portfolio heeft meer dan [4,8 miljard minuten](/maps), waarmee we tot de top van betrokkenheidsgeneratoren op het platform behoren.
+**Gespeelde minuten** — De primaire metriek. Dit is de totale cumulatieve speeltijd over alle spelers. Ons gecombineerde portfolio heeft meer dan [4,7 miljard minuten](/maps), waarmee we tot de top van betrokkenheidsgeneratoren op het platform behoren.
 
 **Favorieten** — Eilanden met meer favorieten krijgen een betere plaatsing in Discover. Onze maps hebben samen meer dan **3,2 miljoen favorieten**, wat organische vindbaarheid stimuleert.
 
@@ -331,7 +331,7 @@ Deze gids behandelt de absolute basis. Om dieper te gaan:
 
 Het bouwen van aangepaste Verse devices is wat professionele UEFN developers onderscheidt van hobbyisten. Als je complexe aangepaste mechanismen nodig hebt voor je map, [ons team is gespecialiseerd in Verse scripting](/services) — van aangepaste scoresystemen tot complete game mode frameworks.
 
-Bekijk ons [portfolio](/maps) om Verse in actie te zien in 10 gepubliceerde maps met meer dan 4,8 miljard gespeelde minuten.`,
+Bekijk ons [portfolio](/maps) om Verse in actie te zien in 15 gepubliceerde maps met meer dan 4,7 miljard gespeelde minuten.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",

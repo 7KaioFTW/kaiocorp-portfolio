@@ -52,7 +52,7 @@ Epic Games a platit peste **$722 milioane** creatorilor de insule Fortnite prin 
 - Organizatiile esports comanda harti competitive personalizate
 - Content creatorii colaboreaza cu dezvoltatorii pentru harti exclusive
 
-Pentru context, hartile noastre de la [Kaio Corporation](/about) au acumulat peste **4,8 miliarde de minute jucate** pe 10 insule publicate, lucrand cu creatori precum Martoz, GamersOrigin si WZF.
+Pentru context, hartile noastre de la [Kaio Corporation](/about) au acumulat peste **4,7 miliarde de minute jucate** pe 15 insule publicate, lucrand cu creatori precum Martoz, GamersOrigin si WZF.
 
 ## Competente necesare
 
@@ -99,7 +99,7 @@ Formula exacta de plata nu este dezvaluita public, dar pe baza datelor publice s
 
 Nu toate minutele sunt egale. Iata ce conteaza cu adevarat:
 
-**Minute jucate** — Metrica principala. Aceasta este timpul total cumulativ de joc pe toti jucatorii. Portofoliul nostru combinat are peste [4,8 miliarde de minute](/maps), plasandu-ne printre cei mai importanti generatori de engagement de pe platforma.
+**Minute jucate** — Metrica principala. Aceasta este timpul total cumulativ de joc pe toti jucatorii. Portofoliul nostru combinat are peste [4,7 miliarde de minute](/maps), plasandu-ne printre cei mai importanti generatori de engagement de pe platforma.
 
 **Favorite** — Insulele cu mai multe favorite obtin o plasare mai buna in Discover. Hartile noastre au peste **3,2 milioane de favorite** combinate, ceea ce stimuleaza descoperirea organica.
 
@@ -109,7 +109,7 @@ Nu toate minutele sunt egale. Iata ce conteaza cu adevarat:
 
 ## Strategii de optimizare a veniturilor
 
-Pe baza experientei noastre in livrarea a [10 harti](/maps) in mai multe genuri, iata ce functioneaza:
+Pe baza experientei noastre in livrarea a [15 harti](/maps) in mai multe genuri, iata ce functioneaza:
 
 **Actualizarile regulate mentin jucatorii implicati.** Harta noastra emblematica este la versiunea 241. Fiecare actualizare reimprospateza continutul, repara buguri si le da jucatorilor un motiv sa revina. Hartile stagnante dispar rapid.
 
@@ -331,7 +331,7 @@ Acest ghid acopera bazele absolute. Pentru a merge mai adanc:
 
 Construirea de Verse devices personalizate este ceea ce separa dezvoltatorii UEFN profesionisti de pasionati. Daca ai nevoie de mecanici personalizate complexe pentru harta ta, [echipa noastra este specializata in Verse scripting](/services) — de la sisteme de scor personalizate la framework-uri complete de moduri de joc.
 
-Verifica [portofoliul nostru](/maps) pentru a vedea Verse in actiune pe 10 harti publicate cu peste 4,8 miliarde de minute jucate.`,
+Verifica [portofoliul nostru](/maps) pentru a vedea Verse in actiune pe 15 harti publicate cu peste 4,7 miliarde de minute jucate.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",

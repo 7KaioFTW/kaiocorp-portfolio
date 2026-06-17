@@ -28,7 +28,7 @@ export function StatsSection() {
   }, []);
 
   const COUNTERS = [
-    { end: parseStatNumber("4.9B"), suffix: "+", label: t("minutesPlayed"), ctx: t("ctxMinutes") },
+    { end: parseStatNumber("4.5B"), suffix: "+", label: t("minutesPlayed"), ctx: t("ctxMinutes") },
     { end: parseStatNumber("3.3M"), suffix: "+", label: t("favorites"), ctx: t("ctxFavorites") },
     { end: creator.aggregateStats.totalCollaborators, suffix: "", label: t("collaborators"), ctx: t("ctxCollaborators") },
   ];

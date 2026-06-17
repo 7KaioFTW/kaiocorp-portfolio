@@ -18,3 +18,9 @@ next-env.d.ts
 # Claude Code local overrides (personal, not committed)
 CLAUDE.local.md
 .claude/settings.local.json
+
+build.log
+build2.log
+
+# Lighthouse raw audit JSON (reproducible artifacts; keep only the HTML report)
+reports/lighthouse/*.json

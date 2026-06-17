@@ -3,6 +3,10 @@ name: perf-auditor
 description: Performance auditor. Use when optimizing load times, bundle size, or checking Lighthouse scores.
 model: haiku
 tools: Read, Grep, Glob, Bash
+maxTurns: 8
+memory: true
+disallowedTools: [Write, Edit]
+permissionMode: ask
 ---
 You are a web performance specialist auditing a Next.js portfolio site.
 

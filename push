@@ -1,0 +1,14 @@
+#!/bin/bash
+# Portfolio deployment script
+# Usage: ./push
+# Pushes to origin/master after passing build check
+
+set -e
+
+echo "Building portfolio..."
+npm run build
+
+echo "Deploying to Vercel/git origin..."
+git push origin master
+
+echo "Deploy complete."

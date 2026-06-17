@@ -52,7 +52,7 @@ A Epic Games já pagou mais de **722 milhões de dólares** a criadores de ilhas
 - Organizações de esports encomendam mapas competitivos personalizados
 - Criadores de conteúdo fazem parcerias com programadores para mapas exclusivos
 
-Para contextualizar, os nossos mapas na [Kaio Corporation](/about) acumularam mais de **4,8 mil milhões de minutos jogados**, trabalhando com criadores como Martoz, GamersOrigin e WZF.
+Para contextualizar, os nossos mapas na [Kaio Corporation](/about) acumularam mais de **4,7 mil milhões de minutos jogados**, trabalhando com criadores como Martoz, GamersOrigin e WZF.
 
 ## Competências Necessárias
 
@@ -99,7 +99,7 @@ A fórmula exata de pagamento não é divulgada publicamente, mas com base em da
 
 Nem todos os minutos são iguais. Eis o que realmente importa:
 
-**Minutos Jogados** — A métrica principal. É o tempo de jogo cumulativo total de todos os jogadores. O nosso portfólio combinado tem mais de [4,8 mil milhões de minutos](/maps), colocando-nos entre os maiores geradores de envolvimento na plataforma.
+**Minutos Jogados** — A métrica principal. É o tempo de jogo cumulativo total de todos os jogadores. O nosso portfólio combinado tem mais de [4,7 mil milhões de minutos](/maps), colocando-nos entre os maiores geradores de envolvimento na plataforma.
 
 **Favoritos** — Ilhas com mais favoritos obtêm melhor posicionamento no Discover. Os nossos mapas têm mais de **3,2 milhões de favoritos** combinados, o que impulsiona a descoberta orgânica.
 
@@ -331,7 +331,7 @@ Este guia cobre o básico absoluto. Para aprofundar:
 
 Construir dispositivos Verse personalizados é o que separa programadores UEFN profissionais de entusiastas. Se precisa de mecânicas personalizadas complexas para o seu mapa, [a nossa equipa é especialista em programação Verse](/services) — desde sistemas de pontuação personalizados a frameworks completos de modos de jogo.
 
-Consulte o nosso [portfólio](/maps) para ver o Verse em ação com mais de 4,8 mil milhões de minutos jogados.`,
+Consulte o nosso [portfólio](/maps) para ver o Verse em ação com mais de 4,7 mil milhões de minutos jogados.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",

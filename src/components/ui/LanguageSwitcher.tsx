@@ -35,7 +35,7 @@ export function LanguageSwitcher() {
       <button
         onClick={() => setOpen(!open)}
         className="rounded-md border border-white/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400 transition-all hover:border-white/20 hover:text-white"
-        aria-label="Change language"
+        aria-label={`Change language (${locale.toUpperCase()})`}
         aria-expanded={open}
         aria-haspopup="listbox"
       >

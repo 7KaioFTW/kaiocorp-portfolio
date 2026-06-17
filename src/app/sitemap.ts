@@ -7,7 +7,7 @@ import type { FortniteMap } from "@/types";
 const maps = mapsData as FortniteMap[];
 
 function localeUrl(path: string, locale: string) {
-  return locale === "en" ? `https://kaiocorp.com${path}` : `https://kaiocorp.com/${locale}${path}`;
+  return locale === "fr" ? `https://kaiocorp.com${path}` : `https://kaiocorp.com/${locale}${path}`;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -15,10 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages = [
     { path: "", priority: 1.0, freq: "weekly" as const },
-    { path: "/maps", priority: 0.9, freq: "weekly" as const },
+    { path: "/activations-de-marque", priority: 0.95, freq: "monthly" as const },
+    { path: "/agences", priority: 0.9, freq: "monthly" as const },
+    { path: "/createurs-esport", priority: 0.9, freq: "monthly" as const },
+    { path: "/realisations", priority: 0.9, freq: "weekly" as const },
+    { path: "/maps", priority: 0.8, freq: "weekly" as const },
     { path: "/services", priority: 0.9, freq: "monthly" as const },
     { path: "/about", priority: 0.7, freq: "monthly" as const },
-    { path: "/contact", priority: 0.6, freq: "monthly" as const },
+    { path: "/contact", priority: 0.7, freq: "monthly" as const },
     { path: "/blog", priority: 0.8, freq: "daily" as const },
   ];
 

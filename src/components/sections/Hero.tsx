@@ -1,37 +1,53 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
-import { CountUp } from "@/components/ui/CountUp";
-import creatorData from "@/data/creator.json";
-import type { Creator } from "@/types";
-
-const creator = creatorData as Creator;
+import { Cta } from "@/components/ui/Cta";
+import { PROOF } from "@/content/site";
+import { TOTAL_MINUTES_LABEL } from "@/lib/stats";
 
 export function Hero() {
-  const t = useTranslations("hero");
-
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-surface-dark">
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(123,47,190,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(123,47,190,0.04)_1px,transparent_1px)] bg-[size:80px_80px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,212,255,0.06)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#0A0A0F_100%)]" />
-      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center animate-[fadeIn_0.8s_ease-out]">
-        <p className="mb-8 text-[11px] font-medium uppercase tracking-[0.4em] text-slate-400">{t("eyebrow")}</p>
-        <div className="animate-[fadeIn_1s_ease-out_0.2s_both]">
-          <h1 className="font-heading text-[clamp(4rem,12vw,10rem)] font-bold leading-none tracking-tight text-white"><CountUp end={4.9} duration={3000} decimals={1} suffix="B" raw /></h1>
-          <p className="mt-2 text-lg text-slate-400 md:text-xl">{t("statLabel")}</p>
-        </div>
-        <p className="mt-4 text-sm text-slate-400 animate-[fadeIn_0.6s_ease-out_0.8s_both]">
-          {t.rich("humanScale", { accent: (chunks) => <span className="text-accent">{chunks}</span> })}
+    <section className="relative overflow-hidden bg-surface-dark pb-20 pt-36 md:pt-44">
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background:
+            "radial-gradient(60% 50% at 75% 15%, rgba(123,47,190,0.32), transparent 70%), radial-gradient(50% 45% at 12% 85%, rgba(0,212,255,0.18), transparent 70%)",
+        }}
+      />
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:46px_46px] [mask-image:radial-gradient(70%_60%_at_50%_30%,#000,transparent)]" />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
+        <p className="font-heading text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+          UEFN · Verse · Unreal Engine 5 — Studio créatif Fortnite
         </p>
-        <div className="mt-14 flex items-center justify-center gap-8 md:gap-12 animate-[fadeIn_0.6s_ease-out_1.2s_both]">
-          {creator.collaborators.map((col) => <span key={col.name} className="font-heading text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 md:text-xs">{col.name}</span>)}
+        <h1 className="mt-5 max-w-[14ch] bg-gradient-to-r from-white via-[#cdb6ff] to-accent bg-clip-text font-heading text-4xl font-extrabold leading-[1.08] text-transparent sm:text-5xl md:text-6xl">
+          Créez votre expérience Fortnite sur-mesure pour engager votre audience.
+        </h1>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-400 md:text-xl">
+          KaioCorp conçoit des maps, mini-jeux et activations de marque dans Fortnite avec UEFN, Verse et Unreal Engine 5 — de l’idée au prototype, jusqu’à la publication et la maintenance.
+        </p>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.07] bg-white/[0.03] px-4 py-2 text-sm text-slate-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px] shadow-accent" />
+            <b className="font-heading font-bold text-white">{TOTAL_MINUTES_LABEL}</b> minutes jouées
+          </span>
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.07] bg-white/[0.03] px-4 py-2 text-sm text-slate-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px] shadow-accent" />
+            {PROOF.collaborators.join(" · ")}
+          </span>
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.07] bg-white/[0.03] px-4 py-2 text-sm text-slate-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_10px] shadow-accent" />
+            Activations : {PROOF.brands.join(" · ")}
+          </span>
         </div>
-        <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center animate-[fadeIn_0.6s_ease-out_1.5s_both]">
-          <Link href="/maps" className="inline-flex h-12 items-center rounded-md bg-accent px-8 font-heading text-[13px] font-bold uppercase tracking-wider text-surface-dark transition-all hover:bg-accent-light hover:shadow-lg hover:shadow-accent/20">{t("cta")}</Link>
-          <Link href="/contact" className="inline-flex h-12 items-center rounded-md border border-white/15 px-8 font-heading text-[13px] font-bold uppercase tracking-wider text-slate-400 transition-all hover:border-white/30 hover:text-white">{t("ctaSecondary")}</Link>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Cta href="/contact" event="cta_discuter_projet" eventParams={{ from: "hero" }}>Discuter de votre projet →</Cta>
+          <Cta href="/realisations" variant="ghost" event="cta_voir_realisations" eventParams={{ from: "hero" }}>Voir les réalisations</Cta>
         </div>
+        <p className="mt-5 flex items-center gap-2 text-sm text-slate-500">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary-light shadow-[0_0_8px] shadow-primary-light" />
+          De l’idée au prototype, jusqu’à la publication et la maintenance.
+        </p>
       </div>
     </section>
   );

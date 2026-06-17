@@ -52,7 +52,7 @@ Epic Games a versé plus de **722 millions de dollars** aux créateurs d'îles F
 - Les organisations esport commandent des maps compétitives sur mesure
 - Les créateurs de contenu s'associent avec des développeurs pour des maps exclusives
 
-Pour mettre les choses en perspective, nos maps chez [Kaio Corporation](/about) ont cumulé plus de **4,8 milliards de minutes jouées**, en collaboration avec des créateurs comme Martoz, GamersOrigin et WZF.
+Pour mettre les choses en perspective, nos maps chez [Kaio Corporation](/about) ont cumulé plus de **4,7 milliards de minutes jouées**, en collaboration avec des créateurs comme Martoz, GamersOrigin et WZF.
 
 ## Compétences requises
 
@@ -99,7 +99,7 @@ La formule exacte de rémunération n'est pas divulguée publiquement, mais d'ap
 
 Toutes les minutes ne se valent pas. Voici ce qui compte vraiment :
 
-**Minutes jouées** — La métrique principale. Il s'agit du temps de jeu cumulé total de tous les joueurs. Notre portfolio combiné dépasse les [4,8 milliards de minutes](/maps), nous plaçant parmi les plus gros générateurs d'engagement de la plateforme.
+**Minutes jouées** — La métrique principale. Il s'agit du temps de jeu cumulé total de tous les joueurs. Notre portfolio combiné dépasse les [4,7 milliards de minutes](/maps), nous plaçant parmi les plus gros générateurs d'engagement de la plateforme.
 
 **Favoris** — Les îles avec plus de favoris obtiennent un meilleur placement dans Découvrir. Nos maps totalisent plus de **3,2 millions de favoris** combinés, ce qui favorise la découverte organique.
 
@@ -333,7 +333,7 @@ Ce guide couvre les bases absolues. Pour approfondir :
 
 La création de dispositifs Verse personnalisés est ce qui distingue les développeurs UEFN professionnels des amateurs. Si vous avez besoin de mécaniques personnalisées complexes pour votre map, [notre équipe est spécialisée en scripting Verse](/services) — des systèmes de score sur mesure aux frameworks complets de modes de jeu.
 
-Découvrez notre [portfolio](/maps) pour voir Verse en action totalisant plus de 4,8 milliards de minutes jouées.`,
+Découvrez notre [portfolio](/maps) pour voir Verse en action totalisant plus de 4,7 milliards de minutes jouées.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",
