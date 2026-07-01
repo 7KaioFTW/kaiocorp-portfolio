@@ -5,7 +5,7 @@ import { Link } from "@/i18n/routing";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { MarkdownRenderer } from "@/components/ui/MarkdownRenderer";
-import { buildAlternates } from "@/lib/seo";
+import { buildAlternates, SITE_URL, ogLocale } from "@/lib/seo";
 import { getBlogPosts, blogPosts } from "@/content/blog";
 
 export function generateStaticParams() { return blogPosts.map((p) => ({ slug: p.slug })); }
@@ -18,7 +18,15 @@ export async function generateMetadata({ params }: { params: { locale: string; s
     title: post.title,
     description: post.description,
     alternates: buildAlternates(`/blog/${post.slug}`, params.locale),
-    openGraph: { title: post.title, description: post.description, type: "article", publishedTime: post.date },
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      type: "article",
+      publishedTime: post.date,
+      siteName: "KaioCorp",
+      locale: ogLocale(params.locale),
+      images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: post.title }],
+    },
   };
 }
 
@@ -33,7 +41,7 @@ export default async function BlogPostPage({ params }: { params: { locale: strin
   return (
     <main className="min-h-screen bg-surface-dark pb-24 pt-28">
       <JsonLd data={{ "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.description, author: { "@type": "Person", name: "Kaio" }, datePublished: post.date, dateModified: post.date, publisher: { "@type": "Organization", name: "Kaio Corporation" } }} />
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: tNav("home"), item: "https://kaiocorp.com" }, { "@type": "ListItem", position: 2, name: tNav("blog"), item: "https://kaiocorp.com/blog" }, { "@type": "ListItem", position: 3, name: post.title }] }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: tNav("home"), item: SITE_URL }, { "@type": "ListItem", position: 2, name: tNav("blog"), item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: post.title }] }} />
 
       <article className="mx-auto max-w-3xl px-6">
         <Breadcrumb items={[{ label: tNav("home"), href: "/" }, { label: tNav("blog"), href: "/blog" }, { label: post.title }]} />

@@ -1,15 +1,58 @@
 # CACHE — état courant du projet
 
 > Fichier d'état (Rulebook R5.4). **À lire en premier, mettre à jour en dernier.**
-> Dernière mise à jour : 2026-06-17.
+> Dernière mise à jour : 2026-06-30.
 
 ## Où en est le projet
 
-Refonte B2B de kaiocorp.com en cours, **français par défaut** (`defaultLocale: "fr"`, EN + 11 autres
-locales conservées via next-intl). Positionnement : studio créatif Fortnite/UEFN orienté engagement
-de marque (pas « développeur de maps »).
+Refonte B2B de kaiocorp.com, **français par défaut** (`defaultLocale: "fr"`). Positionnement : studio
+créatif Fortnite/UEFN orienté engagement de marque (pas « développeur de maps »).
+
+**Domaine canonique officiel : `https://kaiocorp.com` (SANS www)** — tout le code SEO pointe désormais
+vers ce domaine via la constante unique `SITE_URL` (`src/lib/seo.ts`). ⚠️ Le site est encore SERVI sur
+`www.kaiocorp.com` en prod : la redirection Vercel doit être **inversée à la main** (www → non-www) pour
+que les signaux SEO du code soient cohérents avec le domaine servi. Voir « Étapes manuelles restantes ».
+
+**Locales actives : 4 routées = FR, EN, ES, DE** (réduit de 13 → 4 le 2026-06-30). Les 9 autres locales
+(pt, ar, ja, zh, pt-BR, nl, da, ro, ru) restent traduites sur disque (`src/messages/*.json`,
+`src/content/blog/*.ts`) mais **non routées** — réactivables en les rajoutant dans `src/i18n/routing.ts`
+(+ une `case` dans `src/content/blog.ts` pour le blog).
 
 ## Dernières actions (cette session)
+
+### Cohérence domaine SEO + image OG + réduction locales (2026-06-30)
+
+**Problème traité** : le code SEO pointait vers `kaiocorp.com` (sans www) mais le site est servi sur
+`www.` → canonical/hreflang/sitemap/robots envoyaient des signaux contradictoires à Google. Décision :
+domaine canonique = **`https://kaiocorp.com` (sans www)** ; côté code rien à changer sur le choix
+non-www, mais centralisation + correctifs SEO secondaires.
+
+- **`SITE_URL = "https://kaiocorp.com"`** : constante unique dans `src/lib/seo.ts`, consommée par
+  `seo.ts` (`buildAlternates`), `src/app/sitemap.ts`, `src/app/robots.ts`, `src/app/[locale]/layout.tsx`
+  (`buildHreflangAlternates` + canonical + `metadataBase` + `orgSchema`) et les 3 JSON-LD
+  (`services`, `maps/[id]`, `blog/[slug]`). `grep -rn "kaiocorp.com" src` ne montre plus que la
+  constante + 2 valeurs **data non-SEO** (email `contact@kaiocorp.com` dans `creator.json`, endpoint
+  formsubmit dans `ContactForm.tsx`) — `website` de `creator.json` normalisé en `https://kaiocorp.com`.
+- **Image OG/Twitter par défaut** (1200×630) ajoutée au `generateMetadata` racine (`layout.tsx`) :
+  `public/images/og-default.jpg` — **vraie carte de marque** (logo-mark + wordmark KaioCorp, eyebrow
+  UEFN·Verse·UE5, titre « Studio d'expériences Fortnite sur-mesure », sous-ligne Maps·Mini-jeux·Activations,
+  bandeau stats 4,7 Md+/15/3,3 M+, dégradé + glows + barre accent). Générée via `sharp`/SVG (script
+  scratchpad `gen-og2.js`). **Police : Bahnschrift** (fallback système géométrique — Orbitron indisponible
+  hors navigateur ; Playwright bloqué par le Chrome debug déjà lancé sur :9222). Shippable telle quelle ;
+  remplaçable plus tard par un visuel photographique/designé si souhaité. URL absolue non-www via `metadataBase`.
+- **Réduction locales 13 → 4** (FR, EN, ES, DE) dans `src/i18n/routing.ts` : `localeNames` ramené à 4
+  clés, `rtlLocales` → `[]` (ar retiré), polices CJK `Noto_Sans_JP/SC` retirées de `layout.tsx` (ja/zh
+  retirés). `getBlogPosts` (`content/blog.ts`) ramené aux 4 `case` routées + `default: en` (branches
+  mortes des 9 locales retirées supprimées — évitait un crash build si leurs fichiers étaient nettoyés).
+- **Correctifs issus de la review adversariale** (workflow 3 dimensions) : `og:image` était
+  **silencieusement absent sur les articles blog** (Next.js remplace `openGraph` au lieu de le fusionner)
+  → image par défaut ré-injectée sur `blog/[slug]` (+ `siteName`/`og:locale`) ; `siteName`/`type`/`locale`
+  restaurés sur `maps/[id]` ; **`og:locale` passé en forme territoire** `fr_FR`/`en_US`/`es_ES`/`de_DE`
+  via helper `ogLocale()` dans `seo.ts`.
+- **Vérif** : `tsc` 0, `eslint src` 0, `npm run build` 0 erreur (125 pages). **Sitemap = 120 URLs**
+  (30/locale × 4 : 10 pages statiques + 15 maps + 5 blog), **100 % `https://kaiocorp.com`** (seul `www`
+  = namespace `sitemaps.org`). `<head>` rendu (prod `npm start`) confirmé cohérent non-www sur home/blog/map :
+  canonical + hreflang (en/fr/es/de + x-default, fr → racine) + `og:image` absolue non-www, **0 `www`**.
 
 ### Internationalisation du contenu B2B (2026-06-17)
 
@@ -59,6 +102,18 @@ de marque (pas « développeur de maps »).
 ## Maps désactivées (`disabled: true` dans maps.json)
 
 `rift-racers-alpine` (Alpine), `7r-1v1-ranked`, `piano-1v1`, `fast-realistic-ranked-2v2`.
+
+## Étapes manuelles restantes (SEO — hors code, à faire par Kaio)
+
+> Bloquantes pour que la cohérence non-www du code prenne effet en prod.
+
+- [ ] **Vercel → Settings → Domains** : définir **`kaiocorp.com` (sans www) comme domaine PRIMARY** et
+  rediriger **`www` → non-www** (= inverser la redirection 301 actuelle qui va de non-www vers www).
+- [ ] *(Optionnel)* Remplacer `public/images/og-default.jpg` par un visuel bespoke/photographique si voulu
+  — la carte de marque générée est déjà correcte et shippable (police Bahnschrift à défaut d'Orbitron).
+- [ ] **Google Search Console** : vérifier la propriété (domaine entier `kaiocorp.com`), soumettre
+  `sitemap.xml`, demander l'indexation de la home + pages clés (services, réalisations, agences).
+- [ ] (Après le swap Vercel) re-tester un partage social (OG) + valider hreflang/canonical en prod.
 
 ## Questions ouvertes / à faire
 

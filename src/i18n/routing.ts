@@ -1,8 +1,12 @@
 import { defineRouting } from "next-intl/routing";
 import { createNavigation } from "next-intl/navigation";
 
+// Active, routed locales (sitemap + hreflang). Reduced from 13 → 4 to avoid
+// thin/duplicate content and crawl-budget waste on a young domain. Translated
+// src/messages/*.json + src/content/blog/* for the dropped locales stay in the
+// repo (un-routed) so they can be re-activated by adding them back here.
 export const locales = [
-  "en", "fr", "es", "de", "pt", "ar", "ja", "zh", "pt-BR", "nl", "da", "ro", "ru",
+  "en", "fr", "es", "de",
 ] as const;
 
 export type Locale = (typeof locales)[number];
@@ -20,15 +24,7 @@ export const localeNames: Record<Locale, string> = {
   fr: "Français",
   es: "Español",
   de: "Deutsch",
-  pt: "Português",
-  ar: "العربية",
-  ja: "日本語",
-  zh: "中文",
-  "pt-BR": "Português (Brasil)",
-  nl: "Nederlands",
-  da: "Dansk",
-  ro: "Română",
-  ru: "Русский",
 };
 
-export const rtlLocales: Locale[] = ["ar"];
+// No RTL locale currently routed (ar dropped). Re-add "ar" here if re-activated.
+export const rtlLocales: Locale[] = [];

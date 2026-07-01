@@ -6,7 +6,7 @@ import { Process } from "@/components/sections/Process";
 import { FaqB2B } from "@/components/sections/FaqB2B";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { buildAlternates } from "@/lib/seo";
+import { buildAlternates, SITE_URL } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale: params.locale, namespace: "b2b.pages.services" });
@@ -26,7 +26,7 @@ export default async function Page() {
           "@context": "https://schema.org",
           "@type": "Service",
           serviceType: "Développement UEFN & activation de marque Fortnite",
-          provider: { "@type": "Organization", name: "Kaio Corporation", url: "https://kaiocorp.com" },
+          provider: { "@type": "Organization", name: "Kaio Corporation", url: SITE_URL },
           areaServed: "Worldwide",
         }}
       />

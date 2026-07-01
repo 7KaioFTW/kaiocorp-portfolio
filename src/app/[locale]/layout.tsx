@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Orbitron, Noto_Sans_JP, Noto_Sans_SC } from "next/font/google";
+import { Inter, Orbitron } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -7,12 +7,11 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { locales, rtlLocales, type Locale } from "@/i18n/routing";
+import { SITE_URL, ogLocale } from "@/lib/seo";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron", display: "swap" });
-const notoJP = Noto_Sans_JP({ subsets: ["latin"], variable: "--font-noto-jp", display: "swap", weight: ["400", "700"] });
-const notoSC = Noto_Sans_SC({ subsets: ["latin"], variable: "--font-noto-sc", display: "swap", weight: ["400", "700"] });
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -21,22 +20,31 @@ export function generateStaticParams() {
 function buildHreflangAlternates() {
   const languages: Record<string, string> = {};
   for (const loc of locales) {
-    languages[loc] = loc === "fr" ? "https://kaiocorp.com" : `https://kaiocorp.com/${loc}`;
+    languages[loc] = loc === "fr" ? SITE_URL : `${SITE_URL}/${loc}`;
   }
-  languages["x-default"] = "https://kaiocorp.com";
+  languages["x-default"] = SITE_URL;
   return languages;
 }
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale: params.locale, namespace: "metadata" });
-  const canonicalUrl = params.locale === "fr" ? "https://kaiocorp.com" : `https://kaiocorp.com/${params.locale}`;
+  const canonicalUrl = params.locale === "fr" ? SITE_URL : `${SITE_URL}/${params.locale}`;
 
   return {
-    metadataBase: new URL("https://kaiocorp.com"),
+    metadataBase: new URL(SITE_URL),
     title: { template: "%s | KaioCorp — Studio Fortnite UEFN", default: t("homeTitle") },
     description: t("homeDescription"),
-    openGraph: { type: "website", siteName: "KaioCorp", locale: params.locale },
-    twitter: { card: "summary_large_image", creator: "@7KaioFTW" },
+    openGraph: {
+      type: "website",
+      siteName: "KaioCorp",
+      locale: ogLocale(params.locale),
+      images: [{ url: "/images/og-default.jpg", width: 1200, height: 630, alt: "KaioCorp — Studio créatif Fortnite UEFN" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      creator: "@7KaioFTW",
+      images: ["/images/og-default.jpg"],
+    },
     robots: { index: true, follow: true, "max-image-preview": "large" as const },
     alternates: {
       canonical: canonicalUrl,
@@ -46,7 +54,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 }
 
 const personSchema = { "@context": "https://schema.org", "@type": "Person", name: "Kaio", jobTitle: "UEFN Map Developer", sameAs: ["https://twitter.com/7KaioFTW", "https://fortnite.gg/creator/kaio"], knowsAbout: ["UEFN", "Fortnite Creative", "Verse Programming", "Game Design"] };
-const orgSchema = { "@context": "https://schema.org", "@type": "Organization", name: "Kaio Corporation", url: "https://kaiocorp.com" };
+const orgSchema = { "@context": "https://schema.org", "@type": "Organization", name: "Kaio Corporation", url: SITE_URL };
 
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: { locale: string } }) {
   const locale = params.locale as Locale;
@@ -54,10 +62,9 @@ export default async function LocaleLayout({ children, params }: { children: Rea
 
   const messages = await getMessages();
   const isRtl = rtlLocales.includes(locale);
-  const cjkFont = locale === "ja" ? notoJP.variable : locale === "zh" ? notoSC.variable : "";
 
   return (
-    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} className={`${inter.variable} ${orbitron.variable} ${cjkFont}`}>
+    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} className={`${inter.variable} ${orbitron.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />

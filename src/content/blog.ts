@@ -12,21 +12,16 @@ export interface BlogPost {
 // English is always needed (default fallback + sitemap slugs)
 import { blogPosts as en } from "./blog/en";
 
+// Keep this switch in sync with the routed locales in src/i18n/routing.ts.
+// Blog files for dropped locales (./blog/{pt,ar,ja,zh,pt-BR,nl,da,ro,ru}.ts) stay on
+// disk but are intentionally un-referenced — re-activate one by re-adding its case here
+// AND its locale in routing.ts. Unknown/dropped locales fall back to English.
 export function getBlogPosts(locale: string): BlogPost[] {
   switch (locale) {
-    case "en": return en;
     case "fr": return require("./blog/fr").blogPosts;
     case "es": return require("./blog/es").blogPosts;
     case "de": return require("./blog/de").blogPosts;
-    case "pt": return require("./blog/pt").blogPosts;
-    case "ar": return require("./blog/ar").blogPosts;
-    case "ja": return require("./blog/ja").blogPosts;
-    case "zh": return require("./blog/zh").blogPosts;
-    case "pt-BR": return require("./blog/pt-BR").blogPosts;
-    case "nl": return require("./blog/nl").blogPosts;
-    case "da": return require("./blog/da").blogPosts;
-    case "ro": return require("./blog/ro").blogPosts;
-    case "ru": return require("./blog/ru").blogPosts;
+    case "en":
     default: return en;
   }
 }

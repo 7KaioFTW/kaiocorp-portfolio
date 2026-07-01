@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
+import { SITE_URL } from "@/lib/seo";
 import mapsData from "@/data/maps.json";
 import { blogPosts } from "@/content/blog";
 import type { FortniteMap } from "@/types";
@@ -7,7 +8,7 @@ import type { FortniteMap } from "@/types";
 const maps = mapsData as FortniteMap[];
 
 function localeUrl(path: string, locale: string) {
-  return locale === "fr" ? `https://kaiocorp.com${path}` : `https://kaiocorp.com/${locale}${path}`;
+  return locale === "fr" ? `${SITE_URL}${path}` : `${SITE_URL}/${locale}${path}`;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
