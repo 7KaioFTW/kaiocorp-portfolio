@@ -11,4 +11,5 @@ paths:
 - All data changes must update the JSON files, not component code
 - TypeScript types in `src/types/index.ts` must stay in sync with JSON schema
 - Stats from fortnite.gg use string format for large numbers ("1.6B", "1.1M")
-- Use `parseStatNumber()` and `formatNumber()` from `src/lib/utils.ts` for display
+- Use `parseStatNumber()` from `src/lib/utils.ts` to parse those strings; aggregate
+  figures (total minutes, etc.) are **computed** in `src/lib/stats.ts`, never hardcoded

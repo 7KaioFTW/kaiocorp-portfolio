@@ -115,7 +115,9 @@ public/images/   # Map thumbnails (filename matches map id)
 ## Gotchas
 - TypeScript strict mode: no unused imports, no `any`
 - Map thumbnails go in `public/images/maps/` — filename matches map `id`
-- Disabled maps (rift-racers-alpine, 7r-1v1-ranked, piano-1v1, fast-realistic-ranked-2v2) have `"disabled": true`
+- Disabled maps (rift-racers-alpine, 7r-1v1-ranked, piano-1v1, fast-realistic-ranked-2v2) have `"disabled": true`.
+  This is an **internal flag only — intentionally NOT reflected on the site** (product decision): disabled maps
+  are shown as live everywhere (leaderboard, detail page, sitemap, réalisations). Do not "fix" the display.
 - Mounted-disk writes do not truncate: rewriting a file shorter leaves residual bytes — rewrite via
   bash heredoc and re-verify (this file was rebuilt that way)
 - FR apostrophes in raw JSX -> ESLint `react/no-unescaped-entities`: use `’` (U+2019)

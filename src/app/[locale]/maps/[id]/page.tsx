@@ -6,7 +6,7 @@ import { Link } from "@/i18n/routing";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { CopyCode } from "./CopyCode";
-import { buildAlternates, SITE_URL, ogLocale } from "@/lib/seo";
+import { buildAlternates, ogLocale, localeUrl } from "@/lib/seo";
 import mapsData from "@/data/maps.json";
 import type { FortniteMap } from "@/types";
 
@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: { params: { locale: string; i
     description: `${map.description} Map code: ${map.code}. ${map.stats.minutesPlayed} minutes played.`,
     alternates: buildAlternates(`/maps/${map.id}`, params.locale),
     openGraph: { type: "website", siteName: "KaioCorp", locale: ogLocale(params.locale), title: map.title, description: map.description, images: [{ url: map.thumbnail, width: 1200, height: 675, alt: map.title }] },
+    twitter: { card: "summary_large_image", creator: "@7KaioFTW", title: map.title, description: map.description, images: [map.thumbnail] },
   };
 }
 
@@ -37,7 +38,7 @@ export default async function MapPage({ params }: { params: { locale: string; id
   return (
     <main className="min-h-screen bg-surface-dark pb-24 pt-28">
       <JsonLd data={{ "@context": "https://schema.org", "@type": "Game", name: map.title, description: map.description, creator: { "@type": "Person", name: "Kaio" }, applicationCategory: "Game" }} />
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: tNav("home"), item: SITE_URL }, { "@type": "ListItem", position: 2, name: tNav("maps"), item: `${SITE_URL}/maps` }, { "@type": "ListItem", position: 3, name: map.title }] }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: tNav("home"), item: localeUrl("", params.locale) }, { "@type": "ListItem", position: 2, name: tNav("maps"), item: localeUrl("/maps", params.locale) }, { "@type": "ListItem", position: 3, name: map.title }] }} />
       <div className="mx-auto max-w-5xl px-6">
         <Breadcrumb items={[{ label: tNav("home"), href: "/" }, { label: tNav("maps"), href: "/maps" }, { label: map.title }]} />
         <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_380px]">

@@ -7,6 +7,19 @@ import { locales } from "@/i18n/routing";
  */
 export const SITE_URL = "https://kaiocorp.com";
 
+/** Absolute URL for a path in a given locale (fr = root; others = "/{locale}" prefix). */
+export function localeUrl(path: string, locale: string): string {
+  return locale === "fr" ? `${SITE_URL}${path}` : `${SITE_URL}/${locale}${path}`;
+}
+
+/** hreflang alternates map for a path: every routed locale + `x-default` (fr root). */
+export function localeAlternates(path: string): Record<string, string> {
+  const languages: Record<string, string> = {};
+  for (const loc of locales) languages[loc] = localeUrl(path, loc);
+  languages["x-default"] = localeUrl(path, "fr");
+  return languages;
+}
+
 /** Open Graph `og:locale` in language_TERRITORY form. Keep keys in sync with routed locales. */
 const OG_LOCALES: Record<string, string> = {
   fr: "fr_FR",
@@ -21,15 +34,5 @@ export function ogLocale(locale: string): string {
 }
 
 export function buildAlternates(path: string, locale: string) {
-  const languages: Record<string, string> = {};
-  for (const loc of locales) {
-    languages[loc] = loc === "fr" ? `${SITE_URL}${path}` : `${SITE_URL}/${loc}${path}`;
-  }
-  languages["x-default"] = `${SITE_URL}${path}`;
-
-  const canonical = locale === "fr"
-    ? `${SITE_URL}${path}`
-    : `${SITE_URL}/${locale}${path}`;
-
-  return { canonical, languages };
+  return { canonical: localeUrl(path, locale), languages: localeAlternates(path) };
 }

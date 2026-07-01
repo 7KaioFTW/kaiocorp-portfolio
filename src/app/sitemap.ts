@@ -1,15 +1,20 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
-import { SITE_URL } from "@/lib/seo";
+import { localeUrl, localeAlternates } from "@/lib/seo";
 import mapsData from "@/data/maps.json";
 import { blogPosts } from "@/content/blog";
 import type { FortniteMap } from "@/types";
 
 const maps = mapsData as FortniteMap[];
 
-function localeUrl(path: string, locale: string) {
-  return locale === "fr" ? `${SITE_URL}${path}` : `${SITE_URL}/${locale}${path}`;
-}
+// Content-derived "last updated" — stable across deploys (changes only when real
+// content changes), so build time never leaks into <lastmod> for static pages.
+const siteLastMod = new Date(
+  Math.max(
+    ...maps.map((m) => new Date(m.updated).getTime()),
+    ...blogPosts.map((p) => new Date(p.date).getTime()),
+  ),
+);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
@@ -30,10 +35,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const page of staticPages) {
     for (const locale of locales) {
       entries.push({
-        url: localeUrl(page.path || "/", locale),
-        lastModified: new Date(),
+        url: localeUrl(page.path, locale),
+        lastModified: siteLastMod,
         changeFrequency: page.freq,
         priority: page.priority,
+        alternates: { languages: localeAlternates(page.path) },
       });
     }
   }
@@ -45,6 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(map.updated),
         changeFrequency: "monthly",
         priority: 0.85,
+        alternates: { languages: localeAlternates(`/maps/${map.id}`) },
       });
     }
   }
@@ -56,6 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(post.date),
         changeFrequency: "weekly",
         priority: 0.75,
+        alternates: { languages: localeAlternates(`/blog/${post.slug}`) },
       });
     }
   }

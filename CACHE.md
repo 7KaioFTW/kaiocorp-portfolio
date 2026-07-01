@@ -1,7 +1,7 @@
 # CACHE — état courant du projet
 
 > Fichier d'état (Rulebook R5.4). **À lire en premier, mettre à jour en dernier.**
-> Dernière mise à jour : 2026-06-30.
+> Dernière mise à jour : 2026-07-02.
 
 ## Où en est le projet
 
@@ -19,6 +19,37 @@ que les signaux SEO du code soient cohérents avec le domaine servi. Voir « Ét
 (+ une `case` dans `src/content/blog.ts` pour le blog).
 
 ## Dernières actions (cette session)
+
+### Audit workflow complet + nettoyage « tout le safe » (2026-07-02)
+
+Audit multi-agents (workflow 6 dimensions × find→verify adversariale) : 25 findings confirmés.
+Décision produit : **le flag `disabled` de maps.json est interne, volontairement SANS effet sur le
+site** — les maps désactivées s'affichent comme actives (leaderboard, détail, sitemap, réalisations).
+Documenté dans `types/index.ts` (commentaire sur `disabled?`) + Gotchas CLAUDE.md pour éviter tout
+« fix » futur. Tous les findings liés au `disabled` = **par design, non corrigés**.
+
+Correctifs appliqués (« tout le safe », zéro décision produit) :
+- **Dead code supprimé** (9 fichiers) : `ContactForm.tsx` (la page contact utilise `BriefForm`),
+  6 composants pré-refonte non importés (`StatsSection`, `FeaturedMaps`, `ServicesPreview`, `BottomCTA`,
+  `LatestPosts`, `BrandCollabs`), `CountUp.tsx`, et `public/images/logo.png` (1,3 Mo inutilisé).
+  `formatNumber` retiré de `utils.ts` (seul `CountUp` le consommait) ; `parseStatNumber` **conservé**
+  (utilisé par `MapLeaderboard`). `StatsSection` hardcodait `4.5B`/`3.3M` → landmine supprimée.
+- **Bundle** : `i18n/request.ts` passe d'un `import(\`../messages/\${locale}.json\`)` (bundlait les 13 JSON,
+  ~322 Ko de locales mortes) à un **loader map explicite des 4 locales routées**.
+- **SEO** : `sitemap.ts` — `lastmod` désormais **dérivé du contenu** (`siteLastMod` = max des dates
+  maps/posts, stable entre déploiements, plus de `new Date()` build-time) + **hreflang `xhtml:link`**
+  ajoutés (120 URLs → 600 alternates réciproques). `twitter:image` cohérent sur `maps/[id]` (miroir de
+  l'override OG). Breadcrumb JSON-LD **locale-aware** (via helper `localeUrl`, plus de fr-root en dur).
+  Helpers `localeUrl`/`localeAlternates` extraits dans `seo.ts` (source unique).
+- **Qualité** : `CopyCode` clipboard en `try/catch` (plus de rejet non géré / faux « copié ») ;
+  stats agrégées périmées retirées de `creator.json` + `AggregateStats` (calculées dans `stats.ts`) ;
+  `engines: node >=18.18` + `.nvmrc` (pin) ; commentaire sync CSP/GA dans `track.ts` ; `data.md` màj.
+- **Vérif** : `tsc` 0, `eslint src` 0, `npm run build` 0 (125 pages). Sitemap régénéré : 120 URLs,
+  600 `xhtml:link`, `lastmod` = dates contenu (0 date build), `siteLastMod` = 2026-06-13.
+
+**NON corrigé (recommandations workflow, décision utilisateur requise)** : passer à un flow
+branche+PR (preview Vercel) au lieu du push direct `master`→prod ; CSP nonce-based (au lieu de
+`unsafe-inline`) ; les 9 fichiers blog de locales droppées restent sur disque (trade-off assumé).
 
 ### Cohérence domaine SEO + image OG + réduction locales (2026-06-30)
 

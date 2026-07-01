@@ -24,6 +24,12 @@ export interface FortniteMap {
   version: number;
   ageRating: string;
   xpStatus?: string;
+  /**
+   * Internal flag: map is delisted on Fortnite. **Intentionally NOT reflected on the
+   * public site** — disabled maps are still shown as live everywhere (leaderboard,
+   * detail page, sitemap, réalisations showcase) by product decision. Do not "fix" the
+   * display to hide/label them.
+   */
   disabled?: boolean;
   brand?: string;
   stats: MapStats;
@@ -41,10 +47,9 @@ export interface Collaborator {
 
 export interface AggregateStats {
   totalMaps: number;
-  totalMinutesPlayed: string;
-  totalFavorites: string;
-  highestAllTimePeak: number;
   totalCollaborators: number;
+  // Note: minutes/favorites/peak are NOT stored here — they are computed from
+  // maps.json in src/lib/stats.ts (single source of truth), never hand-maintained.
 }
 
 export interface Creator {

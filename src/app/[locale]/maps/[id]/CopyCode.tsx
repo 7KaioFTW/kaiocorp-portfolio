@@ -7,7 +7,17 @@ import { cn } from "@/lib/utils";
 export function CopyCode({ code }: { code: string }) {
   const t = useTranslations("maps");
   const [copied, setCopied] = useState(false);
-  const copy = async () => { await navigator.clipboard.writeText(code); setCopied(true); setTimeout(() => setCopied(false), 2000); };
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(code);
+    } catch {
+      // Clipboard blocked (denied/unfocused/insecure context): avoid an unhandled
+      // promise rejection and don't show a false "copied" state.
+      return;
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className="mt-4 flex items-center gap-2">

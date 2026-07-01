@@ -1,5 +1,8 @@
 // Lightweight conversion tracking. Pushes to GA4 (gtag) and/or a dataLayer
 // if present; no-op otherwise. Configure your analytics in the layout <head>.
+// ⚠ When wiring GA/GTM, also widen the CSP in next.config.js — add
+// https://www.googletagmanager.com to script-src and https://www.google-analytics.com
+// to connect-src, otherwise the loader/beacons are silently blocked.
 
 type TrackParams = Record<string, string | number | boolean | undefined>;
 
