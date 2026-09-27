@@ -13,8 +13,8 @@ export async function Audiences() {
         <SectionHead eyebrow={t("eyebrow")} title={t("title")} />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((a, i) => (
-            <ScrollReveal key={AUDIENCE_LINKS[i].slug} delay={`${i * 70}ms`}>
-              <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-surface to-surface/40 p-6 transition-all hover:-translate-y-1.5 hover:border-accent/45">
+            <ScrollReveal key={AUDIENCE_LINKS[i].slug}>
+              <article data-tilt className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-b from-surface to-surface/40 p-6 transition-colors hover:border-accent/45">
                 <span className="font-heading text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">{a.tag}</span>
                 <h3 className="mt-2.5 font-heading text-lg font-bold text-white">{a.title}</h3>
                 <p className="mt-2.5 text-sm text-slate-400">{a.text}</p>

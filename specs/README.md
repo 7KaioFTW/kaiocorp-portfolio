@@ -9,3 +9,5 @@ de lire la spec. Un manque découvert en exécution → revenir mettre à jour l
 
 Contenu actuel :
 - `refonte-kaiocorp.md` — stratégie, architecture, copy & UX de la refonte B2B.
+- `2026-09-26-motion-design.md` — système de motion design (GSAP + Lenis + WebGL hero), guardrails perf/a11y.
+- `2026-09-27-3d-island-homepage.md` — homepage en parcours 3D « Floating Island » (three.js), d’après `playground/3d-proto-a-island.html`.

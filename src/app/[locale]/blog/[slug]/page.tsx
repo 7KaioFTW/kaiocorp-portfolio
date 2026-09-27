@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { MarkdownRenderer } from "@/components/ui/MarkdownRenderer";
 import { buildAlternates, ogLocale, localeUrl } from "@/lib/seo";
 import { getBlogPosts, blogPosts } from "@/content/blog";
+import { formatBillions } from "@/lib/stats";
 
 export function generateStaticParams() { return blogPosts.map((p) => ({ slug: p.slug })); }
 
@@ -59,7 +60,7 @@ export default async function BlogPostPage({ params }: { params: { locale: strin
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/15 font-heading text-sm font-bold text-purple-300">K</div>
             <div><p className="font-heading text-sm font-bold text-white">Kaio</p><p className="text-xs text-slate-400">{t("authorTitle")}</p></div>
           </div>
-          <p className="mt-3 text-xs text-slate-400">{t("authorBio")} <Link href="/about" className="text-accent hover:text-accent-light">{t("learnMore")} &rarr;</Link></p>
+          <p className="mt-3 text-xs text-slate-400">{t("authorBio", { billions: formatBillions(params.locale) })} <Link href="/about" className="text-accent hover:text-accent-light">{t("learnMore")} &rarr;</Link></p>
         </div>
 
         <div className="mt-10 rounded-lg border border-accent/10 bg-accent/5 p-6 text-center">

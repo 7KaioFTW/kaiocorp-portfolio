@@ -18,8 +18,13 @@ export async function FinalCta({ id = "contact", eyebrow, title, text, defaultTy
   const ti = title ?? t("title");
   const tx = text ?? t("text");
   return (
-    <section id={id} className="border-t border-white/5 bg-[radial-gradient(60%_80%_at_50%_0%,rgba(123,47,190,0.16),transparent_70%)] py-20 md:py-24">
-      <div className="mx-auto grid max-w-6xl items-start gap-10 px-6 lg:grid-cols-2">
+    <section id={id} className="relative overflow-hidden border-t border-white/5 bg-[radial-gradient(60%_80%_at_50%_0%,rgba(123,47,190,0.16),transparent_70%)] py-20 md:py-24">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex select-none items-center">
+        <div data-motion="parallax" data-axis="x" data-speed="-0.3" className="whitespace-nowrap font-heading text-[22vw] font-extrabold leading-none text-transparent [-webkit-text-stroke:1px_rgba(123,47,190,0.28)]">
+          KAIOCORP KAIOCORP
+        </div>
+      </div>
+      <div className="relative z-10 mx-auto grid max-w-6xl items-start gap-10 px-6 lg:grid-cols-2">
         <ScrollReveal>
           <p className="font-heading text-xs font-semibold uppercase tracking-[0.22em] text-accent">{eb}</p>
           <h2 className="mt-3 font-heading text-3xl font-bold leading-tight text-white md:text-4xl">{ti}</h2>
@@ -32,7 +37,7 @@ export async function FinalCta({ id = "contact", eyebrow, title, text, defaultTy
             {t("responseNote")} · {PROOF.email}
           </p>
         </ScrollReveal>
-        <ScrollReveal delay="120ms">
+        <ScrollReveal>
           <BriefForm defaultType={defaultType} />
         </ScrollReveal>
       </div>

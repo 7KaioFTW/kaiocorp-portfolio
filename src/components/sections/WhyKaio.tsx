@@ -37,7 +37,7 @@ export async function WhyKaio() {
             ))}
           </ul>
         </ScrollReveal>
-        <ScrollReveal delay="120ms">
+        <ScrollReveal>
           <div className="rounded-2xl border border-white/[0.07] bg-[radial-gradient(70%_60%_at_70%_10%,rgba(123,47,190,0.2),transparent),#12121A] p-8 text-center">
             <div className="bg-gradient-to-r from-white to-accent bg-clip-text font-heading text-5xl font-extrabold text-transparent md:text-6xl">{TOTAL_MINUTES_LABEL}</div>
             <p className="mt-1.5 text-slate-400">{t("minutesCaption")}</p>

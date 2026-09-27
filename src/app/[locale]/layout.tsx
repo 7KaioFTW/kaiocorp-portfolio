@@ -6,9 +6,12 @@ import { notFound } from "next/navigation";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/ui/JsonLd";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 import { locales, rtlLocales, type Locale } from "@/i18n/routing";
 import { SITE_URL, ogLocale } from "@/lib/seo";
+import { formatBillions } from "@/lib/stats";
 import "../globals.css";
+import "../motion.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron", display: "swap" });
@@ -33,7 +36,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   return {
     metadataBase: new URL(SITE_URL),
     title: { template: "%s | KaioCorp — Studio Fortnite UEFN", default: t("homeTitle") },
-    description: t("homeDescription"),
+    description: t("homeDescription", { billions: formatBillions(params.locale) }),
     openGraph: {
       type: "website",
       siteName: "KaioCorp",
@@ -78,6 +81,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-surface-dark focus:font-semibold">
             Skip to content
           </a>
+          <MotionProvider />
           <JsonLd data={personSchema} />
           <JsonLd data={orgSchema} />
           <Header />

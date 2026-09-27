@@ -13,7 +13,7 @@ export async function Opportunity() {
         <SectionHead eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
           {levers.map((label, i) => (
-            <ScrollReveal key={label} delay={`${i * 50}ms`}>
+            <ScrollReveal key={label}>
               <div className="h-full rounded-xl border border-white/5 bg-gradient-to-b from-white/[0.03] to-transparent p-4 transition-all hover:-translate-y-1 hover:border-accent/40">
                 <span className="mb-2 block text-xl">{LEVER_ICONS[i]}</span>
                 <span className="text-sm font-semibold text-white">{label}</span>

@@ -8,7 +8,7 @@ paths:
 
 # Testing Rules
 
-- Unit tests: Jest for components and utilities
+- Unit tests: Vitest (`npm test`, config `vitest.config.mts`) for pure logic in `src/lib` (`*.test.ts`)
 - E2E tests: Playwright for critical user flows (map pages, contact form)
 - Test coverage target: 70% for src/components, src/lib, src/hooks
 - Component tests: test accessibility, props, error states, animations don't break

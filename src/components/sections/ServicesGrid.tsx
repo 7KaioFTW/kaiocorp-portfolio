@@ -13,12 +13,12 @@ export async function ServicesGrid({ withCta = true }: { withCta?: boolean }) {
         <SectionHead eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((s, i) => (
-            <ScrollReveal key={s.title} delay={`${(i % 3) * 60}ms`}>
-              <div className="h-full rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 transition-all hover:-translate-y-1 hover:border-accent/40 hover:bg-accent/[0.04]">
+            <ScrollReveal key={s.title}>
+              <div data-tilt className="relative h-full overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 transition-colors hover:border-accent/40 hover:bg-accent/[0.04]">
                 <div className="mb-3.5 grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-primary/30 to-accent/25 text-lg">{SERVICE_ICONS[i]}</div>
                 <h3 className="font-heading text-base font-bold text-white">{s.title}</h3>
                 <p className="mt-1.5 text-sm text-slate-400">{s.benefit}</p>
-                <p className="mt-2 text-xs text-slate-500">{s.example}</p>
+                <p className="mt-2 text-xs text-slate-400">{s.example}</p>
               </div>
             </ScrollReveal>
           ))}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, getLocale } from "next-intl/server";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { buildAlternates } from "@/lib/seo";
+import { formatBillions } from "@/lib/stats";
 import { getBlogPosts } from "@/content/blog";
 import { BlogList } from "./BlogList";
 
@@ -21,7 +22,7 @@ export default async function BlogPage() {
       <div className="mx-auto max-w-5xl px-6">
         <Breadcrumb items={[{ label: tNav("home"), href: "/" }, { label: tNav("blog") }]} />
         <h1 className="mb-2 font-heading text-2xl font-bold uppercase tracking-wide text-white md:text-3xl">{t("pageTitle")}</h1>
-        <p className="mb-10 max-w-2xl text-sm text-slate-400">{t("pageDescription")}</p>
+        <p className="mb-10 max-w-2xl text-sm text-slate-400">{t("pageDescription", { billions: formatBillions(locale) })}</p>
         <BlogList posts={posts} />
       </div>
     </main>

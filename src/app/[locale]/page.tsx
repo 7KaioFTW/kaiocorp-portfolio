@@ -3,6 +3,7 @@ import { Opportunity } from "@/components/sections/Opportunity";
 import { Audiences } from "@/components/sections/Audiences";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { StatsBand } from "@/components/sections/StatsBand";
+import { Marquee } from "@/components/motion/Marquee";
 import { Realisations } from "@/components/sections/Realisations";
 import { Process } from "@/components/sections/Process";
 import { WhyKaio } from "@/components/sections/WhyKaio";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Audiences />
       <ServicesGrid />
       <StatsBand />
+      <Marquee />
       <Realisations />
       <Process />
       <WhyKaio />

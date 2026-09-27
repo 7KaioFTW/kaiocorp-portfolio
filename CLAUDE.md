@@ -1,6 +1,6 @@
 # Kaio UEFN Portfolio
 
-**Status**: 15 maps, 5 collaborators. B2B refonte (FR-first). Last updated: 2026-06-17.
+**Status**: 16 maps, 5 collaborators. B2B refonte (FR-first) + motion design system. Last updated: 2026-09-26.
 
 ## Agent rules (Claude Rulebook)
 
@@ -22,7 +22,7 @@ Next.js portfolio showcasing Kaio's Fortnite UEFN maps and creative work. Full-s
 
 ## WHY
 
-Professional portfolio demonstrates technical skills (Next.js, TypeScript, Tailwind, Framer Motion) while showcasing creative portfolio to potential sponsors and collaborators.
+Professional portfolio demonstrates technical skills (Next.js, TypeScript, Tailwind, GSAP/WebGL motion) while showcasing creative portfolio to potential sponsors and collaborators.
 
 ## HOW
 
@@ -33,7 +33,10 @@ Professional portfolio demonstrates technical skills (Next.js, TypeScript, Tailw
 5. Test locally: `npm run dev` -> `npm run build` -> `npm run lint`
 
 ## Tech Stack & Commands
-- Next.js 14 (App Router), TypeScript (strict mode), Tailwind CSS, Framer Motion
+- Next.js 14 (App Router), TypeScript (strict mode), Tailwind CSS
+- Motion: GSAP (ScrollTrigger, SplitText) + Lenis via the `data-motion` engine in `src/lib/motion`
+  (lazy-loaded after load+idle), hand-written WebGL hero (`src/lib/motion/shader.ts`), CSS in `src/app/motion.css`
+- Tests: Vitest (`npm test`) for pure helpers
 - Internationalization: next-intl (defaultLocale `fr`)
 - Image optimization: sharp, Next.js Image
 
@@ -46,7 +49,7 @@ npm run start     # Serve production build
 ```
 
 ## Data & Architecture
-- Map data: `src/data/maps.json` (single source of truth, 15 entries)
+- Map data: `src/data/maps.json` (single source of truth, 16 entries)
 - Creator profile: `src/data/creator.json`
 - TypeScript interfaces: `src/types/index.ts`
 - Total minutes: computed in `src/lib/stats.ts` (`TOTAL_MINUTES_LABEL`), never hardcoded
@@ -79,7 +82,7 @@ src/
     forms/       # BriefForm (formsubmit.co -> contact@kaiocorp.com)
     maps/        # MapRow, MapLeaderboard
   content/       # site.ts (B2B copy), realisations.ts (derived from maps.json)
-  data/          # maps.json (15 entries), creator.json
+  data/          # maps.json (16 entries), creator.json
   lib/           # cn(), stats.ts (TOTAL_MINUTES_LABEL), track.ts, seo.ts, utils.ts
   i18n/          # routing.ts (defaultLocale fr), request.ts
   messages/      # 13 locale JSON files
@@ -122,3 +125,8 @@ public/images/   # Map thumbnails (filename matches map id)
   bash heredoc and re-verify (this file was rebuilt that way)
 - FR apostrophes in raw JSX -> ESLint `react/no-unescaped-entities`: use `’` (U+2019)
 - `npm run build` / `next dev` may not finish in a slow sandbox — verify via `tsc` + `eslint`
+- **Motion** (spec `specs/2026-09-26-motion-design.md`): reduced motion = engine never loads (static site).
+  This PC's Windows animation effects are OFF → Chrome reports `prefers-reduced-motion: reduce`, so the
+  site looks static here. For visual checks / Lighthouse, force `no-preference` via CDP
+  (`Emulation.setEmulatedMedia`) or puppeteer `page.emulateMediaFeatures`.
+- `next dev` needs `'unsafe-eval'` (React Refresh) — added to CSP for development only in `next.config.js`.

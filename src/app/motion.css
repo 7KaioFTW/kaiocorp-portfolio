@@ -1,0 +1,175 @@
+/* Motion system styles — spec: specs/2026-09-26-motion-design.md.
+   Imported after globals.css so these rules win over Tailwind utilities of equal specificity. */
+
+/* Lenis smooth scroll (replaces lenis/dist/lenis.css, without !important) */
+html.lenis,
+html.lenis body { height: auto; }
+html.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* decode: fixed-width scramble layer (width set inline by the engine) */
+.motion-decode { display: inline-block; vertical-align: top; white-space: nowrap; max-width: 100%; }
+
+/* StatsBand neon scan — one sweep when it first enters the viewport (engine adds .is-on) */
+.motion-scan {
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent) no-repeat -30% 0 / 30% 100%;
+}
+.motion-scan.is-on { opacity: 1; animation: motion-scan 1.4s cubic-bezier(0.65, 0, 0.35, 1) both; }
+@keyframes motion-scan { from { background-position: -30% 0; } to { background-position: 130% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-scan { display: none; }
+}
+
+/* ---- Hero entrance: CSS only (never waits for JS). LCP text stays opaque from frame 1. ---- */
+@keyframes hero-rise { from { transform: translateY(24px); filter: blur(8px); } to { transform: none; filter: none; } }
+@keyframes hero-fade-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.hero-rise { animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms) both; }
+.hero-fade-rise { animation: hero-fade-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms) both; }
+
+/* Gradient headline (replaces Tailwind's bg-gradient on the h1) + one-shot light sweep */
+.hero-sweep {
+  background-image:
+    linear-gradient(100deg, transparent 42%, rgba(255, 255, 255, 0.9) 50%, transparent 58%),
+    linear-gradient(to right, #ffffff, #cdb6ff, #00d4ff);
+  background-size: 250% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 150% 0, 0 0;
+  animation: hero-sweep 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+@keyframes hero-sweep { from { background-position: 150% 0, 0 0; } to { background-position: -60% 0, 0 0; } }
+
+/* One-shot RGB-split glitch drawn by the wrapper's pseudo-elements (data-text = headline) */
+.hero-glitch { position: relative; }
+.hero-glitch::before,
+.hero-glitch::after {
+  content: attr(data-text);
+  content: attr(data-text) / ""; /* decorative: empty alt text so screen readers don't hear the title 3× */
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+.hero-glitch::before { color: #00d4ff; animation: hero-glitch-a 0.6s steps(1) both; /* no delay: must paint in the same frame as the h1 or it becomes a late LCP candidate */ }
+.hero-glitch::after { color: #ff3ea5; animation: hero-glitch-b 0.6s steps(1) both; }
+@keyframes hero-glitch-a {
+  0% { opacity: 0.85; transform: translate(-5px, 0); clip-path: inset(8% 0 62% 0); }
+  20% { transform: translate(4px, 0); clip-path: inset(48% 0 22% 0); }
+  40% { transform: translate(-3px, 0); clip-path: inset(28% 0 50% 0); }
+  60% { transform: translate(5px, 0); clip-path: inset(70% 0 6% 0); }
+  80% { transform: translate(-2px, 0); clip-path: inset(15% 0 70% 0); }
+  100% { opacity: 0; transform: none; clip-path: inset(0 0 100% 0); }
+}
+@keyframes hero-glitch-b {
+  0% { opacity: 0.8; transform: translate(5px, 0); clip-path: inset(60% 0 12% 0); }
+  20% { transform: translate(-4px, 0); clip-path: inset(18% 0 58% 0); }
+  40% { transform: translate(3px, 0); clip-path: inset(40% 0 36% 0); }
+  60% { transform: translate(-5px, 0); clip-path: inset(5% 0 78% 0); }
+  80% { transform: translate(2px, 0); clip-path: inset(66% 0 10% 0); }
+  100% { opacity: 0; transform: none; clip-path: inset(0 0 100% 0); }
+}
+
+/* WebGL background: fades in on first frame; the CSS grid overlay fades out (the shader draws its own) */
+.motion-shader.is-live { opacity: 1; }
+.hero-grid { transition: opacity 1s ease; }
+.motion-shader.is-live ~ .hero-grid { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .hero-fade-rise,
+  .hero-sweep,
+  .hero-glitch::before,
+  .hero-glitch::after { animation: none; }
+}
+
+/* ---- Pointer layer (classes added by the engine on fine pointers only) ---- */
+.motion-tilt,
+.motion-glow { position: relative; }
+.motion-tilt::after,
+.motion-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 212, 255, 0.13), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.motion-tilt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 212, 255, 0.9), transparent 60%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.motion-tilt:hover::before,
+.motion-tilt:hover::after,
+.motion-glow:hover::after { opacity: 1; }
+
+/* Cursor (dot + ring, positioned by GSAP x/y) */
+.motion-cursor { position: fixed; left: 0; top: 0; z-index: 80; pointer-events: none; border-radius: 9999px; transition: opacity 0.2s ease; }
+.motion-cursor.is-hidden { opacity: 0; }
+.motion-cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: #00d4ff; }
+.motion-cursor-ring {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  color: #0a0a0f;
+  font: 700 20px/1 var(--font-orbitron), sans-serif;
+  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.2s ease;
+}
+.motion-cursor-ring span { opacity: 0; transition: opacity 0.2s ease; }
+.motion-cursor-ring.is-link { width: 56px; height: 56px; margin: -28px 0 0 -28px; border-color: transparent; background: #ffffff; mix-blend-mode: difference; }
+.motion-cursor-ring.is-view { width: 84px; height: 84px; margin: -42px 0 0 -42px; border-color: #00d4ff; background: #00d4ff; }
+.motion-cursor-ring.is-view span { opacity: 1; }
+
+/* ---- Marquee: CSS loop, speed/direction bent by the engine ---- */
+.motion-marquee-track { animation: motion-marquee 45s linear infinite; }
+@keyframes motion-marquee { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-marquee-track { animation: none; }
+}
+
+/* ---- Map detail: slow Ken Burns (transform only — LCP-safe, painted from frame 1) ---- */
+.motion-kenburns { animation: motion-kenburns 12s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes motion-kenburns { from { transform: scale(1.08); } to { transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-kenburns { animation: none; }
+}
+
+/* ---- Page transition (client navigations only — see app/[locale]/template.tsx) ---- */
+.motion-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  background: linear-gradient(120deg, #7b2fbe, #00d4ff);
+  transform-origin: 50% 0;
+  animation: motion-curtain 0.65s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+@keyframes motion-curtain { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+.motion-page-enter { animation: motion-page-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards; }
+@keyframes motion-page-enter { from { opacity: 0; transform: translateY(24px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-curtain,
+  .motion-page-enter { animation: none; }
+}

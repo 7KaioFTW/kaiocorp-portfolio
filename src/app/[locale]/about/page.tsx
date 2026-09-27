@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { buildAlternates } from "@/lib/seo";
+import { formatBillions } from "@/lib/stats";
 import creatorData from "@/data/creator.json";
 import type { Creator } from "@/types";
 
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 export default async function AboutPage() {
   const t = await getTranslations("about");
   const tNav = await getTranslations("nav");
+  const locale = await getLocale();
 
   return (
     <main className="min-h-screen bg-surface-dark pb-24 pt-28">
@@ -25,7 +27,7 @@ export default async function AboutPage() {
         <div className="grid gap-14 lg:grid-cols-2">
           <div>
             <p className="mb-8 text-base leading-relaxed text-slate-400">{creator.bio}</p>
-            <p className="mb-8 text-sm leading-relaxed text-slate-400">{t("bioExtended")}</p>
+            <p className="mb-8 text-sm leading-relaxed text-slate-400">{t("bioExtended", { billions: formatBillions(locale) })}</p>
             <h2 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-400">{t("skillsTitle")}</h2>
             <div className="mb-8 flex flex-wrap gap-2">{creator.skills.map((s) => <span key={s} className="rounded-full border border-primary/25 bg-primary/10 px-3.5 py-1 text-xs font-medium text-purple-300">{s}</span>)}</div>
             <div className="flex gap-4">

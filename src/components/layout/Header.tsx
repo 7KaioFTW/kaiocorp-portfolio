@@ -1,18 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { Cta } from "@/components/ui/Cta";
 import { cn } from "@/lib/utils";
+import { nextHeaderHidden } from "@/lib/motion/header";
 
 export function Header() {
   const t = useTranslations("b2b.nav");
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const openRef = useRef(false);
+  const lastY = useRef(0);
 
   const NAV = [
     { label: t("activations"), href: "/activations-de-marque" as const },
@@ -23,14 +28,33 @@ export function Header() {
   ];
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40);
+    const fn = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      const locked = openRef.current || Boolean(headerRef.current?.contains(document.activeElement));
+      const prev = lastY.current; // capture now: React may run the updater after the ref moves on
+      lastY.current = y;
+      setHidden((h) => nextHeaderHidden({ y, lastY: prev, hidden: h, locked }));
+    };
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
   }, []);
   useEffect(() => setOpen(false), [pathname]);
+  useEffect(() => {
+    openRef.current = open;
+    if (open) setHidden(false);
+  }, [open]);
 
   return (
-    <header className={cn("fixed inset-x-0 top-0 z-50 transition-all duration-300", scrolled ? "border-b border-white/5 bg-surface-dark/85 backdrop-blur-md" : "bg-transparent")}>
+    <header
+      ref={headerRef}
+      onFocus={() => setHidden(false)}
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color] duration-300 motion-reduce:transition-none",
+        hidden && "-translate-y-full",
+        scrolled ? "border-b border-white/5 bg-surface-dark/85 backdrop-blur-md" : "bg-transparent",
+      )}
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-2.5">
           <Image src="/images/logo-mark.png" alt="KaioCorp" width={790} height={440} priority className="h-9 w-auto" />

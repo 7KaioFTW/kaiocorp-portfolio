@@ -1,7 +1,7 @@
 # CACHE — état courant du projet
 
 > Fichier d'état (Rulebook R5.4). **À lire en premier, mettre à jour en dernier.**
-> Dernière mise à jour : 2026-07-02.
+> Dernière mise à jour : 2026-09-26.
 
 ## Où en est le projet
 
@@ -19,6 +19,66 @@ que les signaux SEO du code soient cohérents avec le domaine servi. Voir « Ét
 (+ une `case` dans `src/content/blog.ts` pour le blog).
 
 ## Dernières actions (cette session)
+
+### Homepage 3D « Floating Island » — spec APPROUVÉE, plan ÉCRIT : plans/2026-09-27-3d-island-homepage.md (14 tâches, 118 étapes, code pré-validé tsc/eslint/87 tests en scratch) — en attente du choix d’exécution (2026-09-27)
+
+- Retour user : le motion design scroll « n'est pas assez, rien de fou » → veut du **vrai 3D pro**.
+- Choix user : parcours 3D au scroll · assets générés en code (pas d'IP Epic) · 3D chargée après la page
+  (mobile ~80–90 accepté) · 2 prototypes d'abord.
+- Prototypes jetables (sous-agents) : `playground/3d-proto-a-island.html` (île flottante, **retenu**) et
+  `playground/3d-proto-b-neon.html` (arène néon). Vidéos envoyées. Serveur statique scratchpad :4000.
+- Décisions : **la homepage devient le parcours 3D** (sections réelles pilotent la caméra), Stats déplacé
+  après Réalisations, anneau de maps 3D remplace la galerie épinglée, poster + tiers de qualité, fallback
+  reduced-motion **+ toggle « Expérience 3D »** (permet aussi à Kaio de voir la 3D malgré Windows).
+- Spec : `specs/2026-09-27-3d-island-homepage.md` (three.js vanilla, 18 modules `src/lib/three/island/`,
+  mapping scroll→caméra par sections, sticky CSS, dispose complet, budgets Lighthouse home D≥90/M≥80).
+- ⚠️ Le Chrome debug :9222 n'est plus lancé (Chrome rouvert sans debug) ; Chromium Playwright headless
+  (`%LOCALAPPDATA%\ms-playwright\chromium-1217`) sur un port libre sert aux vérifs/vidéos (`CDP_PORT`).
+- Branche `feat/motion-design` toujours **non commitée** (motion design + mineurs + 16ᵉ map).
+
+### 16ᵉ map « Sprite Pillars » + spec motion design (2026-09-26)
+
+- **Map ajoutée** : `sprite-pillars` (0673-9062-5656, créateur KNZI, FFA 12 joueurs, v50) — stats
+  fortnite.gg du 2026-09-26 (228.1M min, 124.6K favoris, pic 6 694). **Choix user : map seule**,
+  KNZI **pas** ajouté aux collaborateurs (reste à 5). Non featured. Filtre « Knzi » ajouté au
+  leaderboard `/maps`. ⚠️ **Vignette manquante** : `public/images/maps/sprite-pillars.jpg` à
+  télécharger (curl bloqué par les permissions) depuis
+  `https://cdn-0001.qstv.on.epicgames.com/liOghSBWVXbwXPdcdE/image/landscape_comp.jpeg`.
+- **Agrégats calculés** : `totalMaps`/`totalCollaborators` retirés de `creator.json` (+ type
+  `AggregateStats` supprimé) → `TOTAL_MAPS` / `TOTAL_COLLABORATORS` dans `stats.ts`. Total minutes →
+  **4,9 Md+** (4 939 159 700). Le chiffre « 4,7 » codé en dur dans 8 clés × 4 locales routées
+  (`homeDescription`, `mapsDescription`, `maps.pageIntro`, `blog.pageDescription`, `blog.authorBio`,
+  `about.bioExtended` + 2 clés mortes) → placeholder `{billions}` alimenté par `formatBillions(locale)`.
+  Articles de blog (contenu daté) et 9 locales non routées : laissés tels quels.
+- **Vérif** : `tsc` 0, `eslint src` 0. Build + rendu à faire avec la vignette.
+- **Motion design — IMPLÉMENTÉ** (branche `feat/motion-design`, **non commité**). Spec
+  `specs/2026-09-26-motion-design.md` (§12 = écarts + scores), plan `plans/2026-09-26-motion-design.md`.
+  Moteur `src/lib/motion/` (GSAP 3.15 ScrollTrigger/SplitText + Lenis 1.3, chargé après load+idle,
+  presets `data-motion`: reveal/split/decode/parallax/gallery/marquee/progress-line + magnetic/tilt/glow,
+  curseur, barre de progression), hero WebGL maison (`shader.ts`), entrée hero CSS (glitch/sweep, LCP-safe),
+  galerie Réalisations épinglée (cartes → liens `/maps/[id]`), marquee des titres, ligne Process, drift
+  KAIOCORP, header masqué au scroll, transition de page (`[locale]/template.tsx`), `src/app/motion.css`.
+  Vitest 4 (`npm test`, 25 tests). CSP : `'unsafe-eval'` en dev uniquement (next dev ne s'hydratait plus).
+- **Revue finale** (reviewer frais) : 0 critique, 8 importants → **tous corrigés** avec test de repro CDP
+  RED→GREEN (decode width lock, titre lu 3× par les lecteurs d'écran, focus carte invisible, filtre blog,
+  deep link `#contact`, cartes coupées en 1366×657, molette dans le textarea, ligne focus invisible).
+  Cause racine du deep link : `html { scroll-behavior: smooth }` (globals.css) → **supprimé** (Lenis lisse).
+  Les 11 mineurs ont ensuite été traités (demande user) : transition entre routes sœurs (template.tsx →
+  MotionProvider), parallax sans saut au reload, shader (résolution au resize, contexte WebGL libéré,
+  highp, temps bouclé), presets isolés (`safely`), marquee en pause hors écran, scan StatsBand one-shot
+  (preset `sweep`), texte décodé redevenu un seul nœud, lagSmoothing restauré, Header ; M-3 non
+  reproductible (0 trigger orphelin). Tests : 30 unitaires + repros CDP (scratchpad) tous verts.
+  Vidéos de preview motion (desktop/mobile) enregistrées via CDP screencast + ffmpeg.
+  Contraste pré-existant corrigé (ServicesGrid, exemples slate-500 → slate-400, 4,01:1 masqué par le reveal).
+- **Lighthouse prod final (motion forcé ON)** : desktop 100/100/100 partout (BP 96 /maps = vignette
+  manquante) ; mobile `/realisations` 96, `/maps` 97, **home 91** (contrôle statique 93 au même moment —
+  Roblox + OBS tournaient). **Re-mesuré après les mineurs, machine plus calme : home mobile 97 (statique 96), desktop 100/100/100** → cible atteinte.
+  A11y 100 partout, y compris en reduced motion. CLS 0. JSON : `reports/lighthouse/motion-*.json`.
+- ⚠️ **Ce PC a les « effets d'animation » Windows désactivés** → Chrome dit `prefers-reduced-motion: reduce`
+  → le site y apparaît **statique** (voulu). Tests/audits : forcer `no-preference` via CDP/puppeteer.
+- **Trouvailles hors scope (pré-existantes)** : (1) les titres ne sont pas en Orbitron (Tailwind
+  `fontFamily.heading: "Orbitron"` ≠ famille renommée par next/font → fallback) ; (2) skip link → nav client
+  → Retour : Next 14 ignore le `popstate` à `state=null` → l'ancienne page reste affichée.
 
 ### Audit workflow complet + nettoyage « tout le safe » (2026-07-02)
 
