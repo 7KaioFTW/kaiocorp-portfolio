@@ -255,6 +255,7 @@
       "ctaAllMaps": "Ver todos los mapas y sus estadísticas",
       "units": { "minutes": "min jugados", "favorites": "favoritos" },
       "projects": {
+        "sprite-pillars": { "type": "Minijuego · KNZI", "objective": "Reunir a un público casual en torno a un minijuego de fiesta que se juega una y otra vez con amigos." },
         "clutch-realistics-1v2": { "type": "Competitivo · Martoz", "objective": "Conectar con una comunidad en torno a un formato clutch frenético." },
         "martoz-1v1-build-fights": { "type": "Competitivo · Martoz", "objective": "Un formato de entrenamiento 1v1 que los jugadores repiten cada día." },
         "martoz-turtle-fights-ffa": { "type": "Competitivo · Martoz", "objective": "Un FFA divertido y adictivo, con builds que se reinician en continuo." },

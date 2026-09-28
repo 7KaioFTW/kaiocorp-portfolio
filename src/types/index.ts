@@ -31,6 +31,8 @@ export interface FortniteMap {
    * display to hide/label them.
    */
   disabled?: boolean;
+  /** Pinned at the top of the /maps leaderboard, above the minutes-played ranking (product decision). */
+  pinned?: boolean;
   brand?: string;
   stats: MapStats;
   fortniteGgUrl: string;

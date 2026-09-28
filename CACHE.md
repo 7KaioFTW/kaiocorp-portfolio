@@ -20,7 +20,34 @@ que les signaux SEO du code soient cohérents avec le domaine servi. Voir « Ét
 
 ## Dernières actions (cette session)
 
-### Homepage 3D « Floating Island » — IMPLÉMENTÉE (non commitée) (2026-09-28)
+### Expérience 3D activée par défaut (2026-09-28, PR #1)
+- **Décision de Kaio** : la 3D doit être active par défaut. Avant, « réduire les animations » (cas de ce PC :
+  animations Windows désactivées) la coupait sans choix enregistré.
+- **Fait** : `selectTier()` + script de boot (parité testée) ne coupent plus la 3D pour le mouvement réduit ;
+  elle tourne alors en version réduite (suit le scroll, pas de swoop d’intro / flottement / grain). Restent
+  en poster sans choix explicite : Save-Data, < 4 Go, pas de WebGL2, GL logiciel, GPU trop lent. Un
+  basculement du réglage OS en cours de visite reconstruit la scène sans la couper. Le bouton « Expérience 3D »
+  permet toujours de la désactiver (choix mémorisé). Le motion GSAP garde sa règle (pas chargé en mouvement réduit).
+- **Vérif** : 144/144 tests, tsc/eslint/build OK ; e2e dev `t5-static` 54 ok (repli statique = choix « off »),
+  `t7-matrix` 73 ok (reduce + défaut → live, sans swoop/flottement/grain/kick FOV), `tf-rm-anchor` 24 ok, 0 FAIL.
+
+### Sprite Pillars en tête + stats du blog recalculées (2026-09-28, PR #1)
+- **Demande de Kaio** (retour sur la preview) : Sprite Pillars absente de l’anneau 3D, doit être en premier ;
+  stats globales soupçonnées de ne pas l’inclure.
+- **Diagnostic** : `TOTAL_MINUTES` l’incluait déjà (4,71 → 4,94 Md, « 4,9 Md+ » sur la home et /maps), mais les
+  **articles de blog** fr/en/es/de citaient « 4,7 milliards » en dur ; l’anneau l’excluait faute de miniature.
+- **Fait** : miniature téléchargée (`public/images/maps/sprite-pillars.jpg`, 1920×1080, 205 KB, CDN Epic) ;
+  Sprite Pillars 1re de `maps.json` + `"pinned": true` (épinglée #1 du classement /maps, `leaderboardOrder()`) ;
+  1re des réalisations mises en avant (catégorie `minijeu`, textes fr/en/es/de à relire) ; 1er écran de
+  l’anneau (tag MINIGAME), **The Box sort de l’anneau** (10 emplacements) ; blog = `formatBillions(locale)`.
+- **Vérif** : 142/142 tests (+12 : blog, `leaderboardOrder`, réalisations), tsc/eslint/build OK ; e2e dev
+  `t10-ring` (ordre mis à jour) 8 ok, `t10-keys` 8, `t5-static` 36, `t11-stats-portal` 25, 0 FAIL ; captures
+  `…/island/sp-*.png` : 10 miniatures de l’anneau en 200, /maps #1 Sprite Pillars, blog « 4,9 milliards ».
+- Non touché : les locales non routées (da/nl/pt-BR/ro…) gardent « 4,7 » en dur (non servies).
+- Question ouverte : Kaio voyait des écrans sans miniature sur la preview Vercel — probablement Sprite Pillars
+  (fichier absent) ; à reconfirmer après le push (preview protégée par la connexion Vercel).
+
+### Homepage 3D « Floating Island » — IMPLÉMENTÉE, commit 22b5b95, PR #1 (2026-09-28)
 
 Les 14 tâches du plan (`plans/2026-09-27-3d-island-homepage.md`) sont terminées. Détails complets et
 rulings : `specs/2026-09-27-3d-island-homepage.md` §11 (« Implementation notes »). Rien n’est commité :

@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 import { islandStore, safeStorage, writePreference } from "@/lib/three/island/store";
 import { cn } from "@/lib/utils";
 
-// "Expérience 3D : activée / désactivée" (spec §6). Overrides the default (reduced motion → off) per
-// visitor; the choice is stored in localStorage. IslandJourney reacts to the store's `pref`/`restarts`.
+// "Expérience 3D : activée / désactivée" (spec §6). Overrides the default (on, except Save-Data / < 4 GB)
+// per visitor; the choice is stored in localStorage. IslandJourney reacts to the store's `pref`/`restarts`.
 // It shows the EFFECTIVE state (is the 3D running?). Pressing it while the 3D is off always restarts
 // the world, even when the stored preference is already "on" (slow-GPU give-up, failed start).
 // Visuals follow html[data-island] (set before first paint by the boot script, then kept in sync with

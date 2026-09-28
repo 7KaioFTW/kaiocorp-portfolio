@@ -11,7 +11,7 @@ const byId = (id: string): FortniteMap => {
   return m;
 };
 
-export type ProjectCategory = "competitif" | "activation" | "tycoon";
+export type ProjectCategory = "competitif" | "activation" | "tycoon" | "minijeu";
 
 export type ProjectCardMeta = {
   id: string;
@@ -25,7 +25,9 @@ export type ProjectCardMeta = {
   version: FortniteMap["version"];
 };
 
+// Order = display order. Sprite Pillars leads (product decision 2026-09-28).
 const FEATURED: { id: string; category: ProjectCategory; thumbLabel: string }[] = [
+  { id: "sprite-pillars", category: "minijeu", thumbLabel: "SPRITE" },
   { id: "clutch-realistics-1v2", category: "competitif", thumbLabel: "CLUTCH" },
   { id: "martoz-1v1-build-fights", category: "competitif", thumbLabel: "1V1" },
   { id: "martoz-turtle-fights-ffa", category: "competitif", thumbLabel: "FFA" },
@@ -53,9 +55,10 @@ export const BRAND_CASES_META = REALISATIONS_META.filter((r) => r.category === "
 export const COMPETITIVE_CASES_META = REALISATIONS_META.filter((r) => r.category === "competitif");
 
 // The 10 maps shown as screens in the homepage's 3D ring chapter (and in its accessible HTML list),
-// in ring order (= prototype order). `tag` must be one of the map's maps.json tags (tested).
-// sprite-pillars is left out: its thumbnail file is still missing.
+// in ring order. `tag` must be one of the map's maps.json tags (tested). Sprite Pillars takes the first slot
+// and The Box left the ring (product decision 2026-09-28); the rest keeps the prototype order.
 const RING: { id: string; tag: string }[] = [
+  { id: "sprite-pillars", tag: "MINIGAME" },
   { id: "clutch-realistics-1v2", tag: "BOXFIGHT" },
   { id: "martoz-1v1-build-fights", tag: "BUILDING" },
   { id: "martoz-turtle-fights-ffa", tag: "FREE FOR ALL" },
@@ -63,7 +66,6 @@ const RING: { id: string; tag: string }[] = [
   { id: "clutch-realistics-2v3", tag: "TRIOS" },
   { id: "boxfight-2v2-ranked", tag: "BOXFIGHT" },
   { id: "carlife-tycoon", tag: "SIMULATOR" },
-  { id: "the-box", tag: "PVP" },
   { id: "senses-rush", tag: "DEATHRUN" },
   { id: "rift-racers-alpine", tag: "RACE" },
 ];

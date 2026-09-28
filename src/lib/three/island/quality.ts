@@ -17,8 +17,10 @@ export interface DeviceSignals {
 export function selectTier(s: DeviceSignals, pref: Preference): Tier {
   if (!s.webgl2 || pref === "off") return "off";
   const constrained = s.saveData || (s.deviceMemory !== undefined && s.deviceMemory < 4);
-  // Without an explicit opt-in, reduced motion and constrained devices get the poster.
-  if (pref !== "on" && (s.reducedMotion || constrained)) return "off";
+  // The 3D is on by default, reduced motion included (user decision 2026-09-28: the world then follows
+  // the scroll only — no intro swoop, idle motion or grain). Without an explicit opt-in, only constrained
+  // devices (Save-Data, < 4 GB) get the poster.
+  if (pref !== "on" && constrained) return "off";
   if (constrained || s.coarsePointer || (s.deviceMemory !== undefined && s.deviceMemory < 8)) return "medium";
   return "high";
 }

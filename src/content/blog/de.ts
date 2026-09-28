@@ -1,4 +1,5 @@
 import type { BlogPost } from "../blog";
+import { formatBillions } from "@/lib/stats";
 
 export const blogPosts: BlogPost[] = [
  {
@@ -52,7 +53,7 @@ Epic Games hat über **722 Millionen Dollar** an Fortnite-Island-Creator über d
 - E-Sport-Organisationen beauftragen maßgeschneiderte kompetitive Maps
 - Content Creator kooperieren mit Entwicklern für exklusive Maps
 
-Zum Vergleich: Unsere Maps bei [Kaio Corporation](/about) haben insgesamt über **4,7 Milliarden Spielminuten** angesammelt, in Zusammenarbeit mit Creatorn wie Martoz, GamersOrigin und WZF.
+Zum Vergleich: Unsere Maps bei [Kaio Corporation](/about) haben insgesamt über **${formatBillions("de")} Milliarden Spielminuten** angesammelt, in Zusammenarbeit mit Creatorn wie Martoz, GamersOrigin und WZF.
 
 ## Erforderliche Fähigkeiten
 
@@ -99,7 +100,7 @@ Die genaue Auszahlungsformel ist nicht öffentlich bekannt, aber basierend auf �
 
 Nicht alle Minuten sind gleich viel wert. Hier ist, worauf es wirklich ankommt:
 
-**Spielminuten** — Die primäre Metrik. Dies ist die gesamte kumulative Spielzeit aller Spieler. Unser kombiniertes Portfolio hat über [4,7 Milliarden Minuten](/maps), was uns zu den Top-Engagement-Generatoren auf der Plattform zählt.
+**Spielminuten** — Die primäre Metrik. Dies ist die gesamte kumulative Spielzeit aller Spieler. Unser kombiniertes Portfolio hat über [${formatBillions("de")} Milliarden Minuten](/maps), was uns zu den Top-Engagement-Generatoren auf der Plattform zählt.
 
 **Favoriten** — Islands mit mehr Favoriten erhalten eine bessere Platzierung im Discover-Tab. Unsere Maps haben zusammen über **3,2 Millionen Favoriten**, was die organische Auffindbarkeit fördert.
 
@@ -331,7 +332,7 @@ Dieser Leitfaden deckt die absoluten Grundlagen ab. Um tiefer einzusteigen:
 
 Das Erstellen benutzerdefinierter Verse-Geräte unterscheidet professionelle UEFN-Entwickler von Hobbyisten. Wenn Sie komplexe benutzerdefinierte Mechaniken für Ihre Map benötigen, [ist unser Team auf Verse-Scripting spezialisiert](/services) — von benutzerdefinierten Punktesystemen bis zu vollständigen Spielmodus-Frameworks.
 
-Sehen Sie sich unser [Portfolio](/maps) an, um Verse in Aktion mit über 4,7 Milliarden Spielminuten zu erleben.`,
+Sehen Sie sich unser [Portfolio](/maps) an, um Verse in Aktion mit über ${formatBillions("de")} Milliarden Spielminuten zu erleben.`,
  },
  {
  slug: "behind-the-scenes-clutch-realistics",

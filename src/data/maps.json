@@ -1,5 +1,40 @@
 [
   {
+    "id": "sprite-pillars",
+    "code": "0673-9062-5656",
+    "title": "SPRITE PILLARS",
+    "subtitle": "",
+    "creator": "KNZI",
+    "description": "12-player free-for-all. A random block every 5 seconds — don't fall! Last player standing wins. Have fun & share with friends.",
+    "tags": [
+      "MINIGAME",
+      "CASUAL",
+      "JUST FOR FUN",
+      "FREE FOR ALL"
+    ],
+    "mapType": "UEFN",
+    "maxPlayers": 12,
+    "released": "2026-07-10",
+    "updated": "2026-09-24",
+    "version": 50,
+    "ageRating": "Teen / 12",
+    "xpStatus": "Awarding",
+    "stats": {
+      "minutesPlayed": "228.1M",
+      "minutesPlayedRank": 466,
+      "favorites": "124.6K",
+      "favoritesRank": 1460,
+      "allTimePeak": 6694,
+      "day1Retention": "27%",
+      "day7Retention": "12%",
+      "avgPlaytime": "30.1 min"
+    },
+    "fortniteGgUrl": "https://fortnite.gg/island/0673-9062-5656",
+    "thumbnail": "/images/maps/sprite-pillars.jpg",
+    "featured": false,
+    "pinned": true
+  },
+  {
     "id": "clutch-realistics-1v2",
     "code": "6809-4712-6549",
     "title": "1V2 CLUTCH REALISTICS",
@@ -503,40 +538,6 @@
     },
     "fortniteGgUrl": "https://fortnite.gg/island/2811-1355-5533",
     "thumbnail": "/images/maps/fast-realistic-ranked-2v2.jpg",
-    "featured": false
-  },
-  {
-    "id": "sprite-pillars",
-    "code": "0673-9062-5656",
-    "title": "SPRITE PILLARS",
-    "subtitle": "",
-    "creator": "KNZI",
-    "description": "12-player free-for-all. A random block every 5 seconds — don't fall! Last player standing wins. Have fun & share with friends.",
-    "tags": [
-      "MINIGAME",
-      "CASUAL",
-      "JUST FOR FUN",
-      "FREE FOR ALL"
-    ],
-    "mapType": "UEFN",
-    "maxPlayers": 12,
-    "released": "2026-07-10",
-    "updated": "2026-09-24",
-    "version": 50,
-    "ageRating": "Teen / 12",
-    "xpStatus": "Awarding",
-    "stats": {
-      "minutesPlayed": "228.1M",
-      "minutesPlayedRank": 466,
-      "favorites": "124.6K",
-      "favoritesRank": 1460,
-      "allTimePeak": 6694,
-      "day1Retention": "27%",
-      "day7Retention": "12%",
-      "avgPlaytime": "30.1 min"
-    },
-    "fortniteGgUrl": "https://fortnite.gg/island/0673-9062-5656",
-    "thumbnail": "/images/maps/sprite-pillars.jpg",
     "featured": false
   }
 ]

@@ -105,7 +105,8 @@ measured on load/resize (ResizeObserver on `main`):
   - `high` (fine pointer, ≥ 8 GB `deviceMemory` or unknown, not `saveData`): prototype settings, DPR ≤ 1.5.
   - `medium` (touch/coarse pointer or `deviceMemory` 4): DPR 1, clouds detail 5 → 3 and count −40 %,
     particles −50 %, bloom at half resolution, MSAA 2.
-  - `off` (no WebGL2, `saveData`, `deviceMemory` < 4, reduced motion without opt-in): poster only.
+  - `off` (no WebGL2, `saveData`, `deviceMemory` < 4 without opt-in; reduced motion no longer since
+    2026-09-28, see §6): poster only.
   - Adaptive step-down kept (150 frames < 45 fps → lower DPR), fixed: MSAA samples follow DPR, dt
     clamp no longer masks < 20 fps.
 - **Recompile stutter fix:** point lights stay in the scene with intensity 0 instead of toggling
@@ -130,8 +131,11 @@ measured on load/resize (ResizeObserver on `main`):
 
 ## 6. Reduced motion & the 3D toggle
 
-- Default: `prefers-reduced-motion: reduce` → tier `off` (poster + static site), same rule as the
-  motion engine.
+- ~~Default: `prefers-reduced-motion: reduce` → tier `off` (poster + static site), same rule as the
+  motion engine.~~ **Amended 2026-09-28 (user decision): the 3D is on by default, reduced motion
+  included** — it then runs in its reduced form (below). Without a stored choice, only Save-Data /
+  `deviceMemory` < 4 (and no WebGL2, software-only GL, a too-slow GPU) fall back to the poster. The
+  GSAP motion engine keeps its own rule (never loads under reduced motion).
 - `Toggle3D` in the hero ("Expérience 3D : activée / désactivée") overrides the default per visitor
   (`localStorage`, wrapped in try/catch). Turning it on loads the world immediately; off disposes it.
 - With 3D on under reduced motion: camera still follows scroll (it is user-driven), but the intro
@@ -194,7 +198,8 @@ the six home-only components) — see CACHE.md "Revue finale" for the cleanup ev
    later superseded on the homepage and removed in Task 14 (see (b) below and R14-4).
 3. The 10 ring maps are the fixed `RING_MAPS` list in `src/content/realisations.ts` (prototype's 10, prototype
    order), fields from `maps.json`; `boxfight-2v2-ranked` uses `BOXFIGHT` (no "Ranked" data tag);
-   `sprite-pillars` excluded (missing thumbnail).
+   `sprite-pillars` excluded (missing thumbnail). **Amended 2026-09-28 (user decision):** the thumbnail now
+   exists; `sprite-pillars` (tag `MINIGAME`) takes the first slot and `the-box` leaves the ring (still 10 slots).
 4. Pillar heights: the prototype's fixed descending heights 8.6/7.0/5.8/4.8 are kept (data units are
    incompatible, so data-proportional heights would be meaningless). Settled by the user (R14-2): kept fixed.
 5. Stats labels sit under the pillars as a glass grid (not projected onto pillar tips every frame).

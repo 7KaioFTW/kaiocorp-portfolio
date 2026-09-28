@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { MapRow } from "@/components/maps/MapRow";
-import { cn, parseStatNumber } from "@/lib/utils";
+import { cn, leaderboardOrder } from "@/lib/utils";
 import mapsData from "@/data/maps.json";
 import type { FortniteMap } from "@/types";
 
@@ -16,7 +16,7 @@ export function MapLeaderboard() {
   const [filter, setFilter] = useState<string>("All");
   const maps = useMemo(() => {
     const f = filter === "All" ? allMaps : allMaps.filter((m) => m.creator === KEY[filter]);
-    return [...f].sort((a, b) => parseStatNumber(b.stats.minutesPlayed) - parseStatNumber(a.stats.minutesPlayed));
+    return leaderboardOrder(f);
   }, [filter]);
 
   // New rows mounted by a filter change → ask the motion engine to animate them.

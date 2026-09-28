@@ -32,7 +32,7 @@ export interface SceneContext {
 
 /** Per-frame state handed to every unit after the camera has been placed. */
 export interface FrameState {
-  /** Ambient clock (seconds) for shaders and idle motion; frozen under reduced motion (3D opted in). */
+  /** Ambient clock (seconds) for shaders and idle motion; frozen under reduced motion. */
   t: number;
   /** Simulation step, clamped to ≤ 1/20 s. */
   dt: number;
@@ -40,7 +40,7 @@ export interface FrameState {
   p: number;
   camera: THREE.PerspectiveCamera;
   portrait: boolean;
-  /** Idle-motion factor (bobbing, idle spins): 1, or 0 under reduced motion (3D opted in). */
+  /** Idle-motion factor (bobbing, idle spins): 1, or 0 under reduced motion. */
   bob: number;
 }
 

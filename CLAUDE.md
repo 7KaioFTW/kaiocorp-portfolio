@@ -122,6 +122,9 @@ public/images/   # Map thumbnails (filename matches map id)
 ## Gotchas
 - TypeScript strict mode: no unused imports, no `any`
 - Map thumbnails go in `public/images/maps/` — filename matches map `id`
+- Sprite Pillars leads everywhere (product decision): first entry of `maps.json`, `"pinned": true` (pinned at the
+  top of the /maps leaderboard via `leaderboardOrder()` in `src/lib/utils.ts`), first in `FEATURED` and `RING`
+  (`src/content/realisations.ts`). Totals quoted in blog posts use `formatBillions()` — never hardcode them.
 - Disabled maps (rift-racers-alpine, 7r-1v1-ranked, piano-1v1, fast-realistic-ranked-2v2) have `"disabled": true`.
   This is an **internal flag only — intentionally NOT reflected on the site** (product decision): disabled maps
   are shown as live everywhere (leaderboard, detail page, sitemap, réalisations). Do not "fix" the display.
@@ -130,8 +133,11 @@ public/images/   # Map thumbnails (filename matches map id)
 - FR apostrophes in raw JSX -> ESLint `react/no-unescaped-entities`: use `’` (U+2019)
 - `npm run build` / `next dev` may not finish in a slow sandbox — verify via `tsc` + `eslint`
 - **Motion** (spec `specs/2026-09-26-motion-design.md`): reduced motion = engine never loads (static site).
-  This PC's Windows animation effects are OFF → Chrome reports `prefers-reduced-motion: reduce`, so the
-  site looks static here. For visual checks / Lighthouse, force `no-preference` via CDP
+  The **3D homepage is on by default, reduced motion included** (2026-09-28, user decision): under reduced
+  motion it follows the scroll only (no intro swoop, idle motion or grain); only Save-Data / < 4 GB / no GPU
+  fall back to the poster without an explicit choice. `selectTier()` and the inline boot script must agree
+  (boot.test.ts). This PC's Windows animation effects are OFF → Chrome reports `prefers-reduced-motion: reduce`,
+  so the GSAP motion looks static here and the 3D runs in its reduced form. For visual checks / Lighthouse, force `no-preference` via CDP
   (`Emulation.setEmulatedMedia`) or puppeteer `page.emulateMediaFeatures`.
 - `next dev` needs `'unsafe-eval'` (React Refresh) — added to CSP for development only in `next.config.js`.
 - **3D homepage** (spec `specs/2026-09-27-3d-island-homepage.md`, §11 for the implementation notes):
