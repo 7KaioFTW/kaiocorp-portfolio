@@ -67,7 +67,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const isRtl = rtlLocales.includes(locale);
 
   return (
-    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} className={`${inter.variable} ${orbitron.variable}`}>
+    <html lang={locale} dir={isRtl ? "rtl" : "ltr"} className={`${inter.variable} ${orbitron.variable}`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="48x48" />
         <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />

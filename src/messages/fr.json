@@ -184,6 +184,7 @@
   "subtitle": "Expériences Fortnite sur mesure pour les grandes marques"
  },
  "b2b": {
+  "island": { "toggle": "Expérience 3D :", "on": "activée", "off": "désactivée", "ringList": "Sélection de maps" },
   "nav": {
    "activations": "Activations",
    "agences": "Agences",

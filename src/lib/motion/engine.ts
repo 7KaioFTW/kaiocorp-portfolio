@@ -126,14 +126,23 @@ export function initMotion(): MotionEngine {
 
   const onRescan = () => void scan({ animateInView: true });
   const onRefresh = () => refresh();
+  // An app-side scroll correction ("motion:scroll-to", detail { top }), e.g. the 3D homepage keeping the reader
+  // in place when its sticky chapters collapse: Lenis owns the scroll, so jump it there too — otherwise an
+  // in-flight smooth scroll writes the old position straight back.
+  const onScrollTo = (event: Event) => {
+    const top = (event as CustomEvent<{ top?: unknown } | null>).detail?.top;
+    if (typeof top === "number") lenis.scrollTo(top, { immediate: true, force: true });
+  };
   window.addEventListener("motion:rescan", onRescan);
   window.addEventListener("motion:refresh", onRefresh);
+  window.addEventListener("motion:scroll-to", onScrollTo);
   root.classList.add("motion-ready");
 
   function destroy() {
     resetPage();
     window.removeEventListener("motion:rescan", onRescan);
     window.removeEventListener("motion:refresh", onRefresh);
+    window.removeEventListener("motion:scroll-to", onScrollTo);
     globalCleanups.forEach((cleanup) => cleanup());
     gsap.ticker.remove(tick);
     gsap.ticker.lagSmoothing(500, 33); // restore the GSAP default we overrode for Lenis

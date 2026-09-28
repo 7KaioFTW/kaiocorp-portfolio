@@ -38,6 +38,7 @@
   "subtitle": "Custom Fortnite experiences built for leading brands"
  },
  "b2b": {
+  "island": { "toggle": "3D experience:", "on": "on", "off": "off", "ringList": "Featured maps" },
   "nav": {
    "activations": "Activations",
    "agences": "Agencies",

@@ -1,6 +1,7 @@
 # Kaio UEFN Portfolio
 
-**Status**: 16 maps, 5 collaborators. B2B refonte (FR-first) + motion design system. Last updated: 2026-09-26.
+**Status**: 16 maps, 5 collaborators. B2B refonte (FR-first) + motion design system + 3D homepage
+(uncommitted). Last updated: 2026-09-28.
 
 ## Agent rules (Claude Rulebook)
 
@@ -35,7 +36,10 @@ Professional portfolio demonstrates technical skills (Next.js, TypeScript, Tailw
 ## Tech Stack & Commands
 - Next.js 14 (App Router), TypeScript (strict mode), Tailwind CSS
 - Motion: GSAP (ScrollTrigger, SplitText) + Lenis via the `data-motion` engine in `src/lib/motion`
-  (lazy-loaded after load+idle), hand-written WebGL hero (`src/lib/motion/shader.ts`), CSS in `src/app/motion.css`
+  (lazy-loaded after load+idle), CSS in `src/app/motion.css`
+- 3D homepage: three.js 0.170 (vanilla, no R3F) — `src/lib/three/island` (world + scene modules, pure helpers
+  unit-tested), `src/components/three` (IslandJourney / Toggle3D / MapFocusCard); loaded after load+idle via
+  `afterLoadIdle`, home only
 - Tests: Vitest (`npm test`) for pure helpers
 - Internationalization: next-intl (defaultLocale `fr`)
 - Image optimization: sharp, Next.js Image
@@ -130,3 +134,39 @@ public/images/   # Map thumbnails (filename matches map id)
   site looks static here. For visual checks / Lighthouse, force `no-preference` via CDP
   (`Emulation.setEmulatedMedia`) or puppeteer `page.emulateMediaFeatures`.
 - `next dev` needs `'unsafe-eval'` (React Refresh) — added to CSP for development only in `next.config.js`.
+- **3D homepage** (spec `specs/2026-09-27-3d-island-homepage.md`, §11 for the implementation notes):
+  - Never import `three` or `@/lib/three/island/world` statically. `IslandJourney` is the only entry, through
+    a dynamic import. Nothing in the repo enforces this: the `bundle-check.mjs` script that checked it lives
+    in the session scratchpad, not in the repo; its full text is in `plans/2026-09-27-3d-island-homepage.md`
+    (Task 6, Step 14): re-create it from there and run it after `npm run build`.
+  - **Testing tools are NOT in the repo.** The CDP e2e suite (`cdp.mjs`, `island/lib.mjs`, `t5-*` … `t14-*`,
+    `tf-*`), the Lighthouse runner `lh/lh-run.mjs` and `strip-proxy.mjs` live only in the session scratchpad
+    (`%TEMP%\claude\…\scratchpad\island-tools`, a temp dir that can be cleaned). The plan reproduces
+    `cdp.mjs` (Appendix A), `lib.mjs`, `lh-run.mjs` (Task 13) and the first version of each task’s e2e
+    script (`t5-static` … `t11-stats-portal`); later fix-round edits, `t11-gates-exact.sh`, the
+    `t13-*`/`tf-*` scripts and `strip-proxy.mjs` are not reproduced anywhere.
+  - `html[data-island]` = `pending | loading | live | off`, set pre-paint by the inline boot script in
+    `app/[locale]/page.tsx` (+ `suppressHydrationWarning` on `<html>`). The sticky ring/stats chapters exist
+    only while it is not `off`.
+  - The 3D layer is `position: fixed; z-index: -1`, so do not give `<html>` a background.
+  - A slow-GPU give-up, a lost WebGL context (also mid-build) or an OS reduced-motion flip switches `off` (or
+    back on) mid-page; `IslandJourney` then keeps the reader in the same section (`window.scrollTo` + the motion
+    engine's `motion:scroll-to` event, so Lenis jumps too). Any new sticky/height change tied to `data-island`
+    must keep that working (`tf-giveup-anchor`, `tf-rm-anchor` e2e). The shader-compile wait is bounded
+    (`compilePrograms` in `world.ts`, 10 s) — don't go back to three's unbounded `compileAsync`.
+  - The toggle choice is `localStorage["kc-island-3d"]` = `on | off`.
+  - Regenerate the poster (`public/images/island-poster.webp`) with the Task 12 script
+    (`plans/2026-09-27-3d-island-homepage.md`) after any visual change to the hero frame.
+  - The homepage's `Hero`, `Audiences`, `Realisations`, `StatsBand`, `WhyKaio` and `Marquee` are always
+    rendered `over3d` (their old default/non-3D branches were dead code, removed in Task 14) — the other six
+    sections (`Opportunity`, `ServicesGrid`, `Process`, `SectorIdeas`, `FaqB2B`, `FinalCta`) still support both
+    variants because other pages render their `default` form.
+  - Lighthouse on Playwright Chromium 147 crashes the renderer on any response carrying `Referrer-Policy` —
+    run it through a header-stripping proxy (`strip-proxy.mjs` in the session scratchpad, not in the repo:
+    a small `node:http` proxy on :3200 → :3000 that drops only `referrer-policy`); the header itself is
+    correct and stays.
+  - `chrome-headless-shell` has no GPU, so the island stays "off" and Lighthouse there scores the poster
+    only — use Playwright `chrome.exe --headless=new --ignore-gpu-blocklist` (real GPU) instead.
+  - On this PC, Chrome stable is locked by registry policy to `C:\ChromeProfile`, and
+    `launch_chrome_debug.bat` kills every Chrome window.
+  - Screen recording needs `--window-size=1456,1052` for a clean 1440×900 capture.

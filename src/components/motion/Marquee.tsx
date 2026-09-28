@@ -6,6 +6,7 @@ const TITLES = (mapsData as FortniteMap[]).map((m) => m.title);
 
 // Decorative marquee of every map title (duplicates real content → aria-hidden). The CSS loop
 // runs without JS; the motion engine bends its speed/direction with scroll velocity.
+// Homepage-only, always over the 3D world: transparent background, the world shows through (spec §3.2).
 export function Marquee() {
   const row = (
     <div className="flex shrink-0 items-center">
@@ -24,7 +25,7 @@ export function Marquee() {
     </div>
   );
   return (
-    <div data-motion="marquee" aria-hidden="true" className="overflow-hidden border-y border-white/5 bg-surface-dark py-6 md:py-8">
+    <div data-motion="marquee" aria-hidden="true" className="overflow-hidden border-y border-white/5 py-6 md:py-8">
       <div className="motion-marquee-track flex w-max whitespace-nowrap">
         {row}
         {row}

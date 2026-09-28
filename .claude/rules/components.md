@@ -9,10 +9,14 @@ paths:
 - Use functional components with hooks, no class components
 - Props interface defined above component, named `{ComponentName}Props`
 - Use `cn()` from `@/lib/utils` for conditional classNames
-- Motion: add `data-motion` / `data-*` attributes (reveal, split, decode, parallax, gallery, marquee,
+- Motion: add `data-motion` / `data-*` attributes (reveal, split, decode, parallax, marquee,
   progress-line, data-magnetic, data-tilt, data-glow, data-cursor) — the lazy engine in `src/lib/motion`
   animates them. Never import gsap in components; hero entrance = CSS classes in `src/app/motion.css`.
   `split` only on solid-colour text; LCP text (hero h1/subtitle) must never start at opacity 0.
 - Always include `key` prop when mapping arrays
 - Use Next.js `<Image>` for all images, never `<img>`
 - Destructure props in function signature
+- 3D (homepage): components never import three; the world is reached only through IslandJourney's dynamic
+  import. Canvas labels use the next/font families via --font-orbitron / --font-inter. Sections support
+  variant="over3d" (Glass panel, transparent background) — keep the default variant unchanged for other
+  pages.
