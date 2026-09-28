@@ -35,7 +35,7 @@ export default async function Page() {
           <SectionHead eyebrow={t("partnershipEyebrow")} title={t("partnershipTitle")} />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {points.map((p, i) => (
-              <ScrollReveal key={p.t} delay={`${(i % 2) * 70}ms`}>
+              <ScrollReveal key={p.t}>
                 <div className="h-full rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6">
                   <h3 className="font-heading text-base font-bold text-white">{p.t}</h3>
                   <p className="mt-2 text-sm text-slate-400">{p.d}</p>

@@ -34,7 +34,7 @@ export default async function Page() {
           <SectionHead eyebrow={t("buildEyebrow")} title={t("buildTitle")} />
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {formats.map((f, i) => (
-              <ScrollReveal key={f.t} delay={`${(i % 2) * 70}ms`}>
+              <ScrollReveal key={f.t}>
                 <div className="h-full rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6">
                   <h3 className="font-heading text-base font-bold text-white">{f.t}</h3>
                   <p className="mt-2 text-sm text-slate-400">{f.d}</p>

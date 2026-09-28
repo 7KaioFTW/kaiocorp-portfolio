@@ -1,0 +1,312 @@
+/* Motion system styles — spec: specs/2026-09-26-motion-design.md.
+   Imported after globals.css so these rules win over Tailwind utilities of equal specificity. */
+
+/* Lenis smooth scroll (replaces lenis/dist/lenis.css, without !important) */
+html.lenis,
+html.lenis body { height: auto; }
+html.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* decode: fixed-width scramble layer (width set inline by the engine) */
+.motion-decode { display: inline-block; vertical-align: top; white-space: nowrap; max-width: 100%; }
+
+/* StatsBand neon scan — one sweep when it first enters the viewport (engine adds .is-on) */
+.motion-scan {
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, #00d4ff, transparent) no-repeat -30% 0 / 30% 100%;
+}
+.motion-scan.is-on { opacity: 1; animation: motion-scan 1.4s cubic-bezier(0.65, 0, 0.35, 1) both; }
+@keyframes motion-scan { from { background-position: -30% 0; } to { background-position: 130% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-scan { display: none; }
+}
+
+/* ---- Hero entrance: CSS only (never waits for JS). LCP text stays opaque from frame 1. ---- */
+@keyframes hero-rise { from { transform: translateY(24px); filter: blur(8px); } to { transform: none; filter: none; } }
+@keyframes hero-fade-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.hero-rise { animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms) both; }
+.hero-fade-rise { animation: hero-fade-rise 0.8s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0ms) both; }
+
+/* Gradient headline (replaces Tailwind's bg-gradient on the h1) + one-shot light sweep */
+.hero-sweep {
+  background-image:
+    linear-gradient(100deg, transparent 42%, rgba(255, 255, 255, 0.9) 50%, transparent 58%),
+    linear-gradient(to right, #ffffff, #cdb6ff, #00d4ff);
+  background-size: 250% 100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 150% 0, 0 0;
+  animation: hero-sweep 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+@keyframes hero-sweep { from { background-position: 150% 0, 0 0; } to { background-position: -60% 0, 0 0; } }
+
+/* One-shot RGB-split glitch drawn by the wrapper's pseudo-elements (data-text = headline) */
+.hero-glitch { position: relative; }
+.hero-glitch::before,
+.hero-glitch::after {
+  content: attr(data-text);
+  content: attr(data-text) / ""; /* decorative: empty alt text so screen readers don't hear the title 3× */
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+.hero-glitch::before { color: #00d4ff; animation: hero-glitch-a 0.6s steps(1) both; /* no delay: must paint in the same frame as the h1 or it becomes a late LCP candidate */ }
+.hero-glitch::after { color: #ff3ea5; animation: hero-glitch-b 0.6s steps(1) both; }
+@keyframes hero-glitch-a {
+  0% { opacity: 0.85; transform: translate(-5px, 0); clip-path: inset(8% 0 62% 0); }
+  20% { transform: translate(4px, 0); clip-path: inset(48% 0 22% 0); }
+  40% { transform: translate(-3px, 0); clip-path: inset(28% 0 50% 0); }
+  60% { transform: translate(5px, 0); clip-path: inset(70% 0 6% 0); }
+  80% { transform: translate(-2px, 0); clip-path: inset(15% 0 70% 0); }
+  100% { opacity: 0; transform: none; clip-path: inset(0 0 100% 0); }
+}
+@keyframes hero-glitch-b {
+  0% { opacity: 0.8; transform: translate(5px, 0); clip-path: inset(60% 0 12% 0); }
+  20% { transform: translate(-4px, 0); clip-path: inset(18% 0 58% 0); }
+  40% { transform: translate(3px, 0); clip-path: inset(40% 0 36% 0); }
+  60% { transform: translate(-5px, 0); clip-path: inset(5% 0 78% 0); }
+  80% { transform: translate(2px, 0); clip-path: inset(66% 0 10% 0); }
+  100% { opacity: 0; transform: none; clip-path: inset(0 0 100% 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .hero-fade-rise,
+  .hero-sweep,
+  .hero-glitch::before,
+  .hero-glitch::after { animation: none; }
+}
+
+/* ---- Pointer layer (classes added by the engine on fine pointers only) ---- */
+.motion-tilt,
+.motion-glow { position: relative; }
+.motion-tilt::after,
+.motion-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 212, 255, 0.13), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.motion-tilt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 212, 255, 0.9), transparent 60%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.motion-tilt:hover::before,
+.motion-tilt:hover::after,
+.motion-glow:hover::after { opacity: 1; }
+
+/* Cursor (dot + ring, positioned by GSAP x/y) */
+.motion-cursor { position: fixed; left: 0; top: 0; z-index: 80; pointer-events: none; border-radius: 9999px; transition: opacity 0.2s ease; }
+.motion-cursor.is-hidden { opacity: 0; }
+.motion-cursor-dot { width: 6px; height: 6px; margin: -3px 0 0 -3px; background: #00d4ff; }
+.motion-cursor-ring {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  color: #0a0a0f;
+  font: 700 20px/1 var(--font-orbitron), sans-serif;
+  transition: width 0.3s ease, height 0.3s ease, margin 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, opacity 0.2s ease;
+}
+.motion-cursor-ring span { opacity: 0; transition: opacity 0.2s ease; }
+.motion-cursor-ring.is-link { width: 56px; height: 56px; margin: -28px 0 0 -28px; border-color: transparent; background: #ffffff; mix-blend-mode: difference; }
+.motion-cursor-ring.is-view { width: 84px; height: 84px; margin: -42px 0 0 -42px; border-color: #00d4ff; background: #00d4ff; }
+.motion-cursor-ring.is-view span { opacity: 1; }
+
+/* ---- Marquee: CSS loop, speed/direction bent by the engine ---- */
+.motion-marquee-track { animation: motion-marquee 45s linear infinite; }
+@keyframes motion-marquee { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-marquee-track { animation: none; }
+}
+
+/* ---- Map detail: slow Ken Burns (transform only — LCP-safe, painted from frame 1) ---- */
+.motion-kenburns { animation: motion-kenburns 12s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes motion-kenburns { from { transform: scale(1.08); } to { transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-kenburns { animation: none; }
+}
+
+/* ---- Page transition (client navigations only — see app/[locale]/template.tsx) ---- */
+.motion-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  background: linear-gradient(120deg, #7b2fbe, #00d4ff);
+  transform-origin: 50% 0;
+  animation: motion-curtain 0.65s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+@keyframes motion-curtain { from { transform: scaleY(1); } to { transform: scaleY(0); } }
+.motion-page-enter { animation: motion-page-enter 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards; }
+@keyframes motion-page-enter { from { opacity: 0; transform: translateY(24px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-curtain,
+  .motion-page-enter { animation: none; }
+}
+
+/* ==== 3D island homepage — spec specs/2026-09-27-3d-island-homepage.md ==== */
+/* html[data-island]: pending (3D decided on, loading after idle) → loading → live; off = poster/static.
+   Set before first paint by the inline boot script, then by IslandJourney. */
+
+/* WebGL layer, fixed behind everything. z-index -1 paints it above the (propagated) body background and
+   below every in-flow section and the footer, without touching shared layout components. */
+.island-layer { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+.island-canvas { display: block; width: 100%; height: 100vh; height: 100lvh; opacity: 0; transition: opacity 0.9s ease; }
+
+/* Poster: the hero background from the first paint. Going live is a hard cut (user decision 2026-09-28: no
+   double exposure) — the first 3D frame replaces the poster and the intro swoop plays from there. Leaving live
+   (toggle off, give-up) keeps the fades above/below, so the poster eases back in. */
+.island-poster { transition: opacity 1.2s ease; }
+html[data-island="live"] .island-canvas { opacity: 1; transition: none; }
+html[data-island="live"] .island-poster { opacity: 0; transition: none; }
+
+/* Dark glass panels carry the homepage content over the world (backdrop blur on desktop only). */
+.island-glass {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+  background: rgba(10, 10, 15, 0.72);
+  padding: 1.25rem;
+}
+@media (min-width: 768px) { .island-glass { padding: 2rem; } }
+/* Contrast (spec §7, Task 13 remedy rung 1): secondary text on the glass panels is slate-300, not slate-400 —
+   slate-400 measured 3.4–4.3:1 over the brightest frames behind the panels; slate-300 ≥ 5.8:1. */
+.island-glass .text-slate-400 { color: rgb(203 213 225); }
+@media (min-width: 1024px) and (pointer: fine) {
+  html[data-island="live"] .island-glass { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+}
+/* Ring chapter, 3D on, lg+: the focused 3D screen sweeps the centre/left of the frame (y ≈ 20–65 %), so the
+   panels hug the free edges — heading + focus card along the bottom, the map list in a right-hand column. The
+   one glass panel splits into its children (display: contents), each a tighter glass panel. 3D off: unchanged. */
+@media (min-width: 1024px) {
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr) 19rem;
+    grid-template-rows: 1fr auto;
+    align-items: end;
+    gap: 1rem;
+    max-width: none;
+    padding-bottom: 1.5rem;
+  }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout .island-glass--split { display: contents; }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout .island-glass--split > * {
+    margin: 0;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1.25rem;
+    background: rgba(10, 10, 15, 0.8); /* AA margin for the list's slate-400 minutes over bright frames */
+    padding: 1.5rem;
+  }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout ol { grid-template-columns: minmax(0, 1fr); }
+}
+@media (min-width: 1024px) and (pointer: fine) {
+  html[data-island="live"] .island-ring-layout .island-glass--split > * { -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+}
+
+/* Ring chapter, 3D on, below lg (ruling F1.4 option A): heading on top; along the bottom a horizontal,
+   scroll-snapping row of the 10 map links (the focused map's chip highlighted), the CTA and the focus card. */
+@media (max-width: 1023.98px) {
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout {
+    gap: 0.625rem;
+    padding-top: 4.5rem;
+    padding-bottom: 1rem;
+  }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout .island-glass--split { display: contents; }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout .island-glass--split > :first-child {
+    margin-inline: -0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 1.25rem;
+    background: rgba(10, 10, 15, 0.85); /* denser than the glass: bright cloud frames sit behind it here */
+    padding: 0.875rem 1rem;
+  }
+  /* Compact heading: the focused 3D screen needs the middle of the frame. */
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout .island-glass--split > :first-child h2 { margin-top: 0.375rem; font-size: 1.25rem; line-height: 1.25; }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout .island-glass--split > :first-child h2 ~ * p { margin-top: 0.375rem; font-size: 0.875rem; line-height: 1.45; }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout .island-glass--split > :last-child { margin-top: auto; }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout ol {
+    display: flex;
+    gap: 0.5rem;
+    margin-inline: -1.5rem;
+    padding: 4px 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.5rem;
+    scrollbar-width: none;
+  }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout ol::-webkit-scrollbar { display: none; }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout li {
+    position: relative;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    gap: 0.125rem;
+    padding: 0.4375rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    background: rgba(10, 10, 15, 0.85);
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+  /* The whole chip is the link's hit area; focus shows on the chip. */
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout li a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout li:has(a:focus-visible) { outline: 2px solid #00d4ff; outline-offset: 1px; }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout li[data-active] {
+    border-color: rgba(0, 212, 255, 0.7);
+    background: linear-gradient(rgba(0, 212, 255, 0.12), rgba(0, 212, 255, 0.12)), rgba(10, 10, 15, 0.88);
+  }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout li[data-active] > span { color: #cbd5e1; }
+  /* Text over the 3D gets a dark backing (contrast AA whatever the frame behind). */
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout ol + div {
+    width: fit-content;
+    margin: 0.375rem 0 0 -0.625rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 0.5rem;
+    background: rgba(10, 10, 15, 0.85);
+  }
+  html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-ring-layout [data-island-focus] { padding: 0.875rem 1.25rem; }
+}
+
+/* Sticky chapters — only while the journey is on. The static fallback keeps the normal flow. */
+html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-chapter--ring { min-height: 300vh; }
+html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-chapter--stats { min-height: 150vh; }
+html:is([data-island="pending"], [data-island="loading"], [data-island="live"]) .island-stage {
+  position: sticky;
+  /* IslandJourney sets a negative value when the stage is taller than the viewport: it then pins by its bottom */
+  top: var(--island-stage-top, 0px);
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* MapFocusCard content swap */
+.island-swap { animation: island-swap 0.45s cubic-bezier(0.16, 1, 0.3, 1) both; }
+@keyframes island-swap { from { opacity: 0; transform: translateY(8px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .island-swap { animation: none; }
+  .island-canvas,
+  .island-poster { transition: none; }
+}

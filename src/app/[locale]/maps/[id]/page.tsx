@@ -42,7 +42,11 @@ export default async function MapPage({ params }: { params: { locale: string; id
       <div className="mx-auto max-w-5xl px-6">
         <Breadcrumb items={[{ label: tNav("home"), href: "/" }, { label: tNav("maps"), href: "/maps" }, { label: map.title }]} />
         <div className="mb-10 grid gap-8 lg:grid-cols-[1fr_380px]">
-          <div className="relative aspect-video overflow-hidden rounded-lg bg-surface"><Image src={map.thumbnail} alt={map.title} fill sizes="(max-width:1024px) 100vw,640px" priority className="object-cover" /></div>
+          <div className="relative aspect-video overflow-hidden rounded-lg bg-surface">
+            <div data-motion="parallax" data-speed="0.12" className="absolute inset-[-8%]">
+              <Image src={map.thumbnail} alt={map.title} fill sizes="(max-width:1024px) 100vw,640px" priority className="motion-kenburns object-cover" />
+            </div>
+          </div>
           <div className="flex flex-col justify-center">
             <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">{map.creator}</p>
             <h1 className="mt-1 font-heading text-2xl font-bold uppercase tracking-wide text-white md:text-3xl">{map.title}</h1>
@@ -55,7 +59,7 @@ export default async function MapPage({ params }: { params: { locale: string; id
 
         <div className="mb-10 grid grid-cols-2 gap-3 md:grid-cols-5">
           {[{ l: t("minutesPlayed"), v: map.stats.minutesPlayed }, { l: t("favoritesLabel"), v: map.stats.favorites }, { l: t("peakPlayers"), v: map.stats.allTimePeak.toLocaleString("en-US") }, { l: t("d1Retention"), v: map.stats.day1Retention }, { l: t("avgPlaytime"), v: map.stats.avgPlaytime }].map((s) => (
-            <div key={s.l} className="rounded-lg border border-white/5 bg-surface-light/50 p-4 text-center"><p className="font-heading text-lg font-bold text-white">{s.v}</p><p className="mt-0.5 text-[10px] text-slate-400">{s.l}</p></div>
+            <div key={s.l} className="rounded-lg border border-white/5 bg-surface-light/50 p-4 text-center"><p data-motion="decode" className="font-heading text-lg font-bold text-white">{s.v}</p><p className="mt-0.5 text-[10px] text-slate-400">{s.l}</p></div>
           ))}
         </div>
 
@@ -82,7 +86,7 @@ export default async function MapPage({ params }: { params: { locale: string; id
             <h2 className="mb-6 font-heading text-sm font-bold uppercase tracking-wider text-slate-400">{t("moreBy", { creator: map.creator })}</h2>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) => (
-                <Link key={r.id} href={`/maps/${r.id}` as `/maps/${string}`} className="group flex items-center gap-3 rounded-lg border border-white/5 bg-surface-light/30 p-3 transition-all hover:border-accent/20">
+                <Link key={r.id} href={`/maps/${r.id}` as `/maps/${string}`} data-glow className="group relative flex items-center gap-3 overflow-hidden rounded-lg border border-white/5 bg-surface-light/30 p-3 transition-all hover:border-accent/20">
                   <div className="relative h-10 w-16 shrink-0 overflow-hidden rounded"><Image src={r.thumbnail} alt={r.title} fill sizes="64px" className="object-cover" /></div>
                   <div className="min-w-0"><p className="truncate font-heading text-[11px] font-bold uppercase text-white">{r.title}</p><p className="text-[10px] text-slate-400">{r.stats.minutesPlayed} {t("played")}</p></div>
                 </Link>

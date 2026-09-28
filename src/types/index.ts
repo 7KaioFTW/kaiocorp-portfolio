@@ -31,6 +31,8 @@ export interface FortniteMap {
    * display to hide/label them.
    */
   disabled?: boolean;
+  /** Pinned at the top of the /maps leaderboard, above the minutes-played ranking (product decision). */
+  pinned?: boolean;
   brand?: string;
   stats: MapStats;
   fortniteGgUrl: string;
@@ -45,13 +47,8 @@ export interface Collaborator {
   description: string;
 }
 
-export interface AggregateStats {
-  totalMaps: number;
-  totalCollaborators: number;
-  // Note: minutes/favorites/peak are NOT stored here — they are computed from
-  // maps.json in src/lib/stats.ts (single source of truth), never hand-maintained.
-}
-
+// Note: aggregate figures (map count, collaborator count, total minutes) are NOT stored
+// in creator.json — they are computed in src/lib/stats.ts from the source JSON files.
 export interface Creator {
   name: string;
   fullName: string;
@@ -62,7 +59,6 @@ export interface Creator {
   bio: string;
   skills: string[];
   collaborators: Collaborator[];
-  aggregateStats: AggregateStats;
   social: {
     twitter: string;
     fortniteGg: string;

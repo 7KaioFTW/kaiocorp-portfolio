@@ -1,8 +1,12 @@
-// Total des minutes jouées, calculé en direct depuis maps.json (source de vérité).
+// Agrégats calculés en direct depuis maps.json / creator.json (sources de vérité) — jamais en dur.
 import mapsData from "@/data/maps.json";
+import creatorData from "@/data/creator.json";
 import type { FortniteMap } from "@/types";
 
 const maps = mapsData as FortniteMap[];
+
+export const TOTAL_MAPS = maps.length;
+export const TOTAL_COLLABORATORS = creatorData.collaborators.length;
 
 function toMinutes(s: string): number {
   const n = parseFloat(s);
@@ -23,3 +27,11 @@ export function formatMinutesFr(n: number): string {
 }
 
 export const TOTAL_MINUTES_LABEL = formatMinutesFr(TOTAL_MINUTES);
+
+// Milliards arrondis à la baisse, toujours 1 décimale, formatés selon la locale : "4,9" (fr) / "4.9" (en).
+export function formatBillions(locale: string, minutes: number = TOTAL_MINUTES): string {
+  return (Math.floor(minutes / 100_000_000) / 10).toLocaleString(locale, {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  });
+}
