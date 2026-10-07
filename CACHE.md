@@ -9,9 +9,8 @@ Refonte B2B de kaiocorp.com, **français par défaut** (`defaultLocale: "fr"`). 
 créatif Fortnite/UEFN orienté engagement de marque (pas « développeur de maps »).
 
 **Domaine canonique officiel : `https://kaiocorp.com` (SANS www)** — tout le code SEO pointe désormais
-vers ce domaine via la constante unique `SITE_URL` (`src/lib/seo.ts`). ⚠️ Le site est encore SERVI sur
-`www.kaiocorp.com` en prod : la redirection Vercel doit être **inversée à la main** (www → non-www) pour
-que les signaux SEO du code soient cohérents avec le domaine servi. Voir « Étapes manuelles restantes ».
+vers ce domaine via la constante unique `SITE_URL` (`src/lib/seo.ts`). ✅ Vercel sert bien `kaiocorp.com`
+et redirige `www` → non-www en 308 (vérifié le 2026-09-28) : code SEO et domaine servi sont cohérents.
 
 **Locales actives : 4 routées = FR, EN, ES, DE** (réduit de 13 → 4 le 2026-06-30). Les 9 autres locales
 (pt, ar, ja, zh, pt-BR, nl, da, ro, ru) restent traduites sur disque (`src/messages/*.json`,
@@ -19,6 +18,26 @@ que les signaux SEO du code soient cohérents avec le domaine servi. Voir « Ét
 (+ une `case` dans `src/content/blog.ts` pour le blog).
 
 ## Dernières actions (cette session)
+
+### GSC : 404 des locales retirées → redirection permanente (2026-10-07, NON commité)
+- Rapport GSC « pages non indexées » : 171 × 404 = anciennes URL des 9 locales retirées le 2026-07-01
+  (pt, pt-BR, ar, ja, zh, nl, da, ro, ru). Le reste (canonique alternative 176, redirection 25,
+  explorée/détectée non indexée 149+49) = normal / autorité d'un domaine jeune, pas de bug.
+- **Fait** : `redirects()` dans `next.config.js` → `/{locale retirée}[/*]` en 308 vers `/en[/*]`.
+  À retirer de la liste si une locale est réactivée.
+- **Vérif** : tsc/eslint/build OK ; routes-manifest = 308 ; serveur prod local : `/ja`→`/en`,
+  `/ja/maps/sprite-pillars`→`/en/maps/sprite-pillars`, `/pt-BR/blog`, `/pt/about`, `/ru/maps`,
+  `/nl/blog?x=1` (query gardée), `/da/` → tous 200 sur l'équivalent EN ; `/de`, `/en/maps` inchangés ;
+  `/jam`, `/zhx/about` restent 404 (pas de faux positif).
+- Reste : commit + deploy, puis « Valider la correction » sur la ligne 404 dans GSC.
+
+### EN LIGNE — PR #1 mergée dans master (2026-09-28 13:33)
+- Merge commit `8cd5091` (motion design `d1db62c` + homepage 3D `22b5b95` + Sprite Pillars / 3D par défaut
+  `9162c2b`). Déploiement Vercel production : success à 13:35.
+- Vérifié sur kaiocorp.com : homepage 3D servie (poster + script de boot), Sprite Pillars avant Clutch 1V2
+  (anneau + /maps), miniature `/images/maps/sprite-pillars.jpg` 200.
+- Reste à faire : test sur vrai téléphone (surtout iPhone : ancrage de section). La redirection www → non-www
+  est déjà en place (vérifiée, voir « Étapes manuelles restantes »).
 
 ### Expérience 3D activée par défaut (2026-09-28, PR #1)
 - **Décision de Kaio** : la 3D doit être active par défaut. Avant, « réduire les animations » (cas de ce PC :
@@ -373,8 +392,9 @@ non-www, mais centralisation + correctifs SEO secondaires.
 
 > Bloquantes pour que la cohérence non-www du code prenne effet en prod.
 
-- [ ] **Vercel → Settings → Domains** : définir **`kaiocorp.com` (sans www) comme domaine PRIMARY** et
-  rediriger **`www` → non-www** (= inverser la redirection 301 actuelle qui va de non-www vers www).
+- [x] **Vercel → Settings → Domains** : `kaiocorp.com` (sans www) est le domaine principal et `www` redirige
+  vers lui — **vérifié le 2026-09-28** : `https://www.kaiocorp.com/` → 308 → `https://kaiocorp.com/`,
+  `https://kaiocorp.com/` servi directement.
 - [ ] *(Optionnel)* Remplacer `public/images/og-default.jpg` par un visuel bespoke/photographique si voulu
   — la carte de marque générée est déjà correcte et shippable (police Bahnschrift à défaut d'Orbitron).
 - [ ] **Google Search Console** : vérifier la propriété (domaine entier `kaiocorp.com`), soumettre
