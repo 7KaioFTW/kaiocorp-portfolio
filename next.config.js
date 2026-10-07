@@ -3,6 +3,15 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Locales dropped 13 -> 4 on 2026-07-01: 301 their old URLs to the EN equivalent instead of 404.
+  // Remove a code from this list if that locale is re-activated in src/i18n/routing.ts.
+  async redirects() {
+    const dropped = "pt-BR|pt|ar|ja|zh|nl|da|ro|ru";
+    return [
+      { source: `/:loc(${dropped})`, destination: "/en", permanent: true },
+      { source: `/:loc(${dropped})/:path*`, destination: "/en/:path*", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
